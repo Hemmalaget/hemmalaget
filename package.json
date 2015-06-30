@@ -1,0 +1,29 @@
+{
+  "name": "Hemmalaget",
+  "description": "Homepage for Hemmalaget",
+  "author": "Daniel Ström",
+  "version": "0.0.0",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+    "start": "brunch watch --server",
+    "postinstall": "brunch build"
+  },
+  "engines": {
+    "node": "0.12.x",
+    "npm": "2.5.x"
+  },
+  "dependencies": {
+    "auto-reload-brunch": "latest",
+    "brunch": "latest",
+    "coffee-script-brunch": "^1.8.1",
+    "jaded-brunch": "^1.7.13",
+    "lost-grid": "^5.1.5",
+    "marked": "^0.3.3",
+    "stylus-brunch": "latest",
+    "uglify-js-brunch": "latest"
+  }
+}
