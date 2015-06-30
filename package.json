@@ -21,7 +21,7 @@
     "brunch": "latest",
     "coffee-script-brunch": "^1.8.1",
     "jaded-brunch": "^1.7.13",
-    "lost-grid": "^5.1.5",
+    "jeet": "^6.1.2",
     "marked": "^0.3.3",
     "stylus-brunch": "latest",
     "uglify-js-brunch": "latest"
