@@ -23,6 +23,7 @@
     "jaded-brunch": "^1.7.13",
     "jeet": "^6.1.2",
     "marked": "^0.3.3",
+    "rupture": "^0.6.1",
     "stylus-brunch": "latest",
     "uglify-js-brunch": "latest"
   }

@@ -1,6 +1,10 @@
 @import 'jeet'
+@import 'rupture'
 
 //edit()
+
+tablet = 700px
+phone = 550px
 
 mint = #A8E6CE
 mintLight = #B1F2D9
@@ -34,10 +38,6 @@ section
   background white
   padding 2rem 1rem
   cf()
-
-#pledge, #testemonial
-  padding-top 0
-  padding-bottom 0
 
 article
   cf()
@@ -83,41 +83,59 @@ button.green
 form > button
   display: inline
 
+.image
+  col(5/12)
+  padding 1rem
+  +below(950px)
+    padding 0
+  +below(tablet)
+    stack()
+    max-width 16rem
+    margin-bottom 1rem
 .quote
   col(7/12)
-  padding-top 7%
   font-size 1.5rem
   blockquote, figure
     margin 0
-.image
-  col(5/12)
-  padding 2rem
+  figcaption
+    margin-top .5rem
+  +below(tablet)
+    stack()
 
 
 #header
   position relative
   width 100%
-  padding-top 25%
-  padding-bottom 25%
   background url(header.png)
   background-size cover
   background-position center
+  +above(tablet+1)
+    padding-top 25%
+    padding-bottom 25%
 
   .logo
-    position absolute
     padding 0
     margin 0
-    top 1rem
-    right 1rem
     font-size 2rem
+    +above(tablet+1)
+      position absolute
+      top 1rem
+      right 1rem
 
   .title
-    position absolute
     padding 0
     margin 0
-    bottom 1rem
-    left 1rem
     font-size 4rem
+    +above(tablet+1)
+      position absolute
+      bottom 1rem
+      left 1rem
+    +below(550px)
+      font-size 3.5rem
+    +below(500px)
+      font-size 3rem
+    +below(420px)
+      font-size 2.8rem
 
 
 #pledge
@@ -127,36 +145,68 @@ form > button
     text-align right
   figcaption:before
     content '- '
+  +above(tablet+1)
+    .image
+      shift(7/12)
+    .quote
+      shift(-5/12)
+  figure
+    padding-top 13%
+    +below(900px)
+      padding-top 3%
+    +below(750px)
+      padding-top 0
+
 
 
 #offer
+  h2
+    margin-bottom 1.5rem
   article
+    padding 1rem
     col(1/2, cycle:2)
-  article:nth-child(4n), article:nth-child(4n-1)
-    background grass
+    +below(tablet)
+      stack()
+  +above(tablet+1)
+    article:nth-child(4n), article:nth-child(4n-1)
+      background grass
+  +below(tablet)
+    article:nth-child(even)
+      background grass
 
 
 #testemonial
+  background lighten(dark, 10)
+  color white
   blockquote
     font-size 2.5rem
     &:before
       content '"'
     &:after
       content '"'
+  figure
+    padding-top 18%
+    +below(805px)
+      padding-top 6%
+    +below(tablet)
+      padding-top 0
 
 
 #call-to-action
   background mint
-  padding-top 6rem
-  padding-bottom 6rem
+  padding-top 4rem
+  padding-bottom 4rem
   h1
-    line-height 3rem
     margin-top 0
     margin-bottom 2rem
     font-size 4rem
-
+    +below(500px)
+      font-size 3.5rem
+    +below(430px)
+      font-size 3rem
 
 #join
+  padding-bottom 4rem
   h2
     margin-bottom 1.5rem
   button
@@ -177,6 +227,11 @@ form > button
     margin-top 1rem
   div
     column(1/2)
+    +below(tablet)
+      stack()
+      margin-bottom 2rem
+      &:last-child
+        margin-bottom 0
   h2
     margin-bottom 1rem
   h3

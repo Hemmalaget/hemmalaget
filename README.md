@@ -3,6 +3,10 @@ Hemmalaget
 
 A static homepage for Hemmalaget AB using angularjs.
 
+## Requirements
+
+none
+
 ## Development
 
 After cloning the repository, you need to install all dependencies using:

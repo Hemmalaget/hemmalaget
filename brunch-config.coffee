@@ -21,7 +21,7 @@ exports.config =
     jshint:
       pattern: /^app\/.*\.js$/
     stylus:
-      plugins: ['jeet']
+      plugins: ['jeet', 'rupture']
     jaded:
       staticPatterns: /^app(\/|\\)(.+)\.jade$/
       jade:
