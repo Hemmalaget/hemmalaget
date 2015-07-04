@@ -37,6 +37,7 @@ section
   center(1024px)
   background white
   padding 2rem 1rem
+  overflow hidden
   cf()
 
 article
@@ -47,6 +48,8 @@ h1,h2,h3,h4,h5,h6
 h2
   font-size 3rem
   margin-top 0
+  +below(phone)
+    font-size 2rem
 h3
   margin-top 0
   font-weight 600
@@ -172,6 +175,10 @@ form > button
   +below(tablet)
     article:nth-child(even)
       background grass
+  +below(phone)
+    padding 0
+    h2
+      margin-left 1rem
 
 
 #testemonial
@@ -183,13 +190,14 @@ form > button
       content '"'
     &:after
       content '"'
+    +below(380px)
+      font-size 2rem
   figure
     padding-top 18%
     +below(805px)
       padding-top 6%
     +below(tablet)
       padding-top 0
-
 
 #call-to-action
   background mint
@@ -203,6 +211,8 @@ form > button
       font-size 3.5rem
     +below(430px)
       font-size 3rem
+    +below(380px)
+      font-size 2.5rem
 
 #join
   padding-bottom 4rem
@@ -238,6 +248,8 @@ form > button
     font-weight 100
     &:after
       content ':'
+    +below(340px)
+      font-size 1.5rem
   h4
     font-weight 600
     margin-bottom .6rem
