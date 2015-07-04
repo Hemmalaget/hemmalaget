@@ -1,11 +1,11 @@
 Hemmalaget
 ==========
 
-A static homepage for Hemmalaget AB using angularjs.
+A static homepage for Hemmalaget AB.
 
 ## Requirements
 
-none
+Node.js, Npm
 
 ## Development
 
