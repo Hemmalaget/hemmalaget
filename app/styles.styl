@@ -1,14 +1,191 @@
 @import 'jeet'
 
+//edit()
+
+mint = #A8E6CE
+mintLight = #B1F2D9
+mintDark = #75A08F
+grass = #DCEDC2
+peach = #FFD3B5
+salmon = #FFAAA6
+salmonDark = #B27673
+tulip = #FF8C94
+dark = #4A4A4A
+
 /* apply a natural box layout model to all elements, but allowing components to change */
 html
   box-sizing border-box
-
 *, *:before, *:after
   box-sizing inherit
 
 html
-  font-size 16px
+  //font-size 22px
+  font-size 120%
+  font-family opensans
+  color dark
+  font-weight 200
+  background whitesmoke
 
-a
-  font-size 1.667rem
+body
+  margin 0
+
+section
+  center(1024px)
+  background white
+  padding 2rem 1rem
+  cf()
+
+#pledge, #testemonial
+  padding-top 0
+  padding-bottom 0
+
+article
+  cf()
+
+h1,h2,h3,h4,h5,h6
+  font-weight 200
+h2
+  font-size 3rem
+  margin-top 0
+h3
+  margin-top 0
+  font-weight 600
+  font-size 1.4rem
+
+img
+  max-width 100%
+
+button
+  background salmon
+  border none
+  font-size 2rem
+  font-weight 100
+  padding .8rem .8rem
+  color dark
+  box-shadow 0 .2rem 0 0 salmonDark
+  border-radius .3rem
+
+  &:hover
+    background lighten(salmon, 3)
+    box-shadow -.05rem .25rem 0 0 salmonDark
+
+  &:active
+    background darken(salmon, 3)
+    box-shadow none
+
+*:focus
+  outline dark dotted thick
+
+button.green
+  background mint
+  box-shadow 0 .2rem 0 0 mintDark
+
+form > button
+  display: inline
+
+.quote
+  col(7/12)
+  padding-top 7%
+  font-size 1.5rem
+  blockquote, figure
+    margin 0
+.image
+  col(5/12)
+  padding 2rem
+
+
+#header
+  position relative
+  width 100%
+  padding-top 25%
+  padding-bottom 25%
+  background url(header.png)
+  background-size cover
+  background-position center
+
+  .logo
+    position absolute
+    padding 0
+    margin 0
+    top 1rem
+    right 1rem
+    font-size 2rem
+
+  .title
+    position absolute
+    padding 0
+    margin 0
+    bottom 1rem
+    left 1rem
+    font-size 4rem
+
+
+#pledge
+  background mint
+  border-top solid mintLight 1.5rem
+  figcaption
+    text-align right
+  figcaption:before
+    content '- '
+
+
+#offer
+  article
+    col(1/2, cycle:2)
+  article:nth-child(4n), article:nth-child(4n-1)
+    background grass
+
+
+#testemonial
+  blockquote
+    font-size 2.5rem
+    &:before
+      content '"'
+    &:after
+      content '"'
+
+
+#call-to-action
+  background mint
+  padding-top 6rem
+  padding-bottom 6rem
+  h1
+    line-height 3rem
+    margin-top 0
+    margin-bottom 2rem
+    font-size 4rem
+
+
+#join
+  h2
+    margin-bottom 1.5rem
+  button
+    margin-top 1.5rem
+
+
+#contact
+  border-top solid salmon 3rem
+  background tulip
+  color white
+  font-size 1.2rem
+  padding-bottom 4rem
+  a
+    display block
+    color white
+    text-decoration none
+  a.address
+    margin-top 1rem
+  div
+    column(1/2)
+  h2
+    margin-bottom 1rem
+  h3
+    font-size 1.7rem
+    font-weight 100
+    &:after
+      content ':'
+  h4
+    font-weight 600
+    margin-bottom .6rem
+  p
+    margin 0
