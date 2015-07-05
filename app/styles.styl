@@ -58,12 +58,13 @@ h3
 img
   max-width 100%
 
-button
+button, .button
+  display inline-block
   background salmon
   border none
+  text-decoration none
   font-size 2rem
-  font-weight 100
-  padding .8rem .8rem
+  padding .6rem .8rem
   color dark
   box-shadow 0 .2rem 0 0 salmonDark
   border-radius .3rem
@@ -79,11 +80,11 @@ button
 *:focus
   outline dark dotted thick
 
-button.green
+button.green, .button.green
   background mint
   box-shadow 0 .2rem 0 0 mintDark
 
-form > button
+form > .button
   display: inline
 
 .image
@@ -219,7 +220,7 @@ form > button
   padding-bottom 4rem
   h2
     margin-bottom 1.5rem
-  button
+  .button
     margin-top 1.5rem
 
 
