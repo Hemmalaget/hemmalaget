@@ -161,21 +161,24 @@ form > .button
       padding-top 0
 
 
-
 #offer
-  h2
-    margin-bottom 1.5rem
-  article
-    padding 1rem
-    col(1/2, cycle:2)
-    +below(tablet)
-      stack()
+  .row
+    overflow hidden
+    article
+      col(1/2)
+      padding 1rem
   +above(tablet+1)
-    article:nth-child(4n), article:nth-child(4n-1)
-      background grass
+    .row:nth-child(even)
+      article
+        background grass
+        padding-bottom 5rem
+        margin-bottom -5rem
   +below(tablet)
-    article:nth-child(even)
-      background grass
+    .row
+      article:nth-child(even)
+        background grass
+      article
+        stack()
   +below(phone)
     padding 0
     h2
