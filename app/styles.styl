@@ -10,11 +10,11 @@ phone = 550px
 main = #A8E6CE
 mainLight = #B1F2D9
 mainDark = #75A08F
-alternative = #DCEDC2
-peach = #FFD3B5
-salmon = #FFAAA6
-salmonDark = #B27673
-tulip = #FF8C94
+mainAlt = #DCEDC2
+complementaryAlt = #FFD3B5
+complementary = #FF8C94
+complementaryLight = #FFAAA6
+complementaryDark = #B27673
 dark = #4A4A4A
 
 /* apply a natural box layout model to all elements, but allowing components to change */
@@ -61,21 +61,19 @@ img
 
 button, .button
   display inline-block
-  background salmon
+  background complementaryLight
   border none
   text-decoration none
   font-size 2rem
   padding .6rem .8rem
   color dark
-  box-shadow 0 .2rem 0 0 salmonDark
+  box-shadow 0 .2rem 0 0 complementaryDark
   border-radius .3rem
-
   &:hover
-    background lighten(salmon, 3)
-    box-shadow -.05rem .25rem 0 0 salmonDark
-
+    background lighten(complementaryLight, 3)
+    box-shadow -.05rem .25rem 0 0 complementaryDark
   &:active
-    background darken(salmon, 3)
+    background darken(complementaryLight, 3)
     box-shadow none
 
 *:focus
@@ -84,6 +82,12 @@ button, .button
 button.green, .button.green
   background main
   box-shadow 0 .2rem 0 0 mainDark
+  &:hover
+    background lighten(mainLight, 3)
+    box-shadow -.05rem .25rem 0 0 mainDark
+  &:active
+    background darken(mainLight, 3)
+    box-shadow none
 
 form > .button
   display: inline
@@ -171,13 +175,13 @@ form > .button
   +above(tablet+1)
     .row:nth-child(even)
       article
-        background alternative
+        background mainAlt
         padding-bottom 5rem
         margin-bottom -5rem
   +below(tablet)
     .row
       article:nth-child(even)
-        background alternative
+        background mainAlt
       article
         stack()
   +below(phone)
@@ -229,8 +233,8 @@ form > .button
 
 
 #contact
-  border-top solid salmon 3rem
-  background tulip
+  border-top solid complementaryLight 3rem
+  background complementary
   color white
   font-size 1.2rem
   padding-bottom 4rem
