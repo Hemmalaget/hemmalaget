@@ -8,13 +8,9 @@ tablet = 700px
 phone = 550px
 
 main = #A8E6CE
-mainLight = #B1F2D9
-mainDark = #75A08F
-mainAlt = #DCEDC2
-complementaryAlt = #FFD3B5
-complementary = #FF8C94
-complementaryLight = #FFAAA6
-complementaryDark = #B27673
+mainLight = saturate(lighten(main, 20%), 30%)
+mainAlt = lighten(spin(main, 290deg), 35%)
+complementary = spin(main,55deg)
 dark = #4A4A4A
 
 /* apply a natural box layout model to all elements, but allowing components to change */
@@ -59,38 +55,34 @@ h3
 img
   max-width 100%
 
-button, .button
+button(color)
   display inline-block
-  background complementaryLight
+  background color
   border none
   text-decoration none
   font-size 2rem
-  padding .6rem .8rem
-  color dark
-  box-shadow 0 .2rem 0 0 complementaryDark
+  padding .6rem 1.4rem
+  if dark(color)
+    color white
+  else
+    color dark
+  box-shadow 0 .2rem 0 0 desaturate(darken(color, 40%), 40%)
   border-radius .3rem
   &:hover
-    background lighten(complementaryLight, 3)
-    box-shadow -.05rem .25rem 0 0 complementaryDark
+    background lighten(color, 3)
+    box-shadow -.05rem .25rem 0 0 desaturate(darken(color, 40%), 40%)
   &:active
-    background darken(complementaryLight, 3)
+    background darken(color, 3)
     box-shadow none
+
+button, .button
+  button(complementary)
+
+button.main, .button.main
+  button(main)
 
 *:focus
   outline dark dotted thick
-
-button.green, .button.green
-  background main
-  box-shadow 0 .2rem 0 0 mainDark
-  &:hover
-    background lighten(mainLight, 3)
-    box-shadow -.05rem .25rem 0 0 mainDark
-  &:active
-    background darken(mainLight, 3)
-    box-shadow none
-
-form > .button
-  display: inline
 
 .image
   col(5/12)
