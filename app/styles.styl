@@ -1,15 +1,16 @@
 @import 'jeet'
 @import 'rupture'
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,300,600')
 
 //edit()
 
 tablet = 700px
 phone = 550px
 
-mint = #A8E6CE
-mintLight = #B1F2D9
-mintDark = #75A08F
-grass = #DCEDC2
+main = #A8E6CE
+mainLight = #B1F2D9
+mainDark = #75A08F
+alternative = #DCEDC2
 peach = #FFD3B5
 salmon = #FFAAA6
 salmonDark = #B27673
@@ -25,7 +26,7 @@ html
 html
   //font-size 22px
   font-size 120%
-  font-family opensans
+  font-family 'Open Sans' sans-serif
   color dark
   font-weight 200
   background whitesmoke
@@ -81,8 +82,8 @@ button, .button
   outline dark dotted thick
 
 button.green, .button.green
-  background mint
-  box-shadow 0 .2rem 0 0 mintDark
+  background main
+  box-shadow 0 .2rem 0 0 mainDark
 
 form > .button
   display: inline
@@ -110,7 +111,7 @@ form > .button
 #header
   position relative
   width 100%
-  background mint url(header.png) center
+  background main url(header.png) center
   background-size cover
   +above(tablet+1)
     padding-top 25%
@@ -142,8 +143,8 @@ form > .button
 
 
 #pledge
-  background mint
-  border-top solid mintLight 1.5rem
+  background main
+  border-top solid mainLight 1.5rem
   figcaption
     text-align right
   figcaption:before
@@ -170,13 +171,13 @@ form > .button
   +above(tablet+1)
     .row:nth-child(even)
       article
-        background grass
+        background alternative
         padding-bottom 5rem
         margin-bottom -5rem
   +below(tablet)
     .row
       article:nth-child(even)
-        background grass
+        background alternative
       article
         stack()
   +below(phone)
@@ -205,7 +206,7 @@ form > .button
       padding-top 0
 
 #call-to-action
-  background mint
+  background main
   padding-top 4rem
   padding-bottom 4rem
   h1
