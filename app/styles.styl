@@ -8,9 +8,10 @@ tablet = 700px
 phone = 550px
 
 main = #A8E6CE
-mainLight = saturate(lighten(main, 20%), 30%)
-mainAlt = lighten(spin(main, 290deg), 35%)
-complementary = spin(main,210deg)
+mainLight = #B1F2D9
+mainAlt = #EAF4DA
+complementary = #FFB6B3
+complementaryDark = #996663
 dark = #4A4A4A
 light = #FFFFFF
 
@@ -61,31 +62,28 @@ h3
 img
 	max-width 100%
 
-button(color)
+button(color, colorDark)
 	display inline-block
 	background color
 	border none
 	text-decoration none
 	font-size 2rem
 	padding .6rem 1.4rem
-	if dark(color)
-		color white
-	else
-		color dark
-	box-shadow 0 .2rem 0 0 desaturate(darken(color, 40%), 40%)
+	color dark
+	box-shadow 0 .2rem 0 0 colorDark
 	border-radius .3rem
 	&:hover
-		background lighten(color, 3)
-		box-shadow -.05rem .25rem 0 0 desaturate(darken(color, 40%), 40%)
+		background lighten(color, 2)
+		box-shadow 0 .25rem 0 0 colorDark
 	&:active
-		background darken(color, 3)
+		background desaturate(darken(color, 2), 10%)
 		box-shadow none
 
 button, .button
-	button(complementary)
+	button(complementary, complementaryDark)
 
 button.main, .button.main
-	button(main)
+	button(main, main)
 
 *:focus
 	outline dark dotted thick
@@ -233,6 +231,11 @@ nBorderHeight = .4rem
 		+below(750px)
 			padding-top 0
 
+
+/////////////////
+//// Regions ////
+/////////////////
+
 #regions
 	background #eee
 	padding-top .5rem
@@ -242,13 +245,24 @@ nBorderHeight = .4rem
 		h2
 			font-size 2rem
 			text-align center
-			margin-bottom .2rem
+			margin-bottom .3rem
 		p
+			margin 0
 			font-size 1.1rem
 			text-align center
+
+
+///////////////
+//// Offer ////
+///////////////
+
 #offer
 	h2
 		margin-bottom 1rem
+	img
+		max-width 100%
+		padding-top 1rem
+		padding-bottom 1rem
 	.row
 		overflow hidden
 		article
