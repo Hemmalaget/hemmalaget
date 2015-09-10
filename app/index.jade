@@ -8,10 +8,17 @@ html(lang='sv')
     script(src='vendor.js')
     link(rel='stylesheet' href='app.css')
     script(src='app.js')
-  body
-    main
-      section#header
+  body#body
+    #navigation
+      nav
+        a(href="#body") Start
+        a(href="#offer") Erbjudande
+        a(href="#join") Assistent
+        a(href="#contact") Kontakt
         h1.logo Hemmalaget
+      
+    main  
+      section#header
         h1.title Personlig assistans<br /> på dina villkor
       
       section#pledge
@@ -171,3 +178,4 @@ html(lang='sv')
 
       ga('create', 'UA-65451616-1', 'auto');
       ga('send', 'pageview');
+    script(type'text/javascript') require("main");

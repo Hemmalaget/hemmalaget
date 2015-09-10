@@ -29,6 +29,10 @@ html
 
 body
   margin 0
+  position relative
+
+main
+  margin-top 3rem
 
 section
   center(1024px)
@@ -102,6 +106,45 @@ button.main, .button.main
     margin-top .5rem
   +below(tablet)
     stack()
+
+#navigation
+  position fixed
+  top 0
+  height 3.3rem
+  display block
+  width 100%
+  z-index 1
+nav
+  position relative
+  max-width 1024px
+  margin-left auto
+  margin-right auto
+  height 3.3rem
+  line-height 3rem
+  overflow hidden
+  cf()
+  background main
+  border-bottom .3rem solid mainLight
+  a
+    display inline-block
+    padding-left 1rem
+    padding-right 1rem
+    margin-right 1rem
+    color dark
+    text-decoration none
+    font-size 1.2rem
+    font-weight 400
+    &:hover
+      background saturate(lighten(main, 30%), 10%)
+    &:active
+      background desaturate(darken(main, 10%), 20%)
+  h1
+    display inline-block
+    position absolute
+    right 1rem
+    padding 0
+    margin 0
+    line-height 3rem
 
 
 #header
