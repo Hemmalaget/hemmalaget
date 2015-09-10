@@ -10,12 +10,18 @@ html(lang='sv')
     script(src='app.js')
   body#body
     #navigation
-      nav
-        a(href="#body") Start
-        a(href="#offer") Erbjudande
-        a(href="#join") Assistent
-        a(href="#contact") Kontakt
+      #nav_container
         h1.logo Hemmalaget
+        nav
+          ul
+            li
+              a(href="#body") Start
+            li
+              a(href="#offer") Erbjudande
+            li
+              a(href="#join") Assistent
+            li
+              a(href="#contact") Kontakt
       
     main  
       section#header

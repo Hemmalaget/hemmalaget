@@ -10,297 +10,326 @@ phone = 550px
 main = #A8E6CE
 mainLight = saturate(lighten(main, 20%), 30%)
 mainAlt = lighten(spin(main, 290deg), 35%)
-complementary = spin(main,55deg)
+complementary = spin(main,210deg)
 dark = #4A4A4A
+light = #FFFFFF
+
 
 /* apply a natural box layout model to all elements, but allowing components to change */
 html
-  box-sizing border-box
+	box-sizing border-box
 *, *:before, *:after
-  box-sizing inherit
+	box-sizing inherit
 
 html
-  //font-size 22px
-  font-size 120%
-  font-family 'Open Sans' sans-serif
-  color dark
-  font-weight 200
-  background whitesmoke
+	//font-size 22px
+	font-size 120%
+	font-family 'Open Sans' sans-serif
+	color dark
+	font-weight 200
+	background whitesmoke
 
 body
-  margin 0
-  position relative
+	margin 0
+	position relative
 
 main
-  margin-top 3rem
+	margin-top 3rem
 
 section
-  center(1024px)
-  background white
-  padding 2rem 1rem
-  overflow hidden
-  cf()
+	center(1024px)
+	background white
+	padding 2rem 1rem
+	overflow hidden
+	cf()
 
 article
-  cf()
+	cf()
 
 h1,h2,h3,h4,h5,h6
-  font-weight 200
+	font-weight 200
 h2
-  font-size 3rem
-  margin-top 0
-  +below(phone)
-    font-size 2rem
+	font-size 3rem
+	margin-top 0
+	+below(phone)
+		font-size 2rem
 h3
-  margin-top 0
-  font-weight 600
-  font-size 1.4rem
+	margin-top 0
+	font-weight 600
+	font-size 1.4rem
 
 img
-  max-width 100%
+	max-width 100%
 
 button(color)
-  display inline-block
-  background color
-  border none
-  text-decoration none
-  font-size 2rem
-  padding .6rem 1.4rem
-  if dark(color)
-    color white
-  else
-    color dark
-  box-shadow 0 .2rem 0 0 desaturate(darken(color, 40%), 40%)
-  border-radius .3rem
-  &:hover
-    background lighten(color, 3)
-    box-shadow -.05rem .25rem 0 0 desaturate(darken(color, 40%), 40%)
-  &:active
-    background darken(color, 3)
-    box-shadow none
+	display inline-block
+	background color
+	border none
+	text-decoration none
+	font-size 2rem
+	padding .6rem 1.4rem
+	if dark(color)
+		color white
+	else
+		color dark
+	box-shadow 0 .2rem 0 0 desaturate(darken(color, 40%), 40%)
+	border-radius .3rem
+	&:hover
+		background lighten(color, 3)
+		box-shadow -.05rem .25rem 0 0 desaturate(darken(color, 40%), 40%)
+	&:active
+		background darken(color, 3)
+		box-shadow none
 
 button, .button
-  button(complementary)
+	button(complementary)
 
 button.main, .button.main
-  button(main)
+	button(main)
 
 *:focus
-  outline dark dotted thick
+	outline dark dotted thick
 
 .image
-  col(5/12)
-  padding 1rem
-  +below(950px)
-    padding 0
-  +below(tablet)
-    stack()
-    max-width 16rem
-    margin-bottom 1rem
+	col(5/12)
+	padding 1rem
+	+below(950px)
+		padding 0
+	+below(tablet)
+		stack()
+		max-width 16rem
+		margin-bottom 1rem
 .quote
-  col(7/12)
-  font-size 1.5rem
-  blockquote, figure
-    margin 0
-  figcaption
-    margin-top .5rem
-  +below(tablet)
-    stack()
+	col(7/12)
+	font-size 1.5rem
+	blockquote, figure
+		margin 0
+	figcaption
+		margin-top .5rem
+	+below(tablet)
+		stack()
+
+
+////////////////////
+//// Navigation ////
+////////////////////
+
+nHeight = 3.5rem
+nBorderHeight = .4rem
 
 #navigation
-  position fixed
-  top 0
-  height 3.3rem
-  display block
-  width 100%
-  z-index 1
-nav
-  position relative
-  max-width 1024px
-  margin-left auto
-  margin-right auto
-  height 3.3rem
-  line-height 3rem
-  overflow hidden
-  cf()
-  background main
-  border-bottom .3rem solid mainLight
-  a
-    display inline-block
-    padding-left 1rem
-    padding-right 1rem
-    margin-right 1rem
-    color dark
-    text-decoration none
-    font-size 1.2rem
-    font-weight 400
-    &:hover
-      background saturate(lighten(main, 30%), 10%)
-    &:active
-      background desaturate(darken(main, 10%), 20%)
-  h1
-    display inline-block
-    position absolute
-    right 1rem
-    padding 0
-    margin 0
-    line-height 3rem
+	position fixed
+	top 0
+	display block
+	width 100%
+	z-index 1
 
+	#nav_container
+		max-width 1024px
+		margin-left auto
+		margin-right auto
+		background light
+		border-bottom nBorderHeight solid mainLight
+		cf()
+
+		h1
+			display inline-block
+			padding 0
+			margin 0
+			margin-left 1rem
+			line-height nHeight
+			z-index 2
+
+		nav
+			float right
+			cf()
+			ul
+				margin 0
+				padding 0
+				list-style-type none
+				li
+					display inline-block
+					a
+						display inline-block
+						color dark
+						text-decoration none
+						font-size 1.4rem
+						font-weight 200
+						height nHeight
+						line-height nHeight
+						padding-left 1rem
+						padding-right 1rem
+						margin-left 1rem
+						height nHeight
+						&:hover
+							background mainLight
+						&:active
+							background desaturate(darken(main, 10%), 20%)
+
+
+////////////////
+//// Header ////
+////////////////
 
 #header
-  position relative
-  width 100%
-  background main url(header.png) center
-  background-size cover
-  +above(tablet+1)
-    padding-top 25%
-    padding-bottom 25%
+	position relative
+	width 100%
+	background main url(header.png) center
+	background-size cover
+	+above(tablet+1)
+		padding-top 25%
+		padding-bottom 25%
 
-  .logo
-    padding 0
-    margin 0
-    font-size 2rem
-    font-weight 400
-    +above(tablet+1)
-      position absolute
-      top 1rem
-      right 1rem
+	.logo
+		padding 0
+		margin 0
+		font-size 2rem
+		font-weight 400
+		+above(tablet+1)
+			position absolute
+			top 1rem
+			right 1rem
 
-  .title
-    padding 0
-    margin 0
-    font-size 4rem
-    font-weight 400
-    +above(tablet+1)
-      position absolute
-      bottom 1rem
-      left 1rem
-    +below(550px)
-      font-size 3.5rem
-    +below(500px)
-      font-size 3rem
-    +below(420px)
-      font-size 2.8rem
+	.title
+		padding 0
+		margin 0
+		font-size 4.1rem
+		font-weight 200
+		+above(tablet+1)
+			position absolute
+			bottom 1rem
+			left 1rem
+		+below(550px)
+			font-size 3.5rem
+		+below(500px)
+			font-size 3rem
+		+below(420px)
+			font-size 2.8rem
 
+
+////////////////
+//// Pledge ////
+////////////////
 
 #pledge
-  background main
-  border-top solid mainLight 1.5rem
-  figcaption
-    text-align right
-  figcaption:before
-    content '- '
-  +above(tablet+1)
-    .image
-      shift(7/12)
-    .quote
-      shift(-5/12)
-  figure
-    padding-top 13%
-    +below(900px)
-      padding-top 3%
-    +below(750px)
-      padding-top 0
+	background main
+	border-top solid mainLight 1.2rem
+	border-bottom solid mainLight 1.2rem
+	figcaption
+		text-align right
+	figcaption:before
+		content '- '
+	+above(tablet+1)
+		.image
+			shift(7/12)
+		.quote
+			shift(-5/12)
+	figure
+		padding-top 13%
+		+below(900px)
+			padding-top 3%
+		+below(750px)
+			padding-top 0
 
 
 #offer
-  h2
-    margin-bottom 1rem
-  .row
-    overflow hidden
-    article
-      col(1/2)
-      padding 1rem
-  +above(tablet+1)
-    .row:nth-child(even)
-      article
-        background mainAlt
-        padding-bottom 5rem
-        margin-bottom -5rem
-  +below(tablet)
-    .row
-      article:nth-child(even)
-        background mainAlt
-      article
-        stack()
-  +below(phone)
-    padding 0
-    h2
-      margin-left 1rem
-      margin-top 1rem
+	h2
+		margin-bottom 1rem
+	.row
+		overflow hidden
+		article
+			col(1/2)
+			padding 1rem
+	+above(tablet+1)
+		.row:nth-child(even)
+			article
+				background mainAlt
+				padding-bottom 5rem
+				margin-bottom -5rem
+	+below(tablet)
+		.row
+			article:nth-child(even)
+				background mainAlt
+			article
+				stack()
+	+below(phone)
+		padding 0
+		h2
+			margin-left 1rem
+			margin-top 1rem
 
 
 #testemonial
-  background lighten(dark, 10)
-  color white
-  blockquote
-    font-size 2.5rem
-    &:before
-      content '"'
-    &:after
-      content '"'
-    +below(380px)
-      font-size 2rem
-  figure
-    padding-top 18%
-    +below(805px)
-      padding-top 6%
-    +below(tablet)
-      padding-top 0
+	background lighten(dark, 10)
+	color white
+	blockquote
+		font-size 2.5rem
+		&:before
+			content '"'
+		&:after
+			content '"'
+		+below(380px)
+			font-size 2rem
+	figure
+		padding-top 18%
+		+below(805px)
+			padding-top 6%
+		+below(tablet)
+			padding-top 0
 
 #call-to-action
-  background main
-  padding-top 4rem
-  padding-bottom 4rem
-  h1
-    margin-top 0
-    margin-bottom 2rem
-    font-size 4rem
-    +below(500px)
-      font-size 3.5rem
-    +below(430px)
-      font-size 3rem
-    +below(380px)
-      font-size 2.5rem
+	background main
+	padding-top 4rem
+	padding-bottom 4rem
+	h1
+		margin-top 0
+		margin-bottom 2rem
+		font-size 4rem
+		+below(500px)
+			font-size 3.5rem
+		+below(430px)
+			font-size 3rem
+		+below(380px)
+			font-size 2.5rem
 
 #join
-  padding-bottom 4rem
-  h2
-    margin-bottom 1.5rem
-  .button
-    margin-top 1.5rem
+	padding-bottom 4rem
+	h2
+		margin-bottom 1.5rem
+	.button
+		margin-top 1.5rem
 
 
 #contact
-  border-top solid mainLight 1.5rem
-  background main
-  color dark
-  font-size 1.2rem
-  padding-bottom 4rem
-  a
-    display block
-    color dark
-    text-decoration none
-  a.address
-    margin-top 1rem
-  div
-    column(1/2)
-    +below(tablet)
-      stack()
-      margin-bottom 2rem
-      &:last-child
-        margin-bottom 0
-  h2
-    margin-bottom 1rem
-  h3
-    font-size 1.7rem
-    font-weight 100
-    &:after
-      content ':'
-    +below(340px)
-      font-size 1.5rem
-  h4
-    font-weight 600
-    margin-bottom .6rem
-  p
-    margin 0
+	border-top solid mainLight 1.5rem
+	background main
+	color dark
+	font-size 1.2rem
+	padding-bottom 4rem
+	a
+		display block
+		color dark
+		text-decoration none
+	a.address
+		margin-top 1rem
+	div
+		column(1/2)
+		+below(tablet)
+			stack()
+			margin-bottom 2rem
+			&:last-child
+				margin-bottom 0
+	h2
+		margin-bottom 1rem
+	h3
+		font-size 1.7rem
+		font-weight 100
+		&:after
+			content ':'
+		+below(340px)
+			font-size 1.5rem
+	h4
+		font-weight 600
+		margin-bottom .6rem
+	p
+		margin 0
