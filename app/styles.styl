@@ -114,7 +114,7 @@ button.main, .button.main
 //// Navigation ////
 ////////////////////
 
-nHeight = 3.5rem
+nHeight = 3rem
 nBorderHeight = .4rem
 
 #navigation
@@ -137,6 +137,7 @@ nBorderHeight = .4rem
 			padding 0
 			margin 0
 			margin-left 1rem
+			font-size 1.7rem
 			line-height nHeight
 			z-index 2
 
@@ -153,7 +154,7 @@ nBorderHeight = .4rem
 						display inline-block
 						color dark
 						text-decoration none
-						font-size 1.4rem
+						font-size 1.2rem
 						font-weight 200
 						height nHeight
 						line-height nHeight
@@ -161,10 +162,11 @@ nBorderHeight = .4rem
 						padding-right 1rem
 						margin-left 1rem
 						height nHeight
-						&:hover
+						&:hover, &:focus
 							background mainLight
+							outline none
 						&:active
-							background desaturate(darken(main, 10%), 20%)
+							background desaturate(darken(mainLight, 10%), 20%)
 
 
 ////////////////
