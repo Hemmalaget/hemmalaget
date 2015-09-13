@@ -263,7 +263,6 @@ nBorderHeight = .4rem
 		text-transform uppercase
 		font-weight 600
 	img
-		max-width 100%
 		padding-top 1rem
 		padding-bottom 1rem
 	.row
@@ -387,6 +386,50 @@ nBorderHeight = .4rem
 			padding-bottom 2rem
 
 
+///////////////
+//// We at ////
+///////////////
+
+#we_at
+	article
+		col(1/2)
+		margin-right 0
+		padding 1rem
+		img
+			width 40%
+			float right
+		h3
+			font-size 1.5rem
+			font-weight 200
+			margin-bottom 0
+		h4
+			margin-top 0
+			font-size	1.2rem
+		.contact_info
+			font-size 1.2rem
+			white-space nowrap
+			a
+				color dark
+				text-decoration none
+				&:hover
+					text-decoration underline
+			ul
+				margin 0
+				padding 0
+				list-style-type none
+			.comment
+				font-style italic
+				color lighten(dark, 50%)
+	+below(tablet)
+		article
+			stack()
+			padding 0
+			margin-bottom 2rem
+	+below(phone)
+		article img
+			float none
+
+
 /////////////////
 //// Contact ////
 /////////////////
@@ -401,6 +444,8 @@ nBorderHeight = .4rem
 		display block
 		color dark
 		text-decoration none
+		&:hover
+			text-decoration underline
 	a.address
 		margin-top 1rem
 	div

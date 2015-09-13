@@ -1,4 +1,23 @@
 doctype html
+
+mixin contactCard(data)
+	article.contact_card
+		- firstName = data.name.toLowerCase().substr(0, data.name.indexOf(' '))
+		img(src=firstName + ".png", alt=data.name + ", " + data.title)
+		h3= data.name
+		h4= data.title
+		.contact_info
+			a(href='mailto:' + data.email)
+				p.email= data.email
+			ul.phones
+				each number in data.phones
+					li
+						a(href='tel:' + number)= number
+			if data.comment
+				p.comment= data.comment
+		p.description= data.description
+
+
 html(lang='sv')
 	head
 		title Hemmalaget
@@ -220,6 +239,12 @@ html(lang='sv')
 					figure
 						blockquote Det är underbart att få göra skillnad i en människas liv.
 						figcaption Susanne, Assistent
+			
+			section#we_at
+				h2 Vi på Hemmalaget
+				
+				each contact in locals.contacts
+					+contactCard(contact)
 			
 			section#contact
 				h2 Kontakt

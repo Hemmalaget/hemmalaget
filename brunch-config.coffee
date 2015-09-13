@@ -1,3 +1,7 @@
+CSON = require 'cson'
+
+data = CSON.load('data.cson').data
+
 exports.config =
   # See http:#brunch.io/#documentation for docs.
   # modules:
@@ -24,6 +28,7 @@ exports.config =
       plugins: ['jeet', 'rupture']
     jaded:
       staticPatterns: /^app(\/|\\)(.+)\.jade$/
+      locals: data
       jade:
         pretty: true
     coffeescript:
