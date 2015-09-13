@@ -259,6 +259,9 @@ nBorderHeight = .4rem
 #offer
 	h2
 		margin-bottom 1rem
+	h3
+		text-transform uppercase
+		font-weight 600
 	img
 		max-width 100%
 		padding-top 1rem
@@ -291,17 +294,25 @@ nBorderHeight = .4rem
 			margin-top 1rem
 
 
+/////////////////////
+//// Testimonial ////
+/////////////////////
+
 #testemonial
-	background lighten(dark, 10)
-	color white
+	background main
+	border-top 1.2rem solid mainLight
+	border-bottom 1.2rem solid mainLight
+	color dark
 	blockquote
-		font-size 2.5rem
+		font-size 3rem
 		&:before
 			content '"'
 		&:after
 			content '"'
 		+below(380px)
-			font-size 2rem
+			font-size 2.5rem
+	figcaption
+		font-size 2rem
 	figure
 		padding-top 18%
 		+below(805px)
@@ -309,27 +320,43 @@ nBorderHeight = .4rem
 		+below(tablet)
 			padding-top 0
 
-#call-to-action
-	background main
-	padding-top 4rem
-	padding-bottom 4rem
-	h1
-		margin-top 0
-		margin-bottom 2rem
-		font-size 4rem
-		+below(500px)
-			font-size 3.5rem
-		+below(430px)
-			font-size 3rem
-		+below(380px)
-			font-size 2.5rem
-
 #join
-	padding-bottom 4rem
 	h2
-		margin-bottom 1.5rem
-	.button
-		margin-top 1.5rem
+		margin-bottom 1rem
+	h3
+		text-transform uppercase
+		font-weight 600
+	.articles
+		margin-top 2rem
+	.row
+		overflow hidden
+		margin-bottom 1rem
+		article
+			col(1/2)
+			padding 1rem
+	#joinbox
+		background #eee
+		padding-top 4rem
+		padding-bottom 30rem
+		margin-bottom -30rem
+		h3
+			text-transform none
+			font-weight 200
+			font-size 2rem
+			margin-bottom 1rem
+			text-align center
+		a.button
+			display block
+			max-width 12rem
+			text-align center
+			margin-left auto
+			margin-right auto
+	+above(tablet+1)
+		.row:nth-child(even)
+			article
+				background mainAlt
+				padding-bottom 5rem
+				margin-bottom -5rem
 
 
 #contact
