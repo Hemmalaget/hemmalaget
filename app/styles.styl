@@ -238,10 +238,11 @@ nBorderHeight = .4rem
 
 #regions
 	background #eee
-	padding-top .5rem
-	padding-bottom .5rem
+	padding-top 1rem
+	padding-bottom 1rem
 	div
-		col(1/2)
+		+above(tablet+1)
+			col(1/2)
 		h2
 			font-size 2rem
 			text-align center
@@ -250,6 +251,9 @@ nBorderHeight = .4rem
 			margin 0
 			font-size 1.1rem
 			text-align center
+	+below(tablet)
+		div
+			padding-bottom 1rem
 
 
 ///////////////
