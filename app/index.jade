@@ -1,5 +1,3 @@
-doctype html
-
 mixin contactCard(data)
 	article.contact_card
 		- firstName = data.name.toLowerCase().substr(0, data.name.indexOf(' '))
@@ -11,13 +9,14 @@ mixin contactCard(data)
 				p.email= data.email
 			ul.phones
 				each number in data.phones
+					- normalized = number.replace( /-| |^\+46|^0/gi, '')
 					li
-						a(href='tel:' + number)= number
+						a(href='tel:+46' + normalized)= number
 			if data.comment
 				p.comment= data.comment
 		p.description= data.description
 
-
+doctype html
 html(lang='sv')
 	head
 		title Hemmalaget
