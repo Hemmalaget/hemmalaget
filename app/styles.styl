@@ -294,11 +294,11 @@ nBorderHeight = .4rem
 			margin-top 1rem
 
 
-/////////////////////
-//// Testimonial ////
-/////////////////////
+//////////////////////
+//// Testimonials ////
+//////////////////////
 
-#testemonial
+.testimonial
 	background main
 	border-top 1.2rem solid mainLight
 	border-bottom 1.2rem solid mainLight
@@ -319,6 +319,20 @@ nBorderHeight = .4rem
 			padding-top 6%
 		+below(tablet)
 			padding-top 0
+
+#testimonial2
+	+above(tablet+1)
+		figure
+			padding-top 2.4rem
+			padding-left 1rem
+		.image
+			shift(7/12)
+		.quote
+			shift(-5/12)
+
+//////////////
+//// Join ////
+//////////////
 
 #join
 	h2
@@ -352,12 +366,30 @@ nBorderHeight = .4rem
 			margin-left auto
 			margin-right auto
 	+above(tablet+1)
+		#joinbox
+			shift(1/2)
+		#collective_agreement
+			shift(-1/2)
 		.row:nth-child(even)
 			article
 				background mainAlt
 				padding-bottom 5rem
 				margin-bottom -5rem
+	+below(tablet)
+		.articles .row article
+			stack()
+			padding 0
+		#joinbox
+			margin 0
+			margin-bottom 2rem
+			padding 0
+			padding-top 2rem
+			padding-bottom 2rem
 
+
+/////////////////
+//// Contact ////
+/////////////////
 
 #contact
 	border-top solid mainLight 1.5rem
