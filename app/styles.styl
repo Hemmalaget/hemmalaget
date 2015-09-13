@@ -166,6 +166,25 @@ nBorderHeight = .4rem
 						&:active
 							background desaturate(darken(mainLight, 10%), 20%)
 
+	+below(950px)
+		#nav_container
+			h1
+				font-size 1.5rem
+			nav ul li a
+					margin-left 0
+					//font-size 1rem
+	+below(850px)
+		#nav_container nav ul li a
+			padding-left .5rem
+			padding-right .5rem
+	+below(750px)
+		#nav_container
+			h1
+				font-size 1.4rem
+			nav ul li a
+				font-size 1.1rem
+	// +below(tablet)
+	// 	display none
 
 ////////////////
 //// Header ////
@@ -385,7 +404,7 @@ nBorderHeight = .4rem
 		#joinbox
 			margin 0
 			margin-bottom 2rem
-			padding 0
+			padding 1rem
 			padding-top 2rem
 			padding-bottom 2rem
 
