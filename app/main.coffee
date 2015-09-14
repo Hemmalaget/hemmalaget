@@ -2,6 +2,15 @@ $ = require 'jquery'
 
 $('a[href^="#"]').on 'click', (event) ->
 	event.preventDefault()
-	menuHeight = $('#navigation').height()
 	target = $($(event.target).attr 'href')
-	$('html, body').animate { scrollTop: target.offset().top - menuHeight }, 500
+	$('.navigation').addClass('hide_nav')
+	if $('#fixed').css('display') == 'none'
+		offset = 0
+	else
+		offset = $('#fixed').height()
+	$('html, body').animate { scrollTop: target.offset().top - offset }, 500
+
+$('#nav_button').on 'click', (event) ->
+	event.preventDefault()
+	console.log 'Hello'
+	$('.navigation').toggleClass('hide_nav')

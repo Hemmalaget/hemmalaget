@@ -17,7 +17,7 @@ mixin contactCard(data)
 		p.description= data.description
 
 mixin navigation(ident)
-	.navigation(id=ident)
+	.navigation(id=ident class="hide_nav")
 		.nav_container
 			h1.logo Hemmalaget
 			nav
@@ -44,6 +44,8 @@ html(lang='sv')
 		link(rel='stylesheet' href='app.css')
 		script(src='app.js')
 	body#body
+		a(href="")#nav_button
+			img(src="menu.svg", alt="Visa navigationsmenyn")
 		+navigation("top")
 		+navigation("fixed")
 

@@ -109,6 +109,24 @@ button.main, .button.main
 //// Navigation ////
 ////////////////////
 
+#nav_button
+	position fixed
+	top 1rem
+	right 1rem
+	z-index 100
+	width 2.5rem
+	height 2.5rem
+	padding .3rem
+	background white
+	border-radius .3rem
+	box-shadow: 0 0 .2rem dark;
+	+above(phone+1)
+		display none
+
++below(phone+1)
+	.hide_nav
+		display none !important
+
 nHeight = 3rem
 nBorderHeight = .4rem
 
@@ -116,6 +134,7 @@ nBorderHeight = .4rem
 	position fixed
 	top 0
 	z-index 1
+
 .navigation
 	display block
 	width 100%
@@ -170,7 +189,6 @@ nBorderHeight = .4rem
 				font-size 1.5rem
 			nav ul li a
 					margin-left 0
-					//font-size 1rem
 	+below(850px)
 		.nav_container nav ul li a
 			padding-left .5rem
@@ -181,11 +199,28 @@ nBorderHeight = .4rem
 				font-size 1.4rem
 			nav ul li a
 				font-size 1.1rem
-	// +below(tablet)
-	// 	.nav_container nav ul li
-	// 		col(1/3)
-	// 		margin 0
 
++below(tablet)
+	.navigation
+		.nav_container
+			h1
+				display none
+			nav
+				float none
+				width 100%
+			ul, li, a
+				width 100%
+				display block
+				text-align center
+				cf()
+			li
+				col(1/3, 0, 0, 0, 0)
+				padding 0
++below(phone)
+	.navigation
+		.nav_container
+			li
+				stack()
 
 ////////////////
 //// Header ////
