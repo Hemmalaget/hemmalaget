@@ -16,6 +16,23 @@ mixin contactCard(data)
 				p.comment= data.comment
 		p.description= data.description
 
+mixin navigation(ident)
+	.navigation(id=ident)
+		.nav_container
+			h1.logo Hemmalaget
+			nav
+				ul
+					li
+						a(href="#body") Start
+					li
+						a(href="#offer") Erbjudande
+					li
+						a(href="#join") Assistent
+					li
+						a(href="#we_at") Anställda
+					li
+						a(href="#contact") Kontakt
+
 doctype html
 html(lang='sv')
 	head
@@ -27,21 +44,8 @@ html(lang='sv')
 		link(rel='stylesheet' href='app.css')
 		script(src='app.js')
 	body#body
-		#navigation
-			#nav_container
-				h1.logo Hemmalaget
-				nav
-					ul
-						li
-							a(href="#body") Start
-						li
-							a(href="#offer") Erbjudande
-						li
-							a(href="#join") Assistent
-						li
-							a(href="#we_at") Anställda
-						li
-							a(href="#contact") Kontakt
+		+navigation("top")
+		+navigation("fixed")
 
 		main
 			section#header
@@ -173,7 +177,7 @@ html(lang='sv')
 			
 			section#join
 				h2 Vill du bli en del av Hemmalaget?
-				p.
+				p.intro.
 					Vi ser det som en självklarhet att du som kund ska ha full insyn i hur
 					assistansersättningen hanteras och hur den ekonomiska fördelningen ser ut.
 					Vi skickar månadsvis en fullständig redovisning till dig för att uppdatera
