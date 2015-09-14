@@ -253,6 +253,15 @@ html(lang='sv')
 				each contact in locals.contacts
 					+contactCard(contact)
 			
+			section#partners
+				p I sammarbete med:
+				#logos
+					a.kfo(href='https://www.kfo.se')
+						img(src="kfo.png", alt="Arbetsgivarföreningen KFO")
+					a.aiai(href='https://www.aiai.se')
+						img(src="aiai.png", alt="Administrationsverktyget AIAI")
+				p Vi innehar tillstånd från Inspektionen för Vård och Omsorg
+			
 			section#contact
 				h2 Kontakt
 				
