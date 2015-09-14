@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "auto-reload-brunch": "latest",
+    "autoprefixer": "^6.0.2",
     "brunch": "latest",
     "coffee-script-brunch": "^1.8.1",
     "cson": "^3.0.1",
@@ -25,6 +26,7 @@
     "jeet": "^6.1.2",
     "jquery": "^2.1.4",
     "marked": "^0.3.3",
+    "postcss-brunch": "^0.5.0",
     "rupture": "^0.6.1",
     "stylus-brunch": "latest",
     "uglify-js-brunch": "latest"

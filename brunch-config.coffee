@@ -33,3 +33,7 @@ exports.config =
         pretty: true
     coffeescript:
       bare: true
+    postcss:
+      processors: [
+        require('autoprefixer')(['last 8 versions'])
+      ]
