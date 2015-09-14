@@ -333,10 +333,17 @@ nBorderHeight = .4rem
 		article
 			col(1/2)
 			padding 1rem
-	#contact-us
+	#contact_us
 		display block
-		img
-			padding-top 2rem
+		#image
+			cf()
+			background-size cover
+			background-image url('contact-tall.png')
+			padding-top 142%
+			+above(phone+1)
+				background-image url('contact.png')
+				padding-top 31%
+
 	+above(tablet+1)
 		.row:nth-child(even)
 			article
@@ -496,7 +503,7 @@ nBorderHeight = .4rem
 			font-size 1.2rem
 			white-space nowrap
 			a
-				color dark
+				color #00aeef
 				text-decoration none
 				&:hover
 					text-decoration underline
@@ -539,6 +546,8 @@ nBorderHeight = .4rem
 	color dark
 	font-size 1.2rem
 	padding-bottom 4rem
+	p.orgnr
+		margin-bottom 1rem
 	a
 		display block
 		color dark
