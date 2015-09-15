@@ -19,7 +19,6 @@ data:
 			title: 'Kundansvarig'
 			email: 'mikaela@hemmalaget.se'
 			phones: ['08-518 199 01', '072-199 44 01']
-			comment: 'Nås främst mellan 09.00-16.30'
 			description: 'Mikaela är en av våra kundansvariga och den som har det övergripande ansvaret för sina kunder och de assistenter som jobbar med dem. Hon har jobbat inom assistans sedan 2005, som både personlig assistent, jourmedarbetare och sedan 2010 som kundansvarig. Mikaela har genom sitt yrke gått kurser inom arbetsmiljö, arbetsgivaransvar och LSS. Utöver det har hon läst kurser inom genusvetenskap, och statsvetenskap, men även fotografi, konst och filmvetenskap. Mikaela är arbetslagets innovatör, nytänkande och kreativ med ständigt nya idéer redo att sättas i handling. Avkoppling för Mikaela är att sitta ensam i en eka ute på en blank sjö och fiska.'
 		}
 		{
@@ -27,7 +26,6 @@ data:
 			title: 'Kundansvarig'
 			email: 'sara@hemmalaget.se'
 			phones: ['08-518 199 04', '072-199 44 04']
-			comment: 'Nås främst mellan 09.00-16.30'
 			description: 'Sara är den andre kundansvariga på Hemmalaget och precis som Mikaela har hon det övergripande ansvaret för sina kunder och assistenter som jobbar med dem. Sara är diplomaten i sammanhanget som månar om noggrannhet och struktur. Hon är den som gärna lägger tid på att reda ut sakfrågor eller drar igång diskussioner från alla tänkbara vinklar av ett ärende. Sara har jobbat som kundansvarig sedan 2008 och har utbildningar i arbetsgivaransvar och arbetsmiljö. Hon har tidigare engagerat sig både inom Amnesty och RFSL samt studerat genusvetenskap och psykologi. Fritiden spenderar Sara gärna med fru och söner i någon av Stockholms parklekar. Får hon lite tid för sig själv är tecknade serier ett stort intresse.'
 		}
 		{
