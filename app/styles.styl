@@ -28,7 +28,11 @@ html
 	font-family 'Open Sans' sans-serif
 	color dark
 	font-weight 200
-	background whitesmoke
+	background-image url('gray_jean.png')
+	background-color whitesmoke
+	@media (min-device-pixel-ratio: 2), (min-resolution: 192dpi)
+		background-image url('gray_jean_@2X.jpg')
+		background-size 150px 150px
 
 body
 	margin 0
@@ -299,9 +303,11 @@ nBorderHeight = .4rem
 /////////////////
 
 #regions
-	background #eee
+	background #EEE
+	border-left 1px solid #e8e8e8
+	border-right 1px solid #e8e8e8
 	padding-top 1rem
-	padding-bottom 1rem
+	padding-bottom 1.7rem
 	div
 		+above(tablet+1)
 			col(1/2)
@@ -314,6 +320,7 @@ nBorderHeight = .4rem
 			font-size 1.1rem
 			text-align center
 	+below(tablet)
+		padding-bottom 1rem
 		div
 			padding-bottom 1rem
 	+below(390px)
