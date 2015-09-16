@@ -1,0 +1,30 @@
+@import 'globals'
+
+#pledge
+	background-image url('debut_light_g.png')
+	background-color main
+	@media (min-device-pixel-ratio: 2), (min-resolution: 192dpi)
+		background-image url('debut_light_g_@2X.png')
+		background-size 200px 200px
+	border-top solid mainLight 1.2rem
+	border-bottom solid mainLight 1.2rem
+	figcaption
+		text-align right
+	figcaption:before
+		content '- '
+	+above(tablet+1)
+		.image
+			shift(7/12)
+		.quote
+			shift(-5/12)
+	figure
+		padding-top 13%
+		+below(900px)
+			padding-top 3%
+		+below(750px)
+			padding-top 0
+		+below(tablet)
+			padding-top 0
+			text-align center
+			figcaption
+				text-align center
