@@ -33,6 +33,29 @@ mixin navigation(ident)
 					li
 						a(href="#contact") Kontakt
 
+mixin articles(dataset)
+	each _, i in dataset
+		if i % 2 == 0
+			.row
+				each data, j in dataset.slice(i, i+2)
+					article(id=data.id)
+						h3= data.title
+						p!= data.text
+
+mixin testimonial(url, quote, name)
+	.image
+		img(src=url, alt="\"" + quote + "\" - " + name)
+	.quote
+		figure
+			blockquote= quote
+			figcaption= name
+
+mixin region(id, name, desc)
+	div(id=id)
+		h2= name
+		p= desc
+
+
 doctype html
 html(lang='sv')
 	head
@@ -43,6 +66,7 @@ html(lang='sv')
 		script(src='vendor.js')
 		link(rel='stylesheet' href='app.css')
 		script(src='app.js')
+	
 	body#body
 		a(href="")#nav_button
 			img(src="menu.svg", alt="Visa navigationsmenyn")
@@ -53,129 +77,34 @@ html(lang='sv')
 			section#header
 				h1.title Personlig assistans<br /> på dina villkor
 			
+			
 			section#pledge
-				.image
-					img(src="per-arne.png", alt="Per-Arne Hederstaf, VD")
-				.quote
-					figure
-						blockquote.
-							Hemmalaget är det personliga assistansbolaget som sätter dig och dina
-							behov i fokus. Tillsammans ser vi till att du får den hjälp som du vill
-							ha, utan onödigt krångel.
-						figcaption Per-Arne, VD
+				+testimonial("per-arne.png",
+				"Hemmalaget är det personliga assistansbolaget som sätter dig och dina behov i fokus. Tillsammans ser vi till att du får den hjälp som du vill ha, utan onödigt krångel.",
+				"Per-Arne, VD")
+			
 			
 			section#regions
-				#west
-					h2 Västra Götaland
-					p Sedan 2011 bedriver Hemmalaget Assistans AB verksamhet inom personlig assistans
-				#east
-					h2 Stockholmsregionen
-					p Våren 2015 öppnade Hemmalaget ett lokalkontor för att utöka verksamheten
+				+region("west", "Västra Götaland", 
+				"Sedan 2011 bedriver Hemmalaget Assistans AB verksamhet inom personlig assistans")
+				+region("east", "Stockholmsregionen",
+				"Våren 2015 öppnade Hemmalaget ett lokalkontor för att utöka verksamheten")
+			
+			
 			section#offer
 				h2 Vi erbjuder
 				img(src="cloud.png", alt="Vårt erbjudande")
 				.articles
-					.row
-						article#contact-person
-							h3 Kontaktperson
-							p.
-								Vi tror på devisen ju fler kockar desto sämre soppa. Därför vill vi
-								att du som kund ska kunna vända dig till din kontaktperson i alla
-								frågor som rör assistansen. Det är kontaktpersonen som känner dig
-								och dina behov bäst. Därför är det naturligt att din personliga
-								kontaktperson är den som i största möjliga mån handhar alla ärenden
-								kring din personliga assistans.
-						
-						article#transparency
-							h3 Transparent redovisning
-							p.
-								Vi ser det som en självklarhet att du som kund ska ha full insyn
-								i hur assistansersättningen hanteras och hur den ekonomiska
-								fördelningen ser ut. Vi skickar månadsvis en fullständig
-								redovisning till dig för att uppdatera dig om timmar och
-								assistansmedel. Rapporten upprättas i samråd med dig och dina
-								önskemål. För oss är det oerhört viktigt att du som kund får
-								relevant redovisning i realtid. Därför har vi utformat vårt
-								arbetssätt för att kunna ge dig periodrapport för föregående
-								månad redan den 15:e månaden efter.
-					.row
-						article#participation
-							h3 Delaktighet
-							p.
-								Innan vårt samarbete inleds upprättar du och din kontaktperson
-								tillsammans en genomförandeplan. Här har du möjlighet att påverka
-								alla delar av assistansen och beskriva hur du vill att samarbetet
-								mellan oss ska fungera. Genomförandeplanen ligger till grund för
-								allt arbete kring din assistans, som en skräddarsydd
-								överenskommelse. Du kan när som helst uppdatera genomförandeplanen
-								med nya önskemål eller direktiv. Hemmalaget är flexibla och arbetar
-								ständigt med att hitta individuella lösningar för att hålla den
-								personliga assistansen personlig.
-
-						article#freedom
-							h3 Frihet
-							p.
-								Assistans ska vara någonting som underlättar livet för den
-								assistansberättigade, inte något som tar tid och krånglar till
-								tillvaron. Hos oss får du som assistansberättigad själv bestämma
-								vilka delar av assistansen du vill sköta och vilka delar du önskar
-								att vi tar hand om. Det är mycket att tänka på för att assistansen
-								ska fungera på bästa sätt. För en person är frihet att få sköta det
-								mesta kring assistansen själv, för en annan är frihet att kunna
-								lägga sin tid på annat. Vad är frihet för dig?
-					.row
-						article#legal-advice
-							h3 Juridisk rådgivning
-							p.
-								Att ansöka om personlig assistans kan vara en långdragen process
-								och även den som beviljats assistans får inte alltid behålla
-								den. Genom Hemmalaget får du vid behov tillgång till juridisk
-								expertis vid t.ex. omprövningar eller överklaganden. Med detta
-								stöd i ryggen vill vi underlätta dina turer med Försäkringskassa
-								eller kommun. Juridisk rådgivning är för dig som kund helt
-								kostnadsfritt. För mer info, se www.cjadvokat.se
-								
-						article#easy-reporting
-							h3 Smidig tidrapportering
-							p.
-								Genom applikationen Aiai får både du som assistansberättigad och
-								dina assistenter full koll på schema och timmar. I slutet av varje
-								månad godkänns tidsredovisningen digitalt genom Aiais webbaserade
-								tjänst. Dina assistenter slipper tidskrävande tidrapportering i
-								pappersformat och eftersom rapporteringen är synkroniserad med
-								schemat minimeras samtidigt risken för felaktig rapportering. Läs
-								mer på aiai.se.
-					.row
-						article#know-how
-							h3 Know-how
-							p.
-								Vi på Hemmalaget har mångårig erfarenhet av arbete inom
-								personlig assistans. Du kan vara trygg i vetskapen om att vi har
-								hög kompetens och är vana i våra yrkesroller. För att hålla oss
-								uppdaterade med lagar och bestämmelser fortbildas all
-								administrativ personal inom samtliga områden som är relevanta
-								för uppdraget
-
-						article#availability
-							h3 Tillgänglighet
-							p.
-								Vi lägger stor vikt vid att finnas tillgängliga för dig på dina
-								villkor. Vid sidan av våra generösa öppettider har vi en bemannad
-								jourverksamhet. Du ska kunna nå oss dygnet runt 365 dagar om året!
-								Hemmalaget arbetar med korta beslutsvägar så att du snabbt kan få
-								svar på dina frågor och är öppna för olika kommunikationsvägar som
-								passar just dig.
-								
+					+articles(offer)
 					a#contact_us(href='mailto:info@hemmalaget.se?subject=Bli kund hos Hemmalaget!')
 						#image(role="img" aria-label="Vi hjälper dig! Kontakta oss!")
 							
+			
 			section#testimonial.testimonial
-				.image
-					img(src="client.png", alt="\"Vi kompletterar varandra, min assistent och jag.\" - Andreas")
-				.quote
-					figure
-						blockquote Vi kompletterar varandra, min assistent och jag.
-						figcaption Andreas
+				+testimonial("client.png",
+				"Vi kompletterar varandra, min assistent och jag.",
+				"Andreas")
+			
 			
 			section#join
 				h2 Vill du bli en del av Hemmalaget?
@@ -185,73 +114,21 @@ html(lang='sv')
 					personlig assistans. Därför vill vi vara en riktigt bra arbetsgivare och
 					arbeta för goda relationer med varje medarbetare. Vi vill att du ska trivas
 					och stanna hos oss!
-				
 				.articles
-					.row
-						article#joinbox
-							h3 Skicka ditt CV och Personligt Brev till oss
-							a.button(href='mailto:info@hemmalaget.se?subject=Bli assistent hos Hemmalaget!') Ansök nu!
-						
-						article#collective_agreement
-							h3 Kollektivavtal
-							p.
-								Hemmalaget Assistans är anslutna till KFO och deras kollektivavtal. Det
-								innebär för dig som assistent att du har en rad olika försäkringar att
-								tillgå som anställd hos oss. Förutom att du är försäkrad på arbetstid
-								kan du t.ex. ansöka om 10 % extra sjuklönetillägg vid längre
-								sjukskrivning eller 10 % extra i föräldratillägg inför föräldraledighet.
-								Du har även en livförsäkring och vi betalar in till din tjänstepension. 
-					
-					.row
-						article
-							h3 Utbildning
-							p.
-								Hemmalaget Assistans erbjuder en rad olika utbildningar för dig som assistent. Hjärt och lungräddning, Introduktionskurs för vikarier, Bemötande och Rullstolskurs är bara några av de utbildningar som erbjuds. Utbildningarna planeras alltid i samråd med den du jobbar hos för att kunna skräddarsy relevant fortbildning för just din arbetsgrupp. Du är också alltid välkommen att komma med förslag och önskemål.
-						
-						article
-							h3 Friskvård
-							p.
-								Du har som anställd hos Hemmalaget alltid rätt till friskvård upp till
-								250 kr/månad. Att vara personlig assistent kan vara ett fysiskt krävande
-								yrke och det är viktigt att man upprätthåller en bra fysik. Detta vill
-								vi främja genom friskvårdbidraget. Du väljer vilken typ av friskvård du
-								vill utöva och får information om vilka aktiviteter som är godkända
-								enligt Skatteverkets riktlinjer. 
-					
-					.row
-						article
-							h3 AIAI
-							p.
-								Genom vår portal, www.aiai.se, har du alltid tillgång till schema
-								digitalt genom din smartphone/dator. Tidrapporter genereras automatiskt
-								baserat på schema och allt du behöver göra är att månadsvis godkänna din
-								tidrapport. Aiai fungerar även som en kommunikationsportal där du hittar
-								all relevant information om ditt arbete eller din anställning hos oss.
-						
-						article
-							h3 Fullservice
-							p.
-								Vi är ett fullserviceföretag och nås dygnet runt. Det tycker vi är en
-								viktig förutsättning. Du ska känna dig trygg med att alltid kunna vända
-								dig till oss. Händer något under ditt arbetspass eller blir du akut sjuk
-								når du oss när som helst genom vår bemannade jour. Du har även en
-								kontaktperson som hjälper till vid alla typer av ärenden. Vi strävar
-								efter att alltid ge snabb återkoppling på alla dina frågor och
-								funderingar.
+					+articles(join)
+			
 			
 			section#testimonial2.testimonial
-				.image
-					img(src="assistant.png", alt="\"Det är underbart att få göra skillnad i en människas liv.\" - Susanne, Assistent")
-				.quote
-					figure
-						blockquote Det är underbart att få göra skillnad i en människas liv.
-						figcaption Susanne, Assistent
+				+testimonial("assistant.png",
+				"Det är underbart att få göra skillnad i en människas liv.",
+				"Susanne, Assistent")
+			
 			
 			section#we_at
 				h2 Vi på Hemmalaget
-				
 				each contact in locals.contacts
 					+contactCard(contact)
+			
 			
 			section#partners
 				p I sammarbete med:
@@ -262,9 +139,9 @@ html(lang='sv')
 						img(src="aiai.png", alt="Administrationsverktyget AIAI")
 				p Vi innehar tillstånd från Inspektionen för Vård och Omsorg
 			
+			
 			section#contact
 				h2 Kontakt
-				
 				p.orgnr Org.nr: 556852-0315
 				
 				#mainoffice
@@ -285,6 +162,7 @@ html(lang='sv')
 					h4 Postadress
 					p Box 2003<br />Renstiernas gata 23<br />116 31 Stockholm
 		
+		
 		script(type='text/javascript').
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -293,4 +171,5 @@ html(lang='sv')
 
 			ga('create', 'UA-65451616-1', 'auto');
 			ga('send', 'pageview');
+			
 		script(type'text/javascript') require("main");
