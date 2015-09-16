@@ -8,3 +8,10 @@ complementary = #FFB6B3
 complementaryDark = #996663
 dark = #4A4A4A
 light = #FFFFFF
+
+bgPattern(color, imgUrl, doubleImgUrl, size)
+	background-image url(imgUrl)
+	background-color color
+	@media (min-device-pixel-ratio: 2), (min-resolution: 192dpi)
+		background-image url(doubleImgUrl)
+		background-size size size

@@ -1,11 +1,7 @@
 @import 'globals'
 
 #regions
-	background-image url('debut_light.png')
-	background-color #EEEEEE
-	@media (min-device-pixel-ratio: 2), (min-resolution: 192dpi)
-		background-image url('debut_light_@2X.png')
-		background-size 200px 200px
+	bgPattern(#EEEEEE, 'debut_light.png', 'debut_light_@2X.png', 200px)
 	padding-top 1rem
 	padding-bottom 1.7rem
 	div

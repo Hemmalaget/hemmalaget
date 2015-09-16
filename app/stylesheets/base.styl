@@ -12,11 +12,7 @@ html
 	font-family 'Open Sans' sans-serif
 	color dark
 	font-weight 200
-	background-image url('gray_jean.png')
-	background-color whitesmoke
-	@media (min-device-pixel-ratio: 2), (min-resolution: 192dpi)
-		background-image url('gray_jean_@2X.jpg')
-		background-size 150px 150px
+	bgPattern(whitesmoke, 'gray_jean.png', 'gray_jean_@2X.jpg', 150px)
 
 body
 	margin 0
