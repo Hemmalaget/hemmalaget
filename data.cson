@@ -5,35 +5,7 @@ data:
 			title: 'Verksamhetschef'
 			email: 'per-arne@hemmalaget.se'
 			phones: ['076 869 50 00']
-			description: 'Per-Arne har sedan 2001 jobbat i nära anknytning till assistans och startade 2010 Hemmalaget Assistans AB. Per-Arne jobbar främst från Alingsås och har helhetsansvaret för kunderna i Västra Götaland. Per-Arne är även verksamhetsansvarig för Stockholmskontoret och jobbar i nära samarbete med Pernilla. Frihet för Per-Arne är att dra iväg några veckor med husbil runt vårt vackra land.'
-		}
-		{
-			name: 'Pernilla Johansson'
-			title: 'Lokal verksamhetschef'
-			email: 'pernilla@hemmalaget.se'
-			phones: ['08-518 199 00', '072-199 44 00']
-			description: 'Som lokal verksamhetschef har Pernilla det övergripande ansvaret för Stockholmskontoret under Per-Arnes ledning. Främst jobbar Pernilla med de ekonomiska delarna men hjälper till där det behövs. Pernilla har en kandidatexamen i ekonomi från Stockholms Universitet och har jobbat inom assistans sedan 2006. Hon började som assistent i en vikariepool och har sedan dess jobbat med allt från kundansvarig till löneansvarig innan hon började på Hemmalaget. Pernilla är den självskrivna organisatören som gärna delar med sig av sin entusiasm och sina visioner för framtiden. Till vardags ligger mycket av Pernillas fokus på hennes dotter och make och så fort tillfälle ges försvinner hon iväg till något av Stockholms alla museum.'
-		}
-		{
-			name: 'Mikaela Elfving'
-			title: 'Kundansvarig'
-			email: 'mikaela@hemmalaget.se'
-			phones: ['08-518 199 01', '072-199 44 01']
-			description: 'Mikaela är en av våra kundansvariga och den som har det övergripande ansvaret för sina kunder och de assistenter som jobbar med dem. Hon har jobbat inom assistans sedan 2005, som både personlig assistent, jourmedarbetare och sedan 2010 som kundansvarig. Mikaela har genom sitt yrke gått kurser inom arbetsmiljö, arbetsgivaransvar och LSS. Utöver det har hon läst kurser inom genusvetenskap, och statsvetenskap, men även fotografi, konst och filmvetenskap. Mikaela är arbetslagets innovatör, nytänkande och kreativ med ständigt nya idéer redo att sättas i handling. Avkoppling för Mikaela är att sitta ensam i en eka ute på en blank sjö och fiska.'
-		}
-		{
-			name: 'Sara Sandström'
-			title: 'Kundansvarig'
-			email: 'sara@hemmalaget.se'
-			phones: ['08-518 199 04', '072-199 44 04']
-			description: 'Sara är den andre kundansvariga på Hemmalaget och precis som Mikaela har hon det övergripande ansvaret för sina kunder och assistenter som jobbar med dem. Sara är diplomaten i sammanhanget som månar om noggrannhet och struktur. Hon är den som gärna lägger tid på att reda ut sakfrågor eller drar igång diskussioner från alla tänkbara vinklar av ett ärende. Sara har jobbat som kundansvarig sedan 2008 och har utbildningar i arbetsgivaransvar och arbetsmiljö. Hon har tidigare engagerat sig både inom Amnesty och RFSL samt studerat genusvetenskap och psykologi. Fritiden spenderar Sara gärna med fru och söner i någon av Stockholms parklekar. Får hon lite tid för sig själv är tecknade serier ett stort intresse.'
-		}
-		{
-			name: 'Hanan Ennjmaouy'
-			title: 'Jourmedarbetare'
-			email: 'hanan@hemmalaget.se'
-			phones: ['08-518 199 02', '072-199 44 02']
-			description: 'Hanan jobbar med jouren, Efter kontorstid är det Hanan som finns tillgänglig för alla typer av ärenden som inte kan vänta till nästa vardag. Hanan jobbar även med rekrytering till vår vikariepool och är den som håller den huvudsakliga kontakten med våra timvikarier. Blir någon hastigt sjuk är det Hanan, i dialog med kund, som ser till att bemanna vakansen. Hanan är en problemlösare ut i fingerspetsarna som tar sig an varje utmaning med positiv energi och prestigelöshet. Samtidigt är hon inte rädd att säga ifrån när någonting inte fungerar. Hon har sedan 2008 skaffat sig bred erfarenhet både som personlig assistent och som administrativ medarbetare. Träning har de senaste åren blivit en livsstil för Hanan och mellan jobbet och hennes dotter upptar träningen en stor del av hennes lediga tid i anspråk.'
+			description: 'Per-Arne har sedan 2001 jobbat i nära anknytning till assistans och startade 2010 Hemmalaget Assistans AB. Per-Arne jobbar främst från Alingsås och har helhetsansvaret för kunderna i Västra Götaland. Frihet för Per-Arne är att dra iväg några veckor med husbil runt vårt vackra land.'
 		}
 	]
 	offer: [
