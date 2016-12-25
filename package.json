@@ -9,10 +9,9 @@
     "url": ""
   },
   "scripts": {
-		"prestart": "yarn",
+    "prestart": "yarn",
     "start": "brunch watch --server",
-    "production": "brunch build --production",
-    "postinstall": "brunch build"
+    "production": "brunch build --production"
   },
   "engines": {
     "node": "0.12.x",

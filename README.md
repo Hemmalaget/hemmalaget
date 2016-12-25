@@ -3,28 +3,26 @@ Hemmalaget
 
 A static homepage for Hemmalaget AB.
 
+
 ## Requirements
 
-Node.js, Npm
+Node.js, Yarn, Git
+
+
+### Image optimization
+
+	brew install optipng jpeg
+
 
 ## Development
 
-After cloning the repository, you need to install all dependencies using:
+	yarn start
 
-	npm install
 
-Now you can start a development server simply by running:
+## Production
 
-	npm start
+	yarn run production
 
-The site uses brunch as a build tool. To start a reloading server (like with
-`npm start`), run
-
-	brunch watch --server
-
-To build assets for production, run
-
-	brunch build --production
 
 # Made by
 Daniel Ström [@dnjstrom](http://twitter.com/dnjstrom)
