@@ -39,3 +39,5 @@ exports.config =
         require('autoprefixer')(['last 8 versions']),
         require('cssnano')()
       ]
+    uglify:
+      mangle: true
