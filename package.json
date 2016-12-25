@@ -9,6 +9,7 @@
     "url": ""
   },
   "scripts": {
+		"prestart": "yarn",
     "start": "brunch watch --server",
     "postinstall": "brunch build"
   },
@@ -19,7 +20,7 @@
   "dependencies": {
     "auto-reload-brunch": "^1.8.0",
     "autoprefixer": "^6.0.2",
-    "brunch": "^1.8.5",
+    "brunch": "^2.9.1",
     "coffee-script-brunch": "^1.8.1",
     "cson": "^3.0.1",
     "jaded-brunch": "^1.7.13",
