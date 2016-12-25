@@ -11,7 +11,8 @@
   "scripts": {
     "prestart": "yarn",
     "start": "brunch watch --server",
-    "production": "brunch build --production"
+    "production": "brunch build --production",
+		"heroku-postbuild": "yarn run production"
   },
   "engines": {
     "node": "0.12.x",
