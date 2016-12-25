@@ -1,1 +1,1 @@
-web: brunch build --production && http-server -p 80 public/
+web: brunch build --production && http-server -p ${PORT:-8080} public/
