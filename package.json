@@ -12,8 +12,8 @@
     "prestart": "yarn",
     "start": "brunch watch --server",
     "build": "brunch build --production",
-		"heroku-postbuild": "yarn run build",
-		"heroku": "http-server -p ${PORT:-8080} public/"
+    "heroku-postbuild": "yarn run build",
+    "heroku": "http-server -p ${PORT:-8080} public/"
   },
   "dependencies": {
     "auto-reload-brunch": "^1.8.0",
@@ -21,6 +21,7 @@
     "brunch": "^2.9.1",
     "coffee-script-brunch": "^1.8.1",
     "cson": "^3.0.1",
+    "cssnano": "^3.9.1",
     "http-server": "^0.9.0",
     "jaded-brunch": "^1.7.13",
     "jeet": "^6.1.2",

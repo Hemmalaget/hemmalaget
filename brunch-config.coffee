@@ -2,6 +2,7 @@ CSON = require 'cson'
 
 data = CSON.load('data.cson').data
 
+
 exports.config =
   # See http:#brunch.io/#documentation for docs.
   # modules:
@@ -35,5 +36,6 @@ exports.config =
       bare: true
     postcss:
       processors: [
-        require('autoprefixer')(['last 8 versions'])
+        require('autoprefixer')(['last 8 versions']),
+        require('cssnano')()
       ]
