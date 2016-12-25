@@ -15,10 +15,6 @@
 		"heroku-postbuild": "yarn run build",
 		"heroku": "http-server -p ${PORT:-8080} public/"
   },
-  "engines": {
-    "node": "0.12.x",
-    "npm": "2.5.x"
-  },
   "dependencies": {
     "auto-reload-brunch": "^1.8.0",
     "autoprefixer": "^6.0.2",
