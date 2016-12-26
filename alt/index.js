@@ -1,5 +1,8 @@
 //import 'babel-polyfill';
 import './index.css';
+import image from './assistant.png';
+
+console.log(image)
 
 const asdf = 3;
 
