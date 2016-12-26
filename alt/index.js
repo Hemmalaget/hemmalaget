@@ -1,4 +1,5 @@
 //import 'babel-polyfill';
+import './index.css';
 
 const asdf = 3;
 

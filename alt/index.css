@@ -1,0 +1,10 @@
+body {
+  background: rebeccapurple;
+  color: white;
+
+  /* Global font styles */
+  font-family: "Helvetica Neue", "Calibri Light", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0.02em;
+}
