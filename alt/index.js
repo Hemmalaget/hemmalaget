@@ -1,18 +1,14 @@
 //import 'babel-polyfill';
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+
 import './index.css';
 import image from './assistant.png';
 
 console.log(image)
 
-const asdf = 3;
-
-function component () {
-  var element = document.createElement('div');
-
-  /* lodash is required for the next line to work */
-  element.innerHTML = "Hello World";
-
-  return element;
-}
-
-document.body.appendChild(component());
+ReactDOM.render(
+  <h1>Hello, world!</h1>,
+  document.getElementById('root')
+);
