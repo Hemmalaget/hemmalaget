@@ -2,13 +2,25 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { AppContainer } from 'react-hot-loader';
 
 import './index.css';
-import image from './assistant.png';
+import App from './app.js';
 
-console.log(image)
+const mountpoint = document.getElementById('root');
 
 ReactDOM.render(
-  <h1>Hello, world!</h1>,
-  document.getElementById('root')
+  <AppContainer><App /></AppContainer>,
+  mountpoint
 );
+
+// Enable hot reloading
+if (module.hot) {
+  module.hot.accept('./app.js', () => {
+    const NextApp = require('./app.js').default;
+    ReactDOM.render(
+      <AppContainer><NextApp /></AppContainer>,
+      mountpoint
+    );
+  });
+}
