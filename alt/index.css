@@ -1,14 +1,30 @@
-body {
-  background: rebeccapurple;
-  color: white;
+/* Default styles */
 
-  /* Global font styles */
+/*
+  Make total width include padding, borders, etc..
+  @REFERENCE: https://www.paulirish.com/2012/box-sizing-border-box-ftw/
+*/
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/*
+  Use whatever nice fonts are available on each system. This means we
+  can avoid using webfonts or bundle our own while still getting nice
+  results.
+  @REFERENCE: https://hackernoon.com/10-things-i-learned-making-the-fastest-site-in-the-world-18a0e1cdf4a7#d27e
+*/
+body {
   font-family: "Helvetica Neue", "Calibri Light", Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: 0.02em;
 }
 
+/* Never over-extend an image */
 img {
   max-width: 100%;
 }
