@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import imgAssistant from './assistant.png';
+import './index.css';
 
 const Hello = ({ name }) =>  <h1> Hello {name} </h1> // Stateless/Pure component
 
