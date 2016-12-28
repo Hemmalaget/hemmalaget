@@ -4,13 +4,13 @@ const path = require('path');
 module.exports = {
   devtool: 'eval',
   entry: [
-      // hot reload
-      'react-hot-loader/patch',
-      'webpack-dev-server/client?http://localhost:3000',
-      'webpack/hot/only-dev-server',
+    // hot reload
+    'react-hot-loader/patch',
+    'webpack-dev-server/client?http://localhost:3000',
+    'webpack/hot/only-dev-server',
 
-      // Main entry
-      './alt/index.js',
+    // Main entry
+    './alt/index.js',
   ],
   output: {
     filename: 'bundle.js',
@@ -35,7 +35,7 @@ module.exports = {
         test: /\.(jpe?g|png|gif|svg)$/i,
         loaders: [
           'file?hash=sha512&digest=hex&name=[hash].[ext]',
-          'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
+          'image-webpack?bypassOnDebug&optimizationLevel=9&interlaced=false'
         ]
       }
     ]

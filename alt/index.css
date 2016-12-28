@@ -8,3 +8,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: 0.02em;
 }
+
+img {
+  max-width: 100%;
+}
