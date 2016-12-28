@@ -1,4 +1,6 @@
-/* Default styles */
+/*
+ * Minimal CSS-reset.
+ */
 
 /*
   Make total width include padding, borders, etc..
@@ -22,6 +24,24 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: 0.02em;
+
+  /* Remove default margin.*/
+  margin: 0;
+}
+
+section {
+  /*
+    Avoid collapsing margins by default for sections making them fully contain
+    their child elements.
+    @REFERENCE: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing
+  */
+  overflow: auto;
+
+  /*
+   * Add general padding to section blocks rather than body, allowing the
+   * background to extend over the full viewport.
+   */
+  padding: 1rem;
 }
 
 /* Never over-extend an image */
