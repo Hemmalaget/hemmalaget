@@ -2,7 +2,7 @@
 
 .offer {
   margin-top: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .title {
@@ -11,6 +11,7 @@
 
 .offers {
   composes: layoutList from '../common.css';
+  margin: 0;
   margin-left: -var(--viewportPadding);
   margin-right: -var(--viewportPadding);
 }
