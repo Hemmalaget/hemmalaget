@@ -15,6 +15,7 @@ import Regions from './regions/regions.js';
 import Offer from './offer/offer.js';
 import Contact from './contact/contact.js';
 import Join from './join/join.js';
+import Benefits from './benefits/benefits.js';
 
 
 export default class App extends Component {
@@ -28,6 +29,7 @@ export default class App extends Component {
         <Contact />
         <Quote image={imgClient} quote={texts.quotes.client.quote} caption={texts.quotes.client.caption}/>
         <Join />
+        <Benefits />
         <Quote image={imgAssistant} quote={texts.quotes.assistant.quote} caption={texts.quotes.assistant.caption}/>
       </main>
     );

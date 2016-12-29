@@ -10,29 +10,8 @@
 }
 
 .offers {
-  composes: layoutList from '../common.css';
+  composes: listing from '../common.css';
   margin: 0;
   margin-left: -var(--viewportPadding);
   margin-right: -var(--viewportPadding);
-}
-
-.item {
-  padding: var(--viewportPadding);
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-
-  & > h2 {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-
-  & > p {
-    margin-bottom: 0;
-    hyphenate: auto;
-
-  }
-}
-
-.item:nth-child(even) {
-  background: var(--mainAlt);
 }

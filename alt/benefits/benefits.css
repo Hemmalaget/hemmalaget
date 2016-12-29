@@ -1,0 +1,4 @@
+
+.list {
+  composes: listing from '../common.css';
+}
