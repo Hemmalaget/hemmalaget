@@ -1,0 +1,20 @@
+
+.region {
+  background: #dadada url(./debut_light.png);
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.title {
+  composes: thinText from '../common.css';
+  font-size: 2.3rem;
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+.text {
+  composes: thinText from '../common.css';
+  font-size: 1.4rem;
+  margin: 0;
+}
