@@ -3,9 +3,10 @@
   --mainLight: #B1F2D9;
   --mainAlt: #EAF4DA;
   --complementary: #FFB6B3;
-  --complementaryDark: #996663;
+  --complementaryDark: #ee9b96;
   --dark: #3A3A3A;
   --light: #FFFFFF;
+  --grey: #eee;
 
   --viewportPadding: 1rem;
 }
@@ -13,4 +14,22 @@
 .layoutList {
   list-style: none;
   padding: 0;
+}
+
+.button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  border-radius: .5rem;
+  background: var(--complementary);
+  color: var(--dark);
+  text-decoration: none;
+  font-size: 1.3rem;
+
+  &:hover, &:focus {
+    box-shadow: var(--complementaryDark) 0 0 0 .2rem;
+  }
+
+  &:active {
+    background: var(--complementaryDark);
+  }
 }

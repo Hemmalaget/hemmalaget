@@ -1,0 +1,36 @@
+@import '../common.css';
+
+.contact {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.banner {
+}
+
+.image {
+  min-height: 30rem;
+  background: url(./natural_smile.jpg) center;
+  background-size: cover;
+}
+
+.bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--grey);
+
+  padding: 1rem;
+}
+
+.title {
+  margin: 0;
+  margin-bottom: 1rem;
+  font-weight: 200;
+  font-size: 3.2rem;
+}
+
+.button {
+  composes: button from '../common.css';
+  font-size: 1.5rem;
+}

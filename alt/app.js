@@ -17,6 +17,8 @@ import Regions from './regions/regions.js';
 
 import Offer from './offer/offer.js';
 
+import Contact from './contact/contact.js';
+
 
 export default class App extends Component {
   render() {
@@ -26,6 +28,7 @@ export default class App extends Component {
         <Quote image={imgOwner} quote={texts.quotes.owner.quote} caption={texts.quotes.owner.caption}/>
         <Regions />
         <Offer />
+        <Contact />
         <Quote image={imgClient} quote={texts.quotes.client.quote} caption={texts.quotes.client.caption}/>
         <Quote image={imgAssistant} quote={texts.quotes.assistant.quote} caption={texts.quotes.assistant.caption}/>
       </main>
