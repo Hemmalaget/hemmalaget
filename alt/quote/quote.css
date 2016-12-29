@@ -17,7 +17,6 @@
 }
 
 .figure {
-  composes: thinText;
   font-size: 1.9rem;
   text-align: center;
   hyphens: auto;

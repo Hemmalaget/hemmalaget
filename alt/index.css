@@ -1,3 +1,5 @@
+@import './common.css';
+
 /*
  * Minimal CSS-reset.
  */
@@ -53,4 +55,12 @@ section {
 /* Never over-extend an image */
 img {
   max-width: 100%;
+}
+
+
+/*
+ * Theme
+ */
+html {
+  color: var(--dark);
 }
