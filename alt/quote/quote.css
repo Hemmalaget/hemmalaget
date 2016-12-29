@@ -1,0 +1,34 @@
+@import 'common.css';
+
+.quote {
+  background: var(--main) url(./debut_light_g.png);
+  border-top: 1.2rem solid var(--mainLight);
+  border-bottom: 1.2rem solid var(--mainLight);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.image {
+  display: block;
+  margin: 0 auto;
+  max-width: 20rem;
+  border: .5rem solid white;
+  border-radius: 50%;
+}
+
+.figure {
+  composes: thinText;
+  font-size: 1.9rem;
+  text-align: center;
+  hyphens: auto;
+  margin: 0;
+  margin-top: 1rem;
+
+  & blockquote, & figcaption {
+    margin: 0;
+  }
+
+  & figcaption {
+    margin-top: 1rem;
+  }
+}

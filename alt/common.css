@@ -4,6 +4,12 @@
   --mainAlt: #EAF4DA;
   --complementary: #FFB6B3;
   --complementaryDark: #996663;
-  --dark: #4A4A4A;
+  --dark: #3A3A3A;
   --light: #FFFFFF;
+
+}
+
+.thinText {
+  font-weight: 200;
+  color: black; /* Increased contrast for legibility */
 }
