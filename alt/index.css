@@ -43,6 +43,11 @@ section {
    * background to extend over the full viewport.
    */
   padding: 1rem;
+
+  /* Layout titles tightly to section border */
+  & > h1:first-child {
+    margin-top: 0;
+  }
 }
 
 /* Never over-extend an image */

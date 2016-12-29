@@ -7,9 +7,15 @@
   --dark: #3A3A3A;
   --light: #FFFFFF;
 
+  --viewportPadding: 1rem;
 }
 
 .thinText {
   font-weight: 200;
   color: black; /* Increased contrast for legibility */
+}
+
+.layoutList {
+  list-style: none;
+  padding: 0;
 }

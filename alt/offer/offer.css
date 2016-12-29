@@ -1,0 +1,37 @@
+@import '../common.css';
+
+.offer {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 2.8rem;
+}
+
+.offers {
+  composes: layoutList from '../common.css';
+  margin-left: -var(--viewportPadding);
+  margin-right: -var(--viewportPadding);
+}
+
+.item {
+  padding: var(--viewportPadding);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  & > h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  & > p {
+    margin-bottom: 0;
+    hyphenate: auto;
+
+  }
+}
+
+.item:nth-child(even) {
+  background: var(--mainAlt);
+}
