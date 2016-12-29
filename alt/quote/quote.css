@@ -28,6 +28,10 @@
     margin: 0;
   }
 
+  & blockquote::before, & blockquote::after {
+    content: '"';
+  }
+
   & figcaption {
     margin-top: 1rem;
   }
