@@ -28,8 +28,11 @@
     margin: 0;
   }
 
-  & blockquote::before, & blockquote::after {
-    content: '"';
+  & blockquote::before {
+    content: '“';
+  }
+  & blockquote::after {
+    content: '”';
   }
 
   & figcaption {
