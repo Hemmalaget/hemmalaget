@@ -17,6 +17,7 @@ import Contact from './contact/contact.js';
 import Join from './join/join.js';
 import Benefits from './benefits/benefits.js';
 import Personel from './personel/personel.js';
+import Collaborators from './collaborators/collaborators.js';
 
 
 export default class App extends Component {
@@ -33,6 +34,7 @@ export default class App extends Component {
         <Benefits />
         <Quote image={imgAssistant} quote={texts.quotes.assistant.quote} caption={texts.quotes.assistant.caption}/>
         <Personel />
+        <Collaborators />
       </main>
     );
   }
