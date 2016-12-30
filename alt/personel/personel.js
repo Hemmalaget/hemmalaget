@@ -21,6 +21,5 @@ export default () => (
         />
       </li>
     </ul>
-    <Card />
   </section>
 );
