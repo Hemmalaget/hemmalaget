@@ -68,5 +68,14 @@ module.exports = {
 			title: 'Fullservice',
 			text: 'Vi är ett fullserviceföretag och nås dygnet runt. Det tycker vi är en viktig förutsättning. Du ska känna dig trygg med att alltid kunna vända dig till oss. Händer något under ditt arbetspass eller blir du akut sjuk når du oss när som helst genom vår bemannade jour. Du har även en kontaktperson som hjälper till vid alla typer av ärenden. Vi strävar efter att alltid ge snabb återkoppling på alla dina frågor och funderingar.'
 		}
-	]
+	],
+  personel: {
+    PA: {
+      name: "Per-Arne Hederstaf",
+      title: "Verksamhetschef",
+      email: "per-arne@hemmalaget.se",
+      phone: "076 859 50 00",
+      description: "Per-Arne har sedan 2001 jobbat i nära anknytning till assistans och startade 2010 Hemmalaget Assistans AB. Per-Arne jobbar främst från Alingsås och har helhetsansvaret för kunderna i Västra Götaland. Frihet för Per-Arne är att dra iväg några veckor med husbil runt vårt vackra land."
+    }
+  }
 }

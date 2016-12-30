@@ -1,0 +1,36 @@
+@import "../../common.css";
+
+.card {
+  text-align: center;
+}
+
+.portrait {
+  width: 70%;
+  max-width: 20rem;
+}
+
+.fullname {
+  margin-bottom: 0;
+  font-size: 2rem;
+}
+
+.title {
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+
+.contactLink {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  text-decoration: none;
+  color: var(--link);
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.description {
+  font-size: 1.2rem;
+}
