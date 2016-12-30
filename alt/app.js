@@ -18,6 +18,7 @@ import Join from './join/join.js';
 import Benefits from './benefits/benefits.js';
 import Personel from './personel/personel.js';
 import Collaborators from './collaborators/collaborators.js';
+import Footer from './footer/footer.js';
 
 
 export default class App extends Component {
@@ -35,6 +36,7 @@ export default class App extends Component {
         <Quote image={imgAssistant} quote={texts.quotes.assistant.quote} caption={texts.quotes.assistant.caption}/>
         <Personel />
         <Collaborators />
+        <Footer />
       </main>
     );
   }

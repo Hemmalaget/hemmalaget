@@ -64,3 +64,12 @@
     background: var(--mainAlt);
   }
 }
+
+.link {
+  text-decoration: none;
+  color: var(--link);
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

@@ -20,15 +20,10 @@
 }
 
 .contactLink {
+  composes: link from '../../common.css';
   display: block;
   margin-bottom: 1rem;
   font-size: 1.3rem;
-  text-decoration: none;
-  color: var(--link);
-
-  &:hover {
-    text-decoration: underline;
-  }
 }
 
 .description {
