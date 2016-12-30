@@ -1,8 +1,7 @@
 @import '../common.css';
 
 .contact {
-  padding-right: 0;
-  padding-left: 0;
+  padding: 0;
 }
 
 .banner {
@@ -21,6 +20,7 @@
   background: var(--grey);
 
   padding: 1rem;
+  padding-bottom: 1.5rem;
 }
 
 .title {
