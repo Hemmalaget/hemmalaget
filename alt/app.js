@@ -19,6 +19,7 @@ import Benefits from './benefits/benefits.js';
 import Personel from './personel/personel.js';
 import Collaborators from './collaborators/collaborators.js';
 import Footer from './footer/footer.js';
+import Attribution from './attribution/attribution.js';
 
 
 export default class App extends Component {
@@ -37,6 +38,7 @@ export default class App extends Component {
         <Personel />
         <Collaborators />
         <Footer />
+        <Attribution />
       </main>
     );
   }
