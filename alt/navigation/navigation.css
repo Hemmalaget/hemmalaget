@@ -27,6 +27,8 @@
   padding: 0 1rem;
   text-decoration: none;
   color: var(--dark);
+  background: white;
+  border: none;
 
   &:hover {
     background: #eee;
