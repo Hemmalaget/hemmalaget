@@ -6,7 +6,7 @@ import pa from './per-arne.png';
 
 
 export default () => (
-  <section className={style.personel}>
+  <section id="Anställda" className={style.personel}>
     <h1 className={style.title}>Vi på hemmalaget</h1>
 
     <ul className={style.cards}>

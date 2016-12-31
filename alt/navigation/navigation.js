@@ -14,7 +14,7 @@ export default class Navigation extends React.Component {
 
   render() {
     return (
-      <section className={style.navigation}>
+      <section id="Start" className={style.navigation}>
         <div className={style.menuBar}>
           <h2 className={style.logo}><a href="/">Hemmalaget</a></h2>
           <a href="#" className={style.navButton} onClick={this.toggleShow}>≡</a>

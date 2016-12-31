@@ -2,7 +2,7 @@ import React from 'react';
 import style from './footer.css';
 
 export default () => (
-  <section className={style.footer}>
+  <section id="Kontakt" className={style.footer}>
     <h2 className={style.title}>Kontakt</h2>
     <p>Org.nr: 556852-0315</p>
     <p>Telefon: <a className={style.link} href="tel:+46768595000">076 859 5000</a></p>
