@@ -26,11 +26,11 @@ export default class Navigation extends React.Component {
               // Make sure to update --nrOfNavItems in navigation.css when making
              // changes to the number of li's here.
             }
-            <li className={style.navItem}><a href="#Start">Start</a></li>
-            <li className={style.navItem}><a href="#Erbjudande">Erbjudande</a></li>
-            <li className={style.navItem}><a href="#Assistent">Assistent</a></li>
-            <li className={style.navItem}><a href="#Anställda">Anställda</a></li>
-            <li className={style.navItem}><a href="#Kontakt">Kontakt</a></li>
+            <li className={style.navItem}><a href="#Start" onClick={this.toggleShow}>Start</a></li>
+            <li className={style.navItem}><a href="#Erbjudande" onClick={this.toggleShow}>Erbjudande</a></li>
+            <li className={style.navItem}><a href="#Assistent" onClick={this.toggleShow}>Assistent</a></li>
+            <li className={style.navItem}><a href="#Anställda" onClick={this.toggleShow}>Anställda</a></li>
+            <li className={style.navItem}><a href="#Kontakt" onClick={this.toggleShow}>Kontakt</a></li>
           </ul>
         </nav>
       </section>
