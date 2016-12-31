@@ -73,3 +73,11 @@
     text-decoration: underline;
   }
 }
+
+/* High-visibility focus style for increased usability */
+:focus {
+  outline: 0;
+  background: var(--dark) !important;
+  border-color: var(--light) !important;
+  color: white !important;
+}
