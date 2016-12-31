@@ -80,4 +80,5 @@
   background: var(--dark) !important;
   border-color: var(--light) !important;
   color: white !important;
+  opacity: 1 !important;
 }
