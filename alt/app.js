@@ -6,6 +6,7 @@ import './index.css';
 import texts from './texts.js';
 
 // Sections
+import Navigation from './navigation/navigation.js';
 import Header from './header/header.js';
 import Quote from './quote/quote.js';
 import imgOwner from './quote/owner.png';
@@ -26,6 +27,7 @@ export default class App extends Component {
   render() {
     return (
       <main>
+        <Navigation />
         <Header />
         <Quote image={imgOwner} quote={texts.quotes.owner.quote} caption={texts.quotes.owner.caption}/>
         <Regions />

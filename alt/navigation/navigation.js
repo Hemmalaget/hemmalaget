@@ -1,0 +1,39 @@
+import React from 'react';
+import classnames from 'classnames';
+import style from './navigation.css';
+
+
+export default class Navigation extends React.Component {
+  state = {
+    showNav: false
+  }
+
+  toggleShow = (e) => {
+    this.setState({showNav: !this.state.showNav});
+  }
+
+  render() {
+    return (
+      <section className={style.navigation}>
+        <div className={style.menuBar}>
+          <h2 className={style.logo}><a href="/">Hemmalaget</a></h2>
+          <a href="#" className={style.navButton} onClick={this.toggleShow}>≡</a>
+        </div>
+
+        <nav className={style.nav}>
+          <ul className={classnames(style.navList , {[style.hide]: !this.state.showNav}, {[style.show]: this.state.showNav})}>
+            {
+              // Make sure to update --nrOfNavItems in navigation.css when making
+             // changes to the number of li's here.
+            }
+            <li className={style.navItem}><a href="#Start">Start</a></li>
+            <li className={style.navItem}><a href="#Erbjudande">Erbjudande</a></li>
+            <li className={style.navItem}><a href="#Assistent">Assistent</a></li>
+            <li className={style.navItem}><a href="#Anställda">Anställda</a></li>
+            <li className={style.navItem}><a href="#Kontakt">Kontakt</a></li>
+          </ul>
+        </nav>
+      </section>
+    );
+  }
+}

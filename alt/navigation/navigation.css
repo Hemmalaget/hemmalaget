@@ -1,0 +1,87 @@
+@import '../common.css';
+
+:root {
+  --animationDuration: 400ms;
+  --navItemHeight: 4rem;
+
+  /*
+   * Due to limitations in CSS, this number will have to be manually updated
+   * when adding new items in the navigation list.
+   */
+  --nrOfNavItems: 5;
+}
+
+.navigation {
+  padding: 0;
+  border-bottom: .5rem solid var(--mainLight);
+}
+
+.menuBar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navButton {
+  font-size: 3rem;
+  cursor: pointer;
+  padding: 0 1rem;
+  text-decoration: none;
+  color: var(--dark);
+
+  &:hover {
+    background: #eee;
+    background: var(--mainLight);
+  }
+}
+
+.logo {
+  margin: 0;
+  & > a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    color: var(--dark);
+    padding: 1rem;
+  }
+}
+
+.nav {
+  overflow-y: hidden;
+}
+
+.hide {
+  max-height: 0;
+  visibility: hidden;
+  transition: var(--animationDuration) ease-in-out;
+}
+
+.show {
+  max-height: calc(var(--nrOfNavItems)*var(--navItemHeight));
+  visibility: visible;
+  transition: var(--animationDuration) ease-in-out;
+}
+
+.navList {
+  composes: layoutList from '../common.css';
+  margin: 0;
+}
+
+.navItem {
+  height: var(--navItemHeight);
+
+  & > a {
+    display: block;
+    line-height: var(--navItemHeight);
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    color: var(--dark);
+    border-top: 1px dotted lightgrey;
+
+    &:hover {
+      background: var(--mainLight);
+    }
+  }
+}
