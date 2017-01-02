@@ -144,6 +144,7 @@
   .navItem > a {
     padding-left: .5rem;
     padding-right: .5rem;
+    border: none;
   }
 
   .navItem:last-child {
