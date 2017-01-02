@@ -9,7 +9,7 @@
   --grey: #eee;
   --link: #00aeef;
 
-  --viewportPadding: 1rem;
+  --gutter: 1.5rem;
 }
 
 .layoutList {

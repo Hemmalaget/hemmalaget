@@ -4,8 +4,8 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  margin-left: -var(--viewportPadding);
-  margin-right: -var(--viewportPadding);
+  margin-left: -var(--gutter);
+  margin-right: -var(--gutter);
   display: flex;
   flex-direction: column;
 }
@@ -22,8 +22,8 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding-left: var(--viewportPadding);
-    padding-right: var(--viewportPadding);
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
   }
   .item {
     width: 49%;
