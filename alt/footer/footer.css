@@ -1,13 +1,13 @@
 @import '../common.css';
 
-.title {
-  font-size: 2rem;
-}
-
 .footer {
   background: var(--main) url(./debut_light_g.png);
   border-top: 1.2rem solid var(--mainLight);
-  font-size: 1.3rem;
+  font-size: 1.4rem;
+}
+
+.title {
+  margin-bottom: 2rem;
 }
 
 .link {

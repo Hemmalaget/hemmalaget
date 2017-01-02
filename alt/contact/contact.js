@@ -7,7 +7,7 @@ export default () => (
     <div className={style.banner}>
       <div className={style.image}></div>
       <div className={style.bar}>
-        <h2 className={style.title}>Vi hjälper dig!</h2>
+        <h1 className={style.title}>Vi hjälper dig!</h1>
         <a className={style.button} href="mailto:asdf@asdf.com">Kontakta oss</a>
       </div>
     </div>
