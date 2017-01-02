@@ -29,11 +29,11 @@
 .navButton {
   font-size: 3rem;
   cursor: pointer;
-  padding: 0 1rem;
+  padding: 0 var(--gutter);
   text-align: center;
 
   /* Compensate for the menu-glyph not being visually centered */
-  padding-left: 1.2rem;
+  padding-left: calc(var(--gutter) + .2rem);
   padding-bottom: .2rem;
 
   text-decoration: none;
@@ -54,7 +54,7 @@
     width: 100%;
     text-decoration: none;
     color: var(--dark);
-    padding: 1rem;
+    padding: var(--gutter);
   }
 }
 

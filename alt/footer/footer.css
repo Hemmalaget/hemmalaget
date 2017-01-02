@@ -7,7 +7,7 @@
 }
 
 .title {
-  margin-bottom: 2rem;
+  margin-bottom: calc(2 * var(--gutter));
 }
 
 .link {

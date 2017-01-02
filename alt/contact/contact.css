@@ -2,7 +2,7 @@
 
 .contact {
   padding: 0;
-  padding-bottom: 2rem;
+  padding-bottom: calc(2 * var(--gutter));
 }
 
 .banner {
@@ -22,13 +22,13 @@
   align-items: center;
   background: var(--grey);
 
-  padding: 1rem;
+  padding: var(--gutter);
   padding-bottom: 1.5rem;
 }
 
 .title {
   margin: 0;
-  margin-bottom: 1rem;
+  margin-bottom: var(--gutter);
   font-weight: 200;
   font-size: 4rem;
   text-align: center;

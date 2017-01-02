@@ -1,9 +1,7 @@
 @import '../common.css';
 
 .card {
-  padding: var(--gutter);
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding: calc(2 * var(--gutter)) var(--gutter);
 }
 
 .title {

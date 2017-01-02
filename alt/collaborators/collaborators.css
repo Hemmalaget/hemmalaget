@@ -1,7 +1,9 @@
+@import '../common.css';
+
 .collaborators {
   text-align: center;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: var(--gutter);
+  padding-bottom: var(--gutter);
 }
 
 .logos {
