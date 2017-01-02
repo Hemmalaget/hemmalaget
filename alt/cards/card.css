@@ -1,0 +1,21 @@
+@import '../common.css';
+
+.card {
+  padding: var(--viewportPadding);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  
+  &:nth-child(even) {
+    background: var(--mainAlt);
+  }
+}
+
+.title {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.text {
+  margin-bottom: 0;
+  hyphenate: auto;
+}

@@ -1,0 +1,9 @@
+import React from 'react';
+import style from './cards.css';
+import Card from './card.js';
+
+export default (props) => (
+  <ul className={style.cards}>
+    {props.items.map(o => <Card key={o.title} title={o.title} text={o.text} />)}
+  </ul>
+);
