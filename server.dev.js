@@ -8,7 +8,7 @@ const port = 3000;
 
 new WebpackDevServer(webpack(config), {
   publicPath: config.output.publicPath,
-  contentBase: 'alt/',
+  contentBase: 'app/',
   hot: true,
   historyApiFallback: true,
   stats: {

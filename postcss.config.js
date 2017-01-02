@@ -1,7 +1,7 @@
 module.exports = {
   plugins: [
     require("postcss-import")({
-      path: './alt/',
+      path: './app/',
     }),
     require("postcss-import")(),
     //require("postcss-url")(), // Handled by webpack file-loder or url-loader

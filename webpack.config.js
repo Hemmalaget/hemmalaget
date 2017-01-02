@@ -10,11 +10,11 @@ module.exports = {
     'webpack/hot/only-dev-server',
 
     // Main entry
-    './alt/index.js',
+    './app/index.js',
   ],
   output: {
     filename: 'bundle.js',
-    path: path.join(__dirname, 'alt', 'dist'),
+    path: path.join(__dirname, 'dist'),
     publicPath: '/assets/'
   },
   plugins: [

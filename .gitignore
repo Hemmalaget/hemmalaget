@@ -32,4 +32,4 @@ public/
 bower_components/
 
 # Webpack output folder
-alt/dist
+dist/
