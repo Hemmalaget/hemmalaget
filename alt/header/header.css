@@ -1,16 +1,21 @@
 @import 'common.css';
 
 .header {
+  position: relative;
 	background: var(--main) url(./header.png) center;
 	background-size: cover;
 	padding-top: 2rem;
 	padding-bottom: 2.8rem; /* Visually compensate for decender on lowercase p. */
+  min-height: 25rem;
 }
 
 .title {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
 	padding: 0;
 	margin: 0;
-	font-size: 4.1rem;
-	font-weight: 400;
+	font-size: 4.5rem;
+	font-weight: 200;
   color: var(--dark);
 }
