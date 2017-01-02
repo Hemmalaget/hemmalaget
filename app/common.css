@@ -25,6 +25,7 @@
   color: var(--dark);
   text-decoration: none;
   font-size: 1.3rem;
+  white-space: nowrap;
 
   &:hover, &:focus {
     box-shadow: var(--complementaryDark) 0 0 0 .2rem;
