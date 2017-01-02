@@ -35,36 +35,6 @@
   }
 }
 
-
-.listing {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  margin-left: -var(--viewportPadding);
-  margin-right: -var(--viewportPadding);
-
-  & > li {
-    padding: var(--viewportPadding);
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-
-    & > h2 {
-      margin-top: 0;
-      margin-bottom: 0;
-    }
-
-    & > p {
-      margin-bottom: 0;
-      hyphenate: auto;
-
-    }
-  }
-
-  & > li:nth-child(even) {
-    background: var(--mainAlt);
-  }
-}
-
 .link {
   text-decoration: none;
   color: var(--link);

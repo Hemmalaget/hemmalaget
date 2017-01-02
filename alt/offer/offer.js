@@ -2,19 +2,13 @@ import React from 'react';
 import style from './offer.css';
 import imgCloud from './cloud.png';
 import texts from '../texts.js';
+import Cards from '../cards/cards.js';
 
 export default () => (
   <section id="Erbjudande" className={style.offer}>
     <h1 className={style.title}>Vi erbjuder</h1>
     <img className={style.cloud} src={imgCloud} />
 
-    <ul className={style.offers}>
-      {texts.offer.map(o => (
-        <li key={o.title} className={style.item}>
-          <h2>{o.title}</h2>
-          <p>{o.text}</p>
-        </li>
-      ))}
-    </ul>
+    <Cards items={texts.offer} />
   </section>
 );
