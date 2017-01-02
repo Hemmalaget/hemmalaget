@@ -29,14 +29,14 @@ export default class App extends Component {
       <main>
         <Navigation />
         <Header />
-        <Quote image={imgOwner} quote={texts.quotes.owner.quote} caption={texts.quotes.owner.caption}/>
+        <Quote reverse image={imgOwner} quote={texts.quotes.owner.quote} caption={texts.quotes.owner.caption}/>
         <Regions />
         <Offer />
         <Contact />
         <Quote image={imgClient} quote={texts.quotes.client.quote} caption={texts.quotes.client.caption}/>
         <Join />
         <Benefits />
-        <Quote image={imgAssistant} quote={texts.quotes.assistant.quote} caption={texts.quotes.assistant.caption}/>
+        <Quote reverse image={imgAssistant} quote={texts.quotes.assistant.quote} caption={texts.quotes.assistant.caption}/>
         <Personel />
         <Collaborators />
         <Footer />
