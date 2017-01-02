@@ -34,7 +34,7 @@
 
   /* Compensate for the menu-glyph not being visually centered */
   padding-left: calc(var(--gutter) + .2rem);
-  padding-bottom: .2rem;
+  padding-bottom: .1rem;
 
   text-decoration: none;
   color: var(--dark);
@@ -152,5 +152,6 @@
 
   .show, .hide {
     visibility: visible;
+    max-height: none;
   }
 }
