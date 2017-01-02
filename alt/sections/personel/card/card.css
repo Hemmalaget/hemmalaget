@@ -1,4 +1,4 @@
-@import "../../common.css";
+@import "../../../common.css";
 
 .card {
   text-align: center;
@@ -22,7 +22,7 @@
 }
 
 .contactLink {
-  composes: link from '../../common.css';
+  composes: link from '../../../common.css';
   display: block;
   margin-bottom: 1rem;
   font-size: 1.3rem;

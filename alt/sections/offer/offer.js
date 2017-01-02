@@ -1,8 +1,8 @@
 import React from 'react';
 import style from './offer.css';
 import imgCloud from './cloud.png';
-import texts from '../texts.js';
-import Cards from '../cards/cards.js';
+import texts from '../../texts.js';
+import Cards from '../../components/cards/cards.js';
 
 export default () => (
   <section id="Erbjudande" className={style.offer}>

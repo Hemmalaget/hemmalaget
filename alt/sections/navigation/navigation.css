@@ -1,4 +1,4 @@
-@import '../common.css';
+@import '../../common.css';
 
 :root {
   --animationDuration: 400ms;
@@ -83,7 +83,7 @@
 .navList {
   display: flex;
   flex-direction: column;
-  composes: layoutList from '../common.css';
+  composes: layoutList from '../../common.css';
   margin: 0;
 }
 

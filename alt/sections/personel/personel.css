@@ -1,5 +1,5 @@
 .cards {
-  composes: layoutList from '../common.css';
+  composes: layoutList from '../../common.css';
   display: flex;
   flex-direction: column;
 }

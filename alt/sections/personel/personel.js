@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './personel.css';
 import Card from './card/card.js';
-import texts from '../texts.js';
+import texts from '../../texts.js';
 import pa from './per-arne.png';
 
 
