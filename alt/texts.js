@@ -1,7 +1,10 @@
+
+// \u00AD - Unicode character for a soft hyphen that's only rendered if necessary.
+
 module.exports = {
   quotes: {
     owner: {
-      quote: 'Hemmalaget är det personliga assistansbolaget som sätter dig och dina behov i fokus. Tillsammans ser vi till att du får den hjälp som du vill ha, utan onödigt krångel.',
+      quote: 'Hemmalaget är det personliga assistans\u00ADbolaget som sätter dig och dina behov i fokus. Tillsam\u00ADmans ser vi till att du får den hjälp som du vill ha, utan onödigt krångel.',
       caption: 'Per-Arne, VD'
     },
     client: {

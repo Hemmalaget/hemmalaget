@@ -19,7 +19,7 @@
 .figure {
   font-size: 1.9rem;
   text-align: center;
-  hyphens: auto;
+  hyphens: manual;
   margin: 0;
   margin-top: 1rem;
 
