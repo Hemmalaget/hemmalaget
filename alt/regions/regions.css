@@ -14,5 +14,6 @@
 
 .text {
   font-size: 1.4rem;
-  margin: 0;
+  margin: 0 auto;
+  max-width: 40rem;
 }
