@@ -30,6 +30,8 @@ body {
 
   /* Remove default margin.*/
   margin: 0;
+
+  height: 100%;
 }
 
 section {

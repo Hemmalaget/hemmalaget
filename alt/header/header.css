@@ -7,6 +7,7 @@
 	padding-top: 2rem;
 	padding-bottom: 2.8rem; /* Visually compensate for decender on lowercase p. */
   min-height: 25rem;
+  height: 60vw;
 }
 
 .title {
@@ -18,4 +19,16 @@
 	font-size: 4.5rem;
 	font-weight: 200;
   color: var(--dark);
+}
+
+@media (width >= 730px) {
+  .title {
+    font-size: 6rem;
+  }
+}
+
+@media (width >= 1200px) {
+  .title {
+    font-size: 8rem;
+  }
 }
