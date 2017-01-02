@@ -12,7 +12,8 @@ app.use(compression());
 
 
 // Serve static files
-app.use(express.static(__dirname + '/public', { maxAge: oneDay }));
+app.use('/assets', express.static(__dirname + '/dist', { maxAge: oneDay }));
+app.get('/', (req, res) => res.sendFile(__dirname + '/app/index.html'));
 
 
 // Listen for requests
