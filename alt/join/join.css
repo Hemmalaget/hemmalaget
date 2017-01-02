@@ -1,6 +1,8 @@
 @import '../common.css';
 
 .join {
+  display: flex;
+  flex-direction: column;
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
@@ -17,6 +19,7 @@
 .banner {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   background: var(--grey);
   text-align: center;
@@ -29,4 +32,16 @@
 
 .button {
   composes: button from '../common.css';
+}
+
+@media (width >= 800px) {
+  .join {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .description, .banner {
+    width: 50%;
+    border: 1rem solid white; /* Used as a margin that's included in the elements total width. */
+  }
 }
