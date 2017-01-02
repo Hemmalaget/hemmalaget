@@ -37,7 +37,6 @@
   border: none;
 
   &:hover {
-    background: #eee;
     background: var(--mainLight);
   }
 }
