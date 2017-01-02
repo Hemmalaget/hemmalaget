@@ -2,9 +2,12 @@
 
 .contact {
   padding: 0;
+  padding-bottom: 2rem;
 }
 
 .banner {
+  display: flex;
+  flex-direction: column;
 }
 
 .image {
@@ -28,9 +31,25 @@
   margin-bottom: 1rem;
   font-weight: 200;
   font-size: 3.2rem;
+  text-align: center;
 }
 
 .button {
   composes: button from '../common.css';
   font-size: 1.5rem;
+}
+
+@media (width >= 800px) {
+  .banner {
+    flex-direction: row-reverse;
+  }
+
+  .image {
+    flex-grow: 1;
+  }
+
+  .bar {
+    width: 30%;
+    justify-content: center;
+  }
 }
