@@ -25,6 +25,12 @@
   font-size: 3rem;
   cursor: pointer;
   padding: 0 1rem;
+  text-align: center;
+
+  /* Compensate for the menu-glyph not being visually centered */
+  padding-left: 1.2rem;
+  padding-bottom: .2rem;
+
   text-decoration: none;
   color: var(--dark);
   background: white;
