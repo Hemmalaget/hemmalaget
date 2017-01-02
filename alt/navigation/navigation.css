@@ -7,11 +7,16 @@
   /*
    * Due to limitations in CSS, this number will have to be manually updated
    * when adding new items in the navigation list.
+   *
+   * You'll also need to update the responsive breakpoint at the bottom of this
+   * file.
    */
   --nrOfNavItems: 5;
 }
 
 .navigation {
+  display: flex;
+  flex-direction: column;
   padding: 0;
   border-bottom: .5rem solid var(--mainLight);
 }
@@ -76,6 +81,8 @@
 }
 
 .navList {
+  display: flex;
+  flex-direction: column;
   composes: layoutList from '../common.css';
   margin: 0;
 }
@@ -96,5 +103,54 @@
     &:hover {
       background: var(--mainLight);
     }
+  }
+}
+
+
+/*
+ * Unfortunately it's not possible to use calc() nor variables in a media query.
+ * This width will have to be updated manually, but should probably fall within
+ * the range of:
+ *
+ * width >= calc(140px * --nrOfNavItems)
+ *
+ */
+@media(width >= 700px) {
+  .navigation {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .navList {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .navList, .navItem {
+    height: 100%;
+  }
+
+  .menuBar {
+    margin-right: 2rem;
+  }
+
+  .nav {
+    flex-grow: 1;
+  }
+
+  .navButton {
+    display: none;
+  }
+
+  .navItem > a {
+    padding-left: .5rem;
+    padding-right: .5rem;
+  }
+
+  .navItem:last-child {
+    margin-right: .5rem;
+  }
+
+  .show, .hide {
+    visibility: visible;
   }
 }
