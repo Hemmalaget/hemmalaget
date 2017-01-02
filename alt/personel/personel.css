@@ -1,11 +1,22 @@
 
-.personel {
-}
-
 .title {
   font-size: 2.5rem;
 }
 
 .cards {
   composes: layoutList from '../common.css';
+  display: flex;
+  flex-direction: column;
+}
+
+@media (width >= 700px) {
+  .cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    & > li {
+      width: 49%;
+    }
+  }
 }
