@@ -7,8 +7,8 @@ export default () => (
     <div className={style.banner}>
       <div className={style.image}></div>
       <div className={style.bar}>
-        <h1 className={style.title}>Vi hjälper dig!</h1>
-        <a className={style.button} href="mailto:asdf@asdf.com">Kontakta oss</a>
+        <h1 className={style.title}>Vi hjälper dig</h1>
+        <a className={style.button} href="mailto:info@hemmalaget.se?Subject=Bli%20kund%20hos%20Hemmalaget">Kontakta oss!</a>
       </div>
     </div>
   </section>

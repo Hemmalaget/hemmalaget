@@ -9,7 +9,7 @@ export default () => (
     </div>
     <div className={style.banner}>
       <h2>Skicka ditt CV och Personligt Brev till oss</h2>
-      <a className={style.button}>Ansök nu!</a>
+      <a className={style.button} href="mailto:info@hemmalaget.se?Subject=Jobba%20i%20Hemmalaget">Ansök nu!</a>
     </div>
   </section>
 );
