@@ -19,5 +19,5 @@ new WebpackDevServer(webpack(config), {
   if (err) {
     console.log(err);
   }
-  console.log(`Listening at ${host}:${port}`);
+  console.log(`Listening at http://${host}:${port}`);
 });
