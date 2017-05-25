@@ -34,6 +34,16 @@ body {
   height: 100%;
 }
 
+/* Never over-extend an image */
+img {
+  max-width: 100%;
+}
+
+
+/*
+ * Layout
+ */
+
 section {
   /*
     Avoid collapsing margins by default for sections making them fully contain
@@ -54,15 +64,11 @@ section {
   }
 }
 
-/* Never over-extend an image */
-img {
-  max-width: 100%;
-}
-
 
 /*
  * Theme
  */
+
 html {
   color: var(--dark);
 }
