@@ -14,8 +14,7 @@
     "prestart": "yarn",
     "start": "node server.dev.js",
     "prebuild": "rm -fr docs/",
-    "build": "webpack --config ./webpack.prod.config.js --progress --colors",
-    "lint": "eslint **/*.js"
+    "build": "webpack --config ./webpack.prod.config.js --progress --colors"
   },
   "dependencies": {
     "babel-core": "^6.21.0",
@@ -28,6 +27,7 @@
     "compression": "^1.6.2",
     "css-loader": "^0.26.1",
     "eslint": "^3.19.0",
+    "eslint-loader": "^1.7.1",
     "eslint-plugin-react": "^7.0.1",
     "express": "^4.14.0",
     "file-loader": "^0.9.0",

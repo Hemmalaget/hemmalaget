@@ -23,8 +23,19 @@ module.exports = {
     new webpack.optimize.DedupePlugin()
   ],
   module: {
+    preLoaders: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader',
+      },
+    ],
     loaders: [
-      { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader'
+      },
       {
         test: /\.css$/,
         loaders: [
@@ -42,4 +53,4 @@ module.exports = {
       }
     ]
   }
-}
+};
