@@ -58,7 +58,7 @@ Most changes to the code should be instantaneously and automatically updated in 
 
 ## Testing
 
-As this is a static webpage, there's not a lot of behavior to test. However, some end-to-end tests and linting are planned for a future release.
+As this is a static webpage, there's frankly not a lot of behavior to test.
 
 
 ## Deployment
