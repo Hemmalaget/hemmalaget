@@ -13,6 +13,7 @@
     "postinstall": "npm run setup",
     "prestart": "yarn",
     "start": "node server.dev.js",
+    "prebuild": "rm -fr docs/",
     "build": "webpack --config ./webpack.prod.config.js --progress --colors"
   },
   "dependencies": {
