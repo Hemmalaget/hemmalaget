@@ -1,7 +1,7 @@
 Hemmalaget
 ==========
 
-A static homepage for Hemmalaget AB, built with React, Express, Webpack and hosted on Heroku.
+A static homepage for Hemmalaget AB, built with React, Express, Webpack and hosted on Github Pages.
 
 
 ## Design goal
@@ -9,9 +9,9 @@ A static homepage for Hemmalaget AB, built with React, Express, Webpack and host
 The repository architecture is optimized for infrequent edits over a long lifetime. This leads to a number of design goals:
 
 * Use standardized languages and tools with long-term relevancy and support.
-* Modularize and limit the relevant context knowledge necessary to make changes.
+* Modularize and limit the relevant context knowledge necessary to make changes and publish them.
 
-Furthermore, the site's user base consists of people with various degrees of ability which necessitates special attention:
+Furthermore, considering the site's user base, universal accessibility is a major priority:
 
 * Make sure usability and clarity is high and that tools such as screen readers and keyboard navigation are well supported.
 
@@ -22,11 +22,9 @@ The website is built around a handful tools and frameworks:
 
 1. **React** - for defining modular web components
 2. **Webpack** - for managing the build process
-3. **Express** - for serving the app in production
+3. **Express** - as a dev server with hot code reloading using *webpack-dev-server*
 4. **Node** - underlying runtime for development tools
-5. **webpack-dev-server** - for serving the app in development
-6. **Heroku** - for hosting the website
-7. **Github** - for hosting the git repository
+5. **Github** - for hosting the git repository and static site deployment
 
 The actual website code is contained in the `app/`-directory. Files on the first level pertains to the application as a whole and includes entrypoints and global layout and styles. Specifically, `app.js` defines the main React component that's mounted into `index.html`. Moreover, `common.css` defines a couple of variables and style-mixins that are used across the codebase.
 
@@ -40,7 +38,6 @@ Each module is responsible for its own assets, notably including it's own css. T
 1. Node
 2. Yarn
 3. Git
-4. Heroku toolbelt
 
 I won't go into installation instructions as there's plenty of more up-to-date information about this online already.
 
@@ -64,18 +61,12 @@ As this is a static webpage, there's not a lot of behavior to test. However, som
 
 ## Deployment
 
-The website is *automatically deployed whenever a new version of the `master` branch is pushed to Github*.
+The website is automatically deployed whenever a new version of the `master` branch is pushed to Github. By Github Pages convention, the public files are served from the docs-directory.
 
-You can test the deployment scripts locally if you'd like:
+### A note on generated files
 
-```bash
-# Build an optimized bundle and images to docs/
-yarn run build
-
-# Start a local server mimicking an actual deploy to Heroku
-heroku local
-```
+Github Pages is by far the easiest way to publish simple static sites with the caveat that only plain html, css and javascript is supported. This requires some tradeoffs to be made in order to use modern build tools - the main one being that the generated build files need to be committed and kept in sync with the source files. While it's generally discouraged to commit build artifacts, we're using a pre-push commit hook to make sure changes are properly synced and the generated files are marked as "binary" to reduce visual clutter in diffs. For this project, these provisions strike a nice balance between best practice and productivity.
 
 
 # Made by
-Daniel Ström [@dnjstrom](http://twitter.com/dnjstrom)
+Daniel Ström [@dnjstrom](https://www.linkedin.com/in/dnjstrom/)
