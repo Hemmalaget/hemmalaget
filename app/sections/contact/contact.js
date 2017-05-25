@@ -1,8 +1,8 @@
 import React from 'react';
 import style from './contact.css';
-import image from './natural_smile.jpg';
+import './natural_smile.jpg';
 
-export default () => (
+const Contact = () => (
   <section className={style.contact}>
     <div className={style.banner}>
       <div className={style.image} role="image" aria-label="Vi hjälper dig!"></div>
@@ -13,3 +13,5 @@ export default () => (
     </div>
   </section>
 );
+
+export default Contact;

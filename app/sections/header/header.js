@@ -1,8 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import style from './header.css';
 
-export default () => (
+const Header = () => (
   <section className={style.header}>
     <h1 className={style.title}>Personlig assistans<br /> på dina villkor</h1>
   </section>
 );
+
+export default Header;

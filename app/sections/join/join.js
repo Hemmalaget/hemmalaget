@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './join.css';
 
-export default () => (
+const Join = () => (
   <section id="Assistent" className={style.join}>
     <div className={style.description}>
       <h1>Vill du bli en del av Hemmalaget?</h1>
@@ -13,3 +13,5 @@ export default () => (
     </div>
   </section>
 );
+
+export default Join;

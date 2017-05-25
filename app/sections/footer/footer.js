@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './footer.css';
 
-export default () => (
+const Footer = () => (
   <section id="Kontakt" className={style.footer}>
     <h1 className={style.title}>Kontakt</h1>
     <p>Org.nr: 556852-0315</p>
@@ -10,3 +10,5 @@ export default () => (
     <a className={style.link} href="https://www.google.se/maps/place/Klockareg%C3%A5rdsv%C3%A4gen+9,+441+35+Alings%C3%A5s/@57.9387194,12.546462">Klockaregårdsvägen 9<br />441 35 Alingsås</a>
   </section>
 );
+
+export default Footer;

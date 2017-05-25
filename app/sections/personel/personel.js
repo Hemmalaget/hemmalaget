@@ -5,7 +5,7 @@ import texts from '../../texts.js';
 import pa from './per-arne.png';
 
 
-export default () => (
+const Personel = () => (
   <section id="Anställda" className={style.personel}>
     <h1 className={style.title}>Vi på hemmalaget</h1>
 
@@ -23,3 +23,5 @@ export default () => (
     </ul>
   </section>
 );
+
+export default Personel;

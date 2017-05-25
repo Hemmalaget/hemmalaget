@@ -3,8 +3,10 @@ import style from './benefits.css';
 import texts from '../../texts.js';
 import Cards from '../../components/cards/cards.js';
 
-export default () => (
+const Benefits = () => (
   <section className={style.benefits}>
     <Cards items={texts.benefits} />
   </section>
 );
+
+export default Benefits;

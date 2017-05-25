@@ -4,7 +4,7 @@ import imgCloud from './cloud.png';
 import texts from '../../texts.js';
 import Cards from '../../components/cards/cards.js';
 
-export default () => (
+const Offer = () => (
   <section id="Erbjudande" className={style.offer}>
     <h1 className={style.title}>Vi erbjuder</h1>
     <img className={style.cloud} src={imgCloud} />
@@ -12,3 +12,5 @@ export default () => (
     <Cards items={texts.offer} />
   </section>
 );
+
+export default Offer;

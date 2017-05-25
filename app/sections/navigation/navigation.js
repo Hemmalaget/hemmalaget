@@ -8,7 +8,7 @@ export default class Navigation extends React.Component {
     showNav: false
   }
 
-  toggleShow = (e) => {
+  toggleShow = () => {
     this.setState({showNav: !this.state.showNav});
   }
 

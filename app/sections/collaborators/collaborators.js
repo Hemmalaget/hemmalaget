@@ -3,7 +3,7 @@ import style from './collaborators.css';
 import imgKfo from './kfo.png';
 import imgAiai from './aiai.png';
 
-export default () => (
+const Collaborators = () => (
   <section className={style.collaborators}>
     <p>I sammarbete med:</p>
     <ul className={style.logos}>
@@ -13,3 +13,5 @@ export default () => (
     <p>Vi innehar tillstånd från Inspektionen för Vård och Omsorg</p>
   </section>
 );
+
+export default Collaborators;
