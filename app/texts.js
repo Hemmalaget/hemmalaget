@@ -1,5 +1,6 @@
 
 // \u00AD - Unicode character for a soft hyphen that's only rendered if necessary.
+//          Useful for suggesting correct hyphenation of long words.
 
 module.exports = {
   quotes: {
