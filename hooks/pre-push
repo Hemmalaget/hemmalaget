@@ -1,0 +1,16 @@
+#!/bin/sh
+# Check for changed source files, and remind me to rebuild the project before
+# pushing to a remote.
+
+# Find source files that are marked as modified
+sources=`git status -s | grep 'M.*app\/.*'`
+
+# Find built files that have changed (we don't use M because they could be deleted, etc)
+built=`git status -s | grep 'docs'`
+
+# If source files have changed, but not built files, block the commit
+if [ -n "$sources" ] &&  [ -z "$built" ]; then
+    echo "\nThere are changes in app/* but not in docs/*..."
+    echo "Don't forget to rebuild the project before pushing! 👍\n"
+    exit 1
+fi
