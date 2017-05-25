@@ -69,7 +69,7 @@ The website is *automatically deployed whenever a new version of the `master` br
 You can test the deployment scripts locally if you'd like:
 
 ```bash
-# Build an optimized bundle and images to dist/
+# Build an optimized bundle and images to docs/
 yarn run build
 
 # Start a local server mimicking an actual deploy to Heroku

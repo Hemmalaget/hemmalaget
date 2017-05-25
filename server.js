@@ -12,7 +12,7 @@ app.use(compression());
 
 
 // Serve static files
-app.use('/', express.static(__dirname + '/dist', { maxAge: oneDay }));
+app.use('/', express.static(__dirname + '/docs', { maxAge: oneDay }));
 
 
 // Listen for requests
