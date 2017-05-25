@@ -1,6 +1,8 @@
 Hemmalaget
 ==========
 
+[![dependencies Status](https://david-dm.org/hemmalaget/hemmalaget/status.svg)](https://david-dm.org/hemmalaget/hemmalaget)
+
 A static homepage for Hemmalaget AB, built with React, Express, Webpack and hosted on Github Pages.
 
 
