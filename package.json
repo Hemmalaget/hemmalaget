@@ -13,9 +13,7 @@
     "postinstall": "npm run setup",
     "prestart": "yarn",
     "start": "node server.dev.js",
-    "build": "webpack --config ./webpack.prod.config.js --progress --colors",
-    "heroku-postbuild": "yarn run build",
-    "heroku": "ENV=production node server.js"
+    "build": "webpack --config ./webpack.prod.config.js --progress --colors"
   },
   "dependencies": {
     "babel-core": "^6.21.0",
