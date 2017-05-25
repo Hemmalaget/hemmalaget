@@ -1,38 +1,38 @@
 module.exports = {
-  "env": {
-    "browser": true,
-    "node": true,
-    "es6": true
+  'env': {
+    'browser': true,
+    'node': true,
+    'es6': true
   },
-  "extends": [
-    "eslint:recommended",
-    "plugin:react/recommended"
+  'extends': [
+    'eslint:recommended',
+    'plugin:react/recommended'
   ],
-  "parser": "babel-eslint",
-  "parserOptions": {
-    "sourceType": "module",
-    "allowImportExportEverywhere": false,
-    "codeFrame": false
+  'parser': 'babel-eslint',
+  'parserOptions': {
+    'sourceType': 'module',
+    'allowImportExportEverywhere': false,
+    'codeFrame': false
   },
-  "plugins": [
-    "react"
+  'plugins': [
+    'react'
   ],
-  "rules": {
-    "indent": [
-      "error",
+  'rules': {
+    'indent': [
+      'error',
       2
     ],
-    "linebreak-style": [
-      "error",
-      "unix"
+    'linebreak-style': [
+      'error',
+      'unix'
     ],
-    "quotes": [
-      "error",
-      "single"
+    'quotes': [
+      'error',
+      'single'
     ],
-    "semi": [
-      "error",
-      "always"
+    'semi': [
+      'error',
+      'always'
     ]
   }
 };

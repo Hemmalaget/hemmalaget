@@ -17,7 +17,9 @@ new WebpackDevServer(webpack(config), {
 })
 .listen(port, host, (err) => {
   if (err) {
-    console.log(err);
+    console.log(err); //eslint-disable-line no-console
   }
+
+  //eslint-disable-next-line no-console
   console.log(`Listening at http://${host}:${port}`);
 });
