@@ -109,7 +109,8 @@ if not git rev-parse --abbrev-ref HEAD | grep --quiet 'master'
   fail "You should only deploy on the master branch; aborting. 🙀"
 end
 
-print "... everything seems ok!"
+echo "... everything seems ok!"
+echo ''
 
 
 #
