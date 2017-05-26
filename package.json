@@ -71,6 +71,7 @@
     "style-loader": "^0.18.1",
     "url-loader": "^0.5.7",
     "webpack": "^2.6.1",
-    "webpack-dev-server": "^2.4.5"
+    "webpack-dev-server": "^2.4.5",
+    "yarn": "^0.24.5"
   }
 }
