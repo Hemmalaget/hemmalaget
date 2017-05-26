@@ -79,4 +79,4 @@ Github Pages is by far the easiest way to publish simple static sites with the c
 
 
 # Made by
-Daniel Ström [@dnjstrom](https://www.linkedin.com/in/dnjstrom/)
+[Daniel Ström](https://www.linkedin.com/in/dnjstrom/)
