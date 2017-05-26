@@ -70,7 +70,7 @@ end
 # Checks if there are remote changes not in the local repository
 function is_up_to_date_with_remote
   git fetch
-  test (git rev-parse HEAD) = (git rev-parse '@{u}')
+  test (git merge-base @ '@{upstream}') = (git rev-parse '@{upstream}')
 end
 
 
