@@ -31,12 +31,13 @@ end
 # Print and exit
 function fail
   print $argv
+  echo ''
   exit 1
 end
 
 # Checks if there are no changes or untracked files present.
 function repository_is_clean
-  test -z (git status -s)
+  test -z "(git status -s)"
 end
 
 function print_success
@@ -82,8 +83,9 @@ print "Making some sanity checks..."
 # Make sure we're in the correct directory before running this script.
 if not cat ./package.json | grep --quiet '"name": "Hemmalaget"'
   print "You're probably in the wrong directory; aborting. 😱"
-  echo "You should be inte project root for Hemmalaget."
+  echo "You should be in the project root for hemmalaget."
   echo "Current position:" (pwd)
+  echo ''
   exit 1
 end
 
@@ -93,6 +95,7 @@ if not repository_is_clean
   print "There are unstaged changes; aborting. 😨"
   echo ''
   git status -s
+  echo ''
   exit 1
 end
 
@@ -128,6 +131,7 @@ git ls-files $dir | tr '\n' ' ' | xargs git update-index --no-assume-unchanged
 if not test $status -eq 0
   print "There was a problem building the project 😿"
   ignore_changes $dir
+  echo ''
   exit 1
 end
 

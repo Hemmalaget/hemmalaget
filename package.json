@@ -9,13 +9,12 @@
     "url": "https://github.com/Hemmalaget/hemmalaget"
   },
   "scripts": {
-    "setup": "ln -fs ../../hooks/pre-push .git/hooks/pre-push",
-    "postinstall": "npm run setup",
     "prestart": "yarn",
     "start": "node server.dev.js",
     "prebuild": "rm -rf docs/",
     "build": "webpack --config ./webpack.prod.config.js --progress --colors",
-    "test": "jest"
+    "test": "jest",
+    "deploy": "./scripts/deploy.fish"
   },
   "jest": {
     "moduleFileExtensions": [
