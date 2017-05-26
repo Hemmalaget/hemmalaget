@@ -58,12 +58,20 @@ Most changes to the code should be instantaneously and automatically updated in 
 
 ## Testing
 
-As this is a static webpage, there's frankly not a lot of behavior to test.
+As this is a static webpage, there's frankly not a lot of behavior to test. There are however a couple of gratuitous tests using Jest which can be run with
+
+```bash
+yarn test
+```
 
 
 ## Deployment
 
 The website is automatically deployed whenever a new version of the `master` branch is pushed to Github. By Github Pages convention, the public files are served from the docs-directory.
+
+```bash
+yarn run deploy
+```
 
 ### A note on generated files
 
