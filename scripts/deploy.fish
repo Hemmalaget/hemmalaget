@@ -37,7 +37,7 @@ end
 
 # Checks if there are no changes or untracked files present.
 function repository_is_clean
-  test -z "(git status -s)"
+  test -z (git status -s)
 end
 
 function print_success
