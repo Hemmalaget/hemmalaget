@@ -67,7 +67,7 @@ The website is automatically deployed whenever a new version of the `master` bra
 
 ### A note on generated files
 
-Github Pages is by far the easiest way to publish simple static sites with the caveat that only plain html, css and javascript is supported. This requires some tradeoffs to be made in order to use modern build tools - the main one being that the generated build files need to be committed and kept in sync with the source files. While it's generally discouraged to commit build artifacts, we're using a pre-push commit hook to make sure changes are properly synced and the generated files are marked as "binary" to reduce visual clutter in diffs. For this project, these provisions strike a nice balance between best practice and productivity.
+Github Pages is by far the easiest way to publish simple static sites with the caveat that only plain html, css and javascript is supported. This requires some tradeoffs to be made in order to use modern build tools - the main one being that the generated build files need to be committed and kept in sync with the source files. While it's generally discouraged to commit build artifacts, here we're using a custom deployment script to negate some of the down-sides of doing so. For this particular project, these provisions strike a nice balance between best practice and productivity.
 
 
 # Made by
