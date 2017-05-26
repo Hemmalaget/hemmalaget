@@ -54,7 +54,7 @@ function print_success
   end
 
   print 'Run'
-  print '  git push -f origin/master'
+  print '  git push -f'
   print 'when you\'re satisfied everything went well. 👍'
 end
 
