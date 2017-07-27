@@ -77,7 +77,7 @@ export default {
       name: 'Per-Arne Hederstaf',
       title: 'Verksamhetschef',
       email: 'per-arne@hemmalaget.se',
-      phone: '076 859 50 00',
+      phone: '076 869 50 00',
       description: 'Per-Arne har sedan 2001 jobbat i nära anknytning till assistans och startade 2010 Hemmalaget Assistans AB. Per-Arne jobbar främst från Alingsås och har helhetsansvaret för kunderna i Västra Götaland. Frihet för Per-Arne är att dra iväg några veckor med husbil runt vårt vackra land.'
     }
   }
