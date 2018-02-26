@@ -7,8 +7,8 @@ const Footer = () => (
     <p>Org.nr: 556852-0315</p>
     <p>
       Telefon:
-      <a className={style.link} href="tel:+46768595000">
-        076 859 5000
+      <a className={style.link} href="tel:+46768695000">
+        076 869 5000
       </a>
     </p>
     <p>
