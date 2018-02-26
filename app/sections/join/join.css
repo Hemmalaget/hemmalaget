@@ -1,4 +1,4 @@
-@import '../../common.css';
+@import "../../common.css";
 
 .join {
   display: flex;
@@ -30,7 +30,7 @@
 }
 
 .button {
-  composes: button from '../../common.css';
+  composes: button from "../../common.css";
 }
 
 @media (width >= 800px) {
@@ -39,7 +39,8 @@
     flex-wrap: wrap;
   }
 
-  .description, .banner {
+  .description,
+  .banner {
     width: 50%;
     border: var(--gutter) solid white; /* Used as a margin that's included in the elements total width. */
   }

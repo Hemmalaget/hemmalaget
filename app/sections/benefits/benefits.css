@@ -3,5 +3,5 @@
 }
 
 .list {
-  composes: listing from '../../common.css';
+  composes: listing from "../../common.css";
 }

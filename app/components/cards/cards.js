@@ -1,13 +1,20 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import style from './cards.css';
-import Card from './card.js';
+import React from "react"
+import PropTypes from "prop-types"
+import style from "./cards.css"
+import Card from "./card.js"
 
-const Cards = ({items}) => (
+const Cards = ({ items }) => (
   <ul className={style.cards}>
-    {items.map(o => <Card className={style.item} key={o.title} title={o.title} text={o.text} />)}
+    {items.map(o => (
+      <Card
+        className={style.item}
+        key={o.title}
+        title={o.title}
+        text={o.text}
+      />
+    ))}
   </ul>
-);
+)
 
 Cards.propTypes = {
   items: PropTypes.arrayOf(
@@ -16,6 +23,6 @@ Cards.propTypes = {
       text: PropTypes.string.required
     })
   )
-};
+}
 
-export default Cards;
+export default Cards

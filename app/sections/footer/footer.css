@@ -1,4 +1,4 @@
-@import '../../common.css';
+@import "../../common.css";
 
 .footer {
   background: var(--main) url(./debut_light_g.png);
@@ -11,6 +11,6 @@
 }
 
 .link {
-  composes: link from '../../common.css';
+  composes: link from "../../common.css";
   color: var(--dark);
 }

@@ -5,32 +5,35 @@
  * fully contained within the "App"-module and its child components.
  */
 
-
 //import 'babel-polyfill'; // Uncomment this to allow modern features in legacy browsers if necessary.
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { AppContainer } from 'react-hot-loader';
+import React from "react"
+import ReactDOM from "react-dom"
+import { AppContainer } from "react-hot-loader"
 
-import App from './app.js';
+import App from "./app.js"
 
-import 'file-loader?name=[name].[ext]!./index.html';
-import 'file-loader?name=[name]!../CNAME';
+import "file-loader?name=[name].[ext]!./index.html"
+import "file-loader?name=[name]!../CNAME"
 
-const mountpoint = document.getElementById('root');
+const mountpoint = document.getElementById("root")
 
 ReactDOM.render(
-  <AppContainer><App /></AppContainer>,
+  <AppContainer>
+    <App />
+  </AppContainer>,
   mountpoint
-);
+)
 
 // Enable hot reloading
 if (module.hot) {
-  module.hot.accept('./app.js', () => {
-    const ChangedApp = require('./app.js').default;
+  module.hot.accept("./app.js", () => {
+    const ChangedApp = require("./app.js").default
     ReactDOM.render(
-      <AppContainer><ChangedApp /></AppContainer>,
+      <AppContainer>
+        <ChangedApp />
+      </AppContainer>,
       mountpoint
-    );
-  });
+    )
+  })
 }

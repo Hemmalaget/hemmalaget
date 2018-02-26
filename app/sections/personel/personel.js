@@ -1,9 +1,8 @@
-import React from 'react';
-import style from './personel.css';
-import Card from './card/card.js';
-import texts from '../../texts.js';
-import pa from './per-arne.png';
-
+import React from "react"
+import style from "./personel.css"
+import Card from "./card/card.js"
+import texts from "../../texts.js"
+import pa from "./per-arne.png"
 
 const Personel = () => (
   <section id="Anställda" className={style.personel}>
@@ -22,6 +21,6 @@ const Personel = () => (
       </li>
     </ul>
   </section>
-);
+)
 
-export default Personel;
+export default Personel

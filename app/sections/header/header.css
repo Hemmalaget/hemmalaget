@@ -1,11 +1,11 @@
-@import '../../common.css';
+@import "../../common.css";
 
 .header {
   position: relative;
-	background: var(--main) url(./header.png) center;
-	background-size: cover;
-	padding-top: 2rem;
-	padding-bottom: 2.8rem; /* Visually compensate for decender on lowercase p. */
+  background: var(--main) url(./header.png) center;
+  background-size: cover;
+  padding-top: 2rem;
+  padding-bottom: 2.8rem; /* Visually compensate for decender on lowercase p. */
   min-height: 25rem;
   height: 60vw;
 }
@@ -14,10 +14,10 @@
   position: absolute;
   bottom: var(--gutter);
   left: var(--gutter);
-	padding: 0;
-	margin: 0;
-	font-size: 4.5rem;
-	font-weight: 200;
+  padding: 0;
+  margin: 0;
+  font-size: 4.5rem;
+  font-weight: 200;
   color: var(--dark);
 }
 

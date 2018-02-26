@@ -1,4 +1,4 @@
-@import './common.css';
+@import "./common.css";
 
 /*
  * Minimal CSS-reset.
@@ -11,7 +11,9 @@
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -39,7 +41,6 @@ img {
   max-width: 100%;
 }
 
-
 /*
  * Layout
  */
@@ -59,11 +60,11 @@ section {
   padding: calc(2*var(--gutter)) var(--gutter);
 
   /* Layout titles tightly to section border */
-  & > h1:first-child, & > h2:first-child {
+  & > h1:first-child,
+  & > h2:first-child {
     margin-top: 0;
   }
 }
-
 
 /*
  * Theme
@@ -73,7 +74,10 @@ html {
   color: var(--dark);
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-weight: normal;
 }
 

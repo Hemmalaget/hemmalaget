@@ -1,4 +1,4 @@
-@import '../../common.css';
+@import "../../common.css";
 
 .contact {
   padding-top: 0;
@@ -35,7 +35,7 @@
 }
 
 .button {
-  composes: button from '../../common.css';
+  composes: button from "../../common.css";
   font-size: 1.5rem;
 }
 

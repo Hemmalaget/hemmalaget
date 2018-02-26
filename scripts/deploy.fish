@@ -81,7 +81,7 @@ end
 print "Making some sanity checks..."
 
 # Make sure we're in the correct directory before running this script.
-if not cat ./package.json | grep --quiet '"name": "Hemmalaget"'
+if not cat ./package.json | grep --quiet '"name": "hemmalaget"'
   print "You're probably in the wrong directory; aborting. 😱"
   echo "You should be in the project root for hemmalaget."
   echo "Current position:" (pwd)

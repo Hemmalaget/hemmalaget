@@ -1,4 +1,4 @@
-@import '../../common.css';
+@import "../../common.css";
 
 .quote {
   display: flex;
@@ -15,7 +15,7 @@
   display: block;
   margin: 0 auto;
   max-width: 20rem;
-  border: .5rem solid white;
+  border: 0.5rem solid white;
   border-radius: 50%;
 }
 
@@ -26,15 +26,16 @@
   margin: 0;
   margin-top: 1rem;
 
-  & blockquote, & figcaption {
+  & blockquote,
+  & figcaption {
     margin: 0;
   }
 
   & blockquote::before {
-    content: '“';
+    content: "“";
   }
   & blockquote::after {
-    content: '”';
+    content: "”";
   }
 
   & figcaption {
@@ -57,7 +58,8 @@
       padding-left: 1rem;
     }
 
-    & blockquote, & figcaption {
+    & blockquote,
+    & figcaption {
       text-align: left;
     }
   }
@@ -69,7 +71,8 @@
       padding-left: 0;
       padding-right: 1rem;
     }
-    & blockquote, & figcaption {
+    & blockquote,
+    & figcaption {
       text-align: right;
     }
   }

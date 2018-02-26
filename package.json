@@ -1,5 +1,5 @@
 {
-  "name": "Hemmalaget",
+  "name": "hemmalaget",
   "description": "Homepage for Hemmalaget",
   "author": "Daniel Ström",
   "version": "1.0.0",
@@ -14,24 +14,19 @@
     "prebuild": "rm -rf docs/",
     "build": "webpack --config ./webpack.prod.config.js --progress --colors",
     "test": "jest",
-    "deploy": "./scripts/deploy.fish"
+    "deploy": "./scripts/deploy.fish",
+    "prettify": "prettier --no-semi --write app/**/*.js app/**/*.css"
   },
   "jest": {
-    "moduleFileExtensions": [
-      "js",
-      "jsx"
-    ],
-    "moduleDirectories": [
-      "node_modules",
-      "bower_components",
-      "shared"
-    ],
+    "moduleFileExtensions": ["js", "jsx"],
+    "moduleDirectories": ["node_modules", "bower_components", "shared"],
     "moduleNameMapper": {
       "\\.(css|less)$": "identity-obj-proxy"
     },
     "transform": {
       "^.+\\.js$": "babel-jest",
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileTransformer.js"
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
+        "<rootDir>/__mocks__/fileTransformer.js"
     }
   },
   "dependencies": {
@@ -62,6 +57,7 @@
     "postcss-loader": "^2.0.5",
     "postcss-reporter": "^3.0.0",
     "postcss-url": "^6.1.0",
+    "prettier": "^1.10.2",
     "prop-types": "^15.5.10",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",

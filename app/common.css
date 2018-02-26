@@ -1,11 +1,11 @@
 :root {
-  --main: #A8E6CE;
-  --mainLight: #B1F2D9;
-  --mainAlt: #EAF4DA;
-  --complementary: #FFB6B3;
+  --main: #a8e6ce;
+  --mainLight: #b1f2d9;
+  --mainAlt: #eaf4da;
+  --complementary: #ffb6b3;
   --complementaryDark: #ee9b96;
-  --dark: #3A3A3A;
-  --light: #FFFFFF;
+  --dark: #3a3a3a;
+  --light: #ffffff;
   --grey: #eee;
   --link: #00aeef;
 
@@ -20,15 +20,16 @@
 .button {
   display: inline-block;
   padding: 1rem 2rem;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   background: var(--complementary);
   color: var(--dark);
   text-decoration: none;
   font-size: 1.3rem;
   white-space: nowrap;
 
-  &:hover, &:focus {
-    box-shadow: var(--complementaryDark) 0 0 0 .2rem;
+  &:hover,
+  &:focus {
+    box-shadow: var(--complementaryDark) 0 0 0 0.2rem;
   }
 
   &:active {
