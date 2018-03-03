@@ -6,6 +6,11 @@ cache:
   directories:
     - "node_modules"
 
+before_install:
+  - sudo add-apt-repository ppa:danmbox/ppa -y
+  - sudo apt-get -qq update
+  - sudo apt-get install -y pngquant
+
 script:
   - yarn test
   - yarn build
