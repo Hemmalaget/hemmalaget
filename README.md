@@ -1,5 +1,7 @@
 # Hemmalaget
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/Hemmalaget/hemmalaget.svg)](https://greenkeeper.io/)
+
 [![dependencies Status](https://david-dm.org/hemmalaget/hemmalaget/status.svg)](https://david-dm.org/hemmalaget/hemmalaget)
 [![Build Status](https://travis-ci.org/Hemmalaget/hemmalaget.svg?branch=master)](https://travis-ci.org/Hemmalaget/hemmalaget)
 
