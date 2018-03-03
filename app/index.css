@@ -49,7 +49,7 @@ section {
   /*
     Avoid collapsing margins by default for sections making them fully contain
     their child elements.
-    @REFERENCE: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing
+    @REFERENCE: https://developer.mozilla.org/en-US/dist/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing
   */
   overflow: auto;
 

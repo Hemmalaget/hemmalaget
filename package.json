@@ -11,7 +11,7 @@
   "scripts": {
     "prestart": "yarn",
     "start": "node server.dev.js",
-    "prebuild": "rm -rf docs/",
+    "prebuild": "rm -rf dist/",
     "build": "webpack --config ./webpack.prod.config.js --progress --colors",
     "test": "jest",
     "deploy": "./scripts/deploy.fish",

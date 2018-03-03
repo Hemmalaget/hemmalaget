@@ -2,7 +2,7 @@
 
 #
 # This script "deploys" changes by commiting a freshly built snapshot of all
-# build artifacts in the docs/ folder.
+# build artifacts in the dist/ folder.
 #
 # NOTE: This script relies on the assumption that timing issues with conccurrent
 #       commits can be neglected. This assumption is built on the fact that there
@@ -15,7 +15,7 @@
 #
 
 # The deployment directory.
-set dir docs/
+set dir dist/
 
 # Helper function for setting assume-unchanged; makes for DRYer code.
 function ignore_changes

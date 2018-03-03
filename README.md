@@ -66,7 +66,7 @@ yarn test
 
 ## Deployment
 
-The website is automatically deployed whenever a new version of the `master` branch is pushed to Github. By Github Pages convention, the public files are served from the docs-directory.
+The website is automatically deployed whenever a new version of the `master` branch is pushed to Github. By Github Pages convention, the public files are served from the dist-directory.
 
 ```bash
 yarn run deploy
