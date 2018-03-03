@@ -14,7 +14,6 @@
     "prebuild": "rm -rf dist/",
     "build": "webpack --config ./webpack.prod.config.js --progress --colors",
     "test": "jest",
-    "deploy": "./scripts/deploy.fish",
     "prettify": "prettier --no-semi --write app/**/*.js app/**/*.css"
   },
   "jest": {
