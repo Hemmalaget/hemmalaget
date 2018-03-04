@@ -9,7 +9,7 @@
     "url": "https://github.com/Hemmalaget/hemmalaget"
   },
   "scripts": {
-    "prestart": "yarn",
+    "prestart": "npm install",
     "start": "node server.dev.js",
     "prebuild": "rm -rf dist/",
     "build": "webpack --config ./webpack.prod.config.js --progress --colors",
@@ -77,7 +77,6 @@
     "url-loader": "^1.0.1",
     "webpack": "^4.0.1",
     "webpack-cli": "^2.0.10",
-    "webpack-dev-server": "^3.1.0",
-    "yarn": "^1.5.1"
+    "webpack-dev-server": "^3.1.0"
   }
 }
