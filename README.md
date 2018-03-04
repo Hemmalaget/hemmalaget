@@ -1,9 +1,8 @@
 # Hemmalaget
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/Hemmalaget/hemmalaget.svg)](https://greenkeeper.io/)
-
-[![dependencies Status](https://david-dm.org/hemmalaget/hemmalaget/status.svg)](https://david-dm.org/hemmalaget/hemmalaget)
 [![Build Status](https://travis-ci.org/Hemmalaget/hemmalaget.svg?branch=master)](https://travis-ci.org/Hemmalaget/hemmalaget)
+[![dependencies Status](https://david-dm.org/hemmalaget/hemmalaget/status.svg)](https://david-dm.org/hemmalaget/hemmalaget)
+[![Greenkeeper badge](https://badges.greenkeeper.io/Hemmalaget/hemmalaget.svg)](https://greenkeeper.io/)
 
 A static homepage for Hemmalaget AB, built with React, Express, Webpack and hosted on Github Pages.
 
