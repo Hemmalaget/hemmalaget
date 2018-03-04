@@ -36,7 +36,7 @@ Each module is responsible for its own assets, notably including it's own css. T
 ## Requirements
 
 1. Node
-2. Yarn
+2. Npm
 3. Git
 
 I won't go into installation instructions as there's plenty of more up-to-date information about this online already.
@@ -52,7 +52,7 @@ brew install libpng
 The below commands will install dependencies, start a development server with hot reload and finally open a tab in your web browser of choice.
 
 ```bash
-yarn start
+npm start
 open http://localhost:3000
 ```
 
@@ -63,7 +63,7 @@ Most changes to the code should be instantaneously and automatically updated in 
 As this is a static webpage, there's frankly not a lot of behavior to test. There are however a couple of gratuitous tests using Jest which can be run with
 
 ```bash
-yarn test
+npm test
 ```
 
 ## Deployment

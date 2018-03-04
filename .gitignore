@@ -32,5 +32,3 @@ public/
 bower_components/
 
 dist/
-
-package-lock.json
