@@ -2,6 +2,7 @@ const webpack = require("webpack")
 const path = require("path")
 
 module.exports = {
+  mode: "production",
   devtool: "cheap-module-source-map",
   entry: [
     // Main entry
@@ -17,11 +18,11 @@ module.exports = {
       "process.env": {
         NODE_ENV: JSON.stringify("production")
       }
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true
     })
   ],
+  optimization: {
+    minimize: true
+  },
   module: {
     rules: [
       {
