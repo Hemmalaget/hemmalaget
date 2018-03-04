@@ -14,7 +14,6 @@ import { AppContainer } from "react-hot-loader"
 import App from "./app.js"
 
 import "file-loader?name=[name].[ext]!./index.html"
-import "file-loader?name=[name]!../CNAME"
 
 const mountpoint = document.getElementById("root")
 
