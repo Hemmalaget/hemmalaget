@@ -17,17 +17,25 @@
     "prettify": "prettier --no-semi --write app/**/*.js app/**/*.css"
   },
   "jest": {
-    "moduleFileExtensions": ["js", "jsx"],
-    "moduleDirectories": ["node_modules", "bower_components", "shared"],
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "bower_components",
+      "shared"
+    ],
     "moduleNameMapper": {
       "\\.(css|less)$": "identity-obj-proxy"
     },
     "transform": {
       "^.+\\.js$": "babel-jest",
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
-        "<rootDir>/__mocks__/fileTransformer.js"
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileTransformer.js"
     },
-    "setupFiles": ["<rootDir>/setup-jest.js"]
+    "setupFiles": [
+      "<rootDir>/setup-jest.js"
+    ]
   },
   "dependencies": {
     "babel-core": "^6.21.0",
@@ -51,6 +59,7 @@
     "identity-obj-proxy": "^3.0.0",
     "image-webpack-loader": "^4.1.0",
     "jest": "^22.4.2",
+    "jest-cli": "^22.4.2",
     "postcss": "^6.0.1",
     "postcss-browser-reporter": "^0.5.0",
     "postcss-cssnext": "^3.1.0",
@@ -67,6 +76,7 @@
     "style-loader": "^0.20.2",
     "url-loader": "^1.0.1",
     "webpack": "^4.0.1",
+    "webpack-cli": "^2.0.10",
     "webpack-dev-server": "^3.1.0",
     "yarn": "^1.5.1"
   }
