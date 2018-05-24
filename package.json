@@ -59,7 +59,7 @@
     "identity-obj-proxy": "^3.0.0",
     "image-webpack-loader": "^4.1.0",
     "jest": "^22.4.2",
-    "jest-cli": "^22.4.2",
+    "jest-cli": "^23.0.0",
     "postcss": "^6.0.1",
     "postcss-browser-reporter": "^0.5.0",
     "postcss-cssnext": "^3.1.0",
