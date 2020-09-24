@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hemmalaget</title>
+
+    <style>
+      :root {
+        --main: hsl(157deg 55% 78%);
+        --mainLight: hsl(157deg 70% 82%);
+        --mainAlt: #eaf4da;
+        --complementary: #ffb6b3;
+        --complementaryDark: #ee9b96;
+        --dark: #3a3a3a;
+        --light: #ffffff;
+        --grey: hsl(0deg 0% 93%);
+        --greyLight: hsl(0deg 15% 97%);
+        --link: #00aeef;
+
+        --gutter: 1rem;
+      }
+
+      html {
+        box-sizing: border-box;
+        font-size: 16px;
+      }
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        max-width: 100%;
+      }
+
+      body {
+        font-family: "Helvetica Neue", "Calibri Light", Roboto, sans-serif;
+        font-size: 120%;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        letter-spacing: 0.02em;
+        color: var(--dark);
+
+        /* Should correspond to the navbar height */
+        padding-top: calc(2rem + 2 * var(--gutter) + 0.5rem);
+      }
+
+      section,
+      .section {
+        padding: calc(2 * var(--gutter)) var(--gutter);
+      }
+
+      section.green,
+      .section.green {
+        background: var(--main);
+        border-top: 1.2rem solid var(--mainLight);
+        border-bottom: 1.2rem solid var(--mainLight);
+        padding: 2rem var(--gutter);
+        background: var(--main)
+          repeating-linear-gradient(
+            -55deg,
+            var(--main),
+            var(--main) 2px,
+            var(--mainLight) 2px,
+            var(--mainLight) 4px
+          );
+      }
+
+      section.grey {
+        background: var(--grey);
+        background: var(--grey) url(/app/sections/quote/debut_light_g.png);
+        padding: 2rem var(--gutter);
+        background: var(--grey)
+          repeating-linear-gradient(
+            -55deg,
+            var(--grey),
+            var(--grey) 2px,
+            var(--greyLight) 2px,
+            var(--greyLight) 4px
+          );
+      }
+
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: var(--light);
+        z-index: 1;
+        border-bottom: 0.5rem solid var(--main);
+      }
+
+      .navbar .bar {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .navbar h1 {
+        font-weight: normal;
+        font-size: 1.8rem;
+        padding: var(--gutter);
+      }
+
+      .navbar nav {
+        display: none;
+      }
+
+      .navbar nav.open {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .navbar nav a {
+        padding: 1.5rem;
+        border-top: 1px solid var(--grey);
+        text-align: center;
+        color: var(--dark);
+        text-decoration: none;
+      }
+
+      .navbar .icon {
+        appearance: none;
+        border: none;
+        background: none;
+        font-size: 3rem;
+        /* height: 2rem; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        padding: 0 var(--gutter);
+      }
+
+      .cover {
+        position: relative;
+        background: var(--main) url(app/sections/header/header.png) center;
+        background-size: cover;
+        min-height: 25rem;
+        height: 60vw;
+      }
+
+      .cover p {
+        font-weight: 200;
+        font-size: 4.5rem;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        padding: var(--gutter);
+      }
+
+      img.avatar {
+        border: 0.5rem solid var(--light);
+        border-radius: 50%;
+      }
+
+      img.avatar.green {
+        border-color: var(--main);
+      }
+
+      blockquote {
+        font-size: 1.9rem;
+        text-align: center;
+        margin-top: 0.5rem;
+      }
+
+      blockquote footer {
+        margin-top: 1rem;
+      }
+
+      .region.title {
+        font-size: 2rem;
+        font-weight: 500;
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+      .region.text {
+        font-size: 1.5rem;
+        text-align: center;
+      }
+
+      h2 {
+        font-size: 3rem;
+        font-weight: normal;
+        margin-bottom: 1.4rem;
+      }
+
+      h3 {
+        font-size: 1.8rem;
+        margin-bottom: 0.7rem;
+      }
+
+      .features {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .features > div {
+        padding: calc(1.5 * var(--gutter)) var(--gutter);
+      }
+
+      .features > div:nth-child(2n) {
+        background: var(--mainAlt);
+      }
+
+      .banner div[role="img"] {
+        height: 500px;
+        background: url(app/sections/contact/natural_smile.jpg) center;
+        background-size: cover;
+        width: 100%;
+      }
+
+      .message {
+        background: var(--grey);
+        padding: calc(2 * var(--gutter));
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .message p {
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+
+      a[role="button"] {
+        display: block;
+        background: var(--complementary);
+        font-size: 1.5rem;
+        padding: 1rem 2rem;
+        border-radius: 0.5rem;
+        text-align: center;
+        cursor: pointer;
+        text-decoration: none;
+        color: var(--dark);
+      }
+
+      a[role="button"]:hover,
+      a[role="button"]:focus {
+        transform: scale(1.02);
+        transition: all 0.2s;
+      }
+
+      a[role="button"]:active {
+        transform: initial;
+        transition: all 0s;
+      }
+
+      .employee {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .employee .name {
+        margin-top: 1.5rem;
+        margin-bottom: 0;
+        font-size: 2rem;
+        font-weight: normal;
+      }
+
+      .employee .title {
+        font-size: 1.5rem;
+        font-weight: normal;
+        margin-bottom: 1.5rem;
+      }
+
+      .employee a {
+        margin-bottom: 1rem;
+        color: var(--link);
+        font-size: 1.4rem;
+      }
+
+      .partners {
+        display: grid;
+        gap: 2rem;
+        text-align: center;
+      }
+
+      .partners .logos {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+      .partners img {
+        max-width: 8rem;
+        max-height: 6rem;
+      }
+
+      footer.section {
+        font-size: 1.5rem;
+      }
+
+      footer.section dl {
+        display: grid;
+        grid-template-columns: 1fr auto;
+      }
+
+      footer.section a {
+        color: var(--dark);
+        text-decoration: none;
+      }
+
+      footer.section a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+
+  <body id="Start">
+    <div class="navbar">
+      <div class="bar">
+        <h1>Hemmalaget</h1>
+
+        <button class="icon" onclick="toggleNav()">≡</button>
+      </div>
+
+      <nav>
+        <a onclick="toggleNav(false)" href="#Start">Start</a>
+        <a onclick="toggleNav(false)" href="#Erbjudande">Erbjudande</a>
+        <a onclick="toggleNav(false)" href="#Assistent">Assistent</a>
+        <a onclick="toggleNav(false)" href="#Anställda">Anställda</a>
+        <a onclick="toggleNav(false)" href="#Kontakt">Kontakt</a>
+      </nav>
+    </div>
+
+    <section class="cover">
+      <p>Personlig assistans på dina villkor</p>
+    </section>
+
+    <section class="green">
+      <img class="avatar" src="app/sections/quote/owner.png" />
+      <blockquote>
+        <p>
+          Hemmalaget är det personliga assistans­bolaget som sätter dig och dina
+          behov i fokus. Tillsam­mans ser vi till att du får den hjälp som du
+          vill ha, utan onödigt krångel.
+        </p>
+        <footer>Per-Arne, VD</footer>
+      </blockquote>
+    </section>
+
+    <section class="grey">
+      <p class="region title">Västra Götaland</p>
+      <p class="region text">
+        Sedan 2011 bedriver Hemmalaget Assistans AB verksamhet inom personlig
+        assistans i Västra Götalandsregionen.
+      </p>
+    </section>
+
+    <section id="Erbjudande">
+      <h2>Vi erbjuder</h2>
+
+      <img style="margin: 2rem 0" src="app/sections/offer/cloud.png" />
+
+      <div class="features">
+        <div>
+          <h3>Kontaktperson</h3>
+          <p>
+            Vi tror på devisen ju fler kockar desto sämre soppa. Därför vill vi
+            att du som kund ska kunna vända dig till din kontaktperson i alla
+            frågor som rör assistansen. Det är kontaktpersonen som känner dig
+            och dina behov bäst. Därför är det naturligt att din personliga
+            kontaktperson är den som i största möjliga mån handhar alla ärenden
+            kring din personliga assistans.
+          </p>
+        </div>
+        <div>
+          <h3>Transparent redovisning</h3>
+          <p>
+            Vi ser det som en självklarhet att du som kund ska ha full insyn i
+            hur assistansersättningen hanteras och hur den ekonomiska
+            fördelningen ser ut. Vi skickar månadsvis en fullständig redovisning
+            till dig för att uppdatera dig om timmar och assistansmedel.
+            Rapporten upprättas i samråd med dig och dina önskemål. För oss är
+            det oerhört viktigt att du som kund får relevant redovisning i
+            realtid. Därför har vi utformat vårt arbetssätt för att kunna ge dig
+            periodrapport för föregående månad redan den 15:e månaden efter.
+          </p>
+        </div>
+        <div>
+          <h3>Delaktighet</h3>
+          <p>
+            Innan vårt samarbete inleds upprättar du och din kontaktperson
+            tillsammans en genomförandeplan. Här har du möjlighet att påverka
+            alla delar av assistansen och beskriva hur du vill att samarbetet
+            mellan oss ska fungera. Genomförandeplanen ligger till grund för
+            allt arbete kring din assistans, som en skräddarsydd
+            överenskommelse. Du kan när som helst uppdatera genomförandeplanen
+            med nya önskemål eller direktiv. Hemmalaget är flexibla och arbetar
+            ständigt med att hitta individuella lösningar för att hålla den
+            personliga assistansen personlig.
+          </p>
+        </div>
+        <div>
+          <h3>Frihet</h3>
+          <p>
+            Assistans ska vara någonting som underlättar livet för den
+            assistansberättigade, inte något som tar tid och krånglar till
+            tillvaron. Hos oss får du som assistansberättigad själv bestämma
+            vilka delar av assistansen du vill sköta och vilka delar du önskar
+            att vi tar hand om. Det är mycket att tänka på för att assistansen
+            ska fungera på bästa sätt. För en person är frihet att få sköta det
+            mesta kring assistansen själv, för en annan är frihet att kunna
+            lägga sin tid på annat. Vad är frihet för dig?
+          </p>
+        </div>
+        <div>
+          <h3>Juridisk rådgivning</h3>
+          <p>
+            Att ansöka om personlig assistans kan vara en långdragen process och
+            även den som beviljats assistans får inte alltid behålla den. Genom
+            Hemmalaget får du vid behov tillgång till juridisk expertis vid
+            t.ex. omprövningar eller överklaganden. Vi samarbetar med en
+            advokatbyrå som har stor erfarenhet av frågor som rör just personlig
+            assistans. Med detta stöd i ryggen vill vi underlätta dina turer med
+            Försäkringskassa eller kommun. Kontakta Hemmalaget för mer info.
+          </p>
+        </div>
+        <div>
+          <h3>Smidig tidrapportering</h3>
+          <p>
+            Genom applikationen Aiai får både du som assistansberättigad och
+            dina assistenter full koll på schema och timmar. I slutet av varje
+            månad godkänns tidsredovisningen digitalt genom Aiais webbaserade
+            tjänst. Dina assistenter slipper tidskrävande tidrapportering i
+            pappersformat och eftersom rapporteringen är synkroniserad med
+            schemat minimeras samtidigt risken för felaktig rapportering. Läs
+            mer på aiai.se.
+          </p>
+        </div>
+        <div>
+          <h3>Know-how</h3>
+          <p>
+            Vi på Hemmalaget har mångårig erfarenhet av arbete inom personlig
+            assistans. Du kan vara trygg i vetskapen om att vi har hög kompetens
+            och är vana i våra yrkesroller. För att hålla oss uppdaterade med
+            lagar och bestämmelser fortbildas all administrativ personal inom
+            samtliga områden som är relevanta för uppdraget
+          </p>
+        </div>
+        <div>
+          <h3>Tillgänglighet</h3>
+          <p>
+            Vi lägger stor vikt vid att finnas tillgängliga för dig på dina
+            villkor. Vid sidan av våra generösa öppettider har vi en bemannad
+            jourverksamhet. Du ska kunna nå oss dygnet runt 365 dagar om året!
+            Hemmalaget arbetar med korta beslutsvägar så att du snabbt kan få
+            svar på dina frågor och är öppna för olika kommunikationsvägar som
+            passar just dig.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="banner">
+      <div role="img"></div>
+      <div class="message">
+        <p>Vi hjälper dig!</p>
+        <a role="button" href="mailto:info@hemmalaget.se">Kontakta oss</a>
+      </div>
+    </section>
+
+    <section class="green">
+      <img class="avatar" src="app/sections/quote/client.png" />
+      <blockquote>
+        <p>Vi kompletterar varandra, min assistent och jag.</p>
+        <cite>Andreas</cite>
+      </blockquote>
+    </section>
+
+    <section id="Assistent">
+      <h2>Vill du bli en del av Hemmalaget?</h2>
+
+      <p>
+        Vi är måna om att erbjuda hög service till både kunder och anställda
+        eftersom vi vet att bra personliga assistenter är en förutsättning för
+        bra personlig assistans. Därför vill vi vara en riktigt bra arbetsgivare
+        och arbeta för goda relationer med varje medarbetare. Vi vill att du ska
+        trivas och stanna hos oss!
+      </p>
+
+      <div class="message">
+        <p>Skicka ditt CV och Personligt Brev till oss!</p>
+        <a href="" role="button">Ansök nu</a>
+      </div>
+
+      <div class="features">
+        <div>
+          <h3>Kollektivavtal</h3>
+          <p>
+            Hemmalaget Assistans är anslutna till KFO och deras kollektivavtal.
+            Det innebär för dig som assistent att du har en rad olika
+            försäkringar att tillgå som anställd hos oss. Förutom att du är
+            försäkrad på arbetstid kan du t.ex. ansöka om 10 % extra
+            sjuklönetillägg vid längre sjukskrivning eller 10 % extra i
+            föräldratillägg inför föräldraledighet. Du har även en livförsäkring
+            och vi betalar in till din tjänstepension.
+          </p>
+        </div>
+        <div>
+          <h3>Utbildning</h3>
+          <p>
+            Hemmalaget Assistans erbjuder en rad olika utbildningar för dig som
+            assistent. Hjärt och lungräddning, Introduktionskurs för vikarier,
+            Bemötande och Rullstolskurs är bara några av de utbildningar som
+            erbjuds. Utbildningarna planeras alltid i samråd med den du jobbar
+            hos för att kunna skräddarsy relevant fortbildning för just din
+            arbetsgrupp. Du är också alltid välkommen att komma med förslag och
+            önskemål.
+          </p>
+        </div>
+        <div>
+          <h3>Friskvård</h3>
+          <p>
+            Du har som anställd hos Hemmalaget alltid rätt till friskvård upp
+            till 250 kr/månad. Att vara personlig assistent kan vara ett fysiskt
+            krävande yrke och det är viktigt att man upprätthåller en bra fysik.
+            Detta vill vi främja genom friskvårdbidraget. Du väljer vilken typ
+            av friskvård du vill utöva och får information om vilka aktiviteter
+            som är godkända enligt Skatteverkets riktlinjer.
+          </p>
+        </div>
+        <div>
+          <h3>AIAI</h3>
+          <p>
+            Genom vår portal, www.aiai.se, har du alltid tillgång till schema
+            digitalt genom din smartphone/dator. Tidrapporter genereras
+            automatiskt baserat på schema och allt du behöver göra är att
+            månadsvis godkänna din tidrapport. Aiai fungerar även som en
+            kommunikationsportal där du hittar all relevant information om ditt
+            arbete eller din anställning hos oss.
+          </p>
+        </div>
+        <div>
+          <h3>Fullservice</h3>
+          <p>
+            Vi är ett fullserviceföretag och nås dygnet runt. Det tycker vi är
+            en viktig förutsättning. Du ska känna dig trygg med att alltid kunna
+            vända dig till oss. Händer något under ditt arbetspass eller blir du
+            akut sjuk når du oss när som helst genom vår bemannade jour. Du har
+            även en kontaktperson som hjälper till vid alla typer av ärenden. Vi
+            strävar efter att alltid ge snabb återkoppling på alla dina frågor
+            och funderingar.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="green">
+      <img class="avatar" src="app/sections/quote/assistant.png" />
+      <blockquote>
+        <p>Det är underbart att få göra skillnad i en människas liv.</p>
+        <cite>Susanne, Assistent</cite>
+      </blockquote>
+    </section>
+
+    <section id="Anställda">
+      <h2>Vi på Hemmalaget</h2>
+
+      <div class="employee">
+        <img class="avatar green" src="app/sections/quote/owner.png" />
+        <h3 class="name">Per-Arne Hederstaf</h3>
+        <p class="title">Verksamhetschef</p>
+        <a>per-arne@hemmalaget.se</a>
+        <a>076 869 50 00</a>
+        <p>
+          Per-Arne har sedan 2001 jobbat i nära anknytning till assistans och
+          startade 2010 Hemmalaget Assistans AB. Per-Arne jobbar främst från
+          Alingsås och har helhetsansvaret för kunderna i Västra Götaland.
+          Frihet för Per-Arne är att dra iväg några veckor med husbil runt vårt
+          vackra land.
+        </p>
+      </div>
+    </section>
+
+    <section class="partners">
+      <p>I sammarbete med:</p>
+
+      <div class="logos">
+        <img src="app/sections/collaborators/kfo.png" />
+        <img src="app/sections/collaborators/aiai.png" />
+      </div>
+
+      <p>Vi innehar tillstånd från Inspektionen för Vård och Omsorg</p>
+    </section>
+
+    <footer class="section green" id="Kontakt">
+      <h2>Kontakt</h2>
+      <dl>
+        <dt>Org.nr</dt>
+        <dd>556852-0315</dd>
+
+        <dt>Telefon</dt>
+        <dd><a href="tel:+46768695000">076 869 5000</a></dd>
+
+        <dt>E-post</dt>
+        <dd><a href="mailto:info@hemmalaget.se">info@hemmalaget.se</a></dd>
+
+        <dt>Adress</dt>
+        <dd>
+          <a href="https://goo.gl/maps/fmYpF54PYM8hU8St8"
+            >Källedalsgatan 1 <br />
+            521 52 Floby</a
+          >
+        </dd>
+      </dl>
+    </footer>
+
+    <script>
+      function toggleNav(newValue) {
+        switch (newValue) {
+          case true:
+            document.querySelector(".navbar nav").classList.add("open");
+            break;
+
+          case false:
+            document.querySelector(".navbar nav").classList.remove("open");
+            break;
+
+          default:
+            document.querySelector(".navbar nav").classList.toggle("open");
+            break;
+        }
+      }
+    </script>
+  </body>
+</html>
