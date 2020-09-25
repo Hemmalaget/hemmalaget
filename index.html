@@ -19,6 +19,8 @@
         --link: #00aeef;
 
         --gutter: 1rem;
+
+        --navBarHeight: calc(-2rem - 2 * var(--gutter) - 0.5rem);
       }
 
       html {
@@ -45,14 +47,13 @@
         -moz-osx-font-smoothing: grayscale;
         letter-spacing: 0.02em;
         color: var(--dark);
-
-        /* Should correspond to the navbar height */
-        padding-top: calc(2rem + 2 * var(--gutter) + 0.5rem);
+        padding-top: var(--navBarHeight);
       }
 
       section,
       .section {
         padding: calc(2 * var(--gutter)) var(--gutter);
+        position: relative;
       }
 
       section.green,
@@ -69,6 +70,16 @@
             var(--mainLight) 2px,
             var(--mainLight) 4px
           );
+      }
+
+      .target {
+        visibility: hidden;
+        position: absolute;
+        background: #ee9b96;
+        width: 0;
+        height: 0;
+        top: var(--navBarHeight);
+        left: 0;
       }
 
       section.grey {
@@ -92,7 +103,7 @@
         right: 0;
         background: var(--light);
         z-index: 1;
-        border-bottom: 0.5rem solid var(--main);
+        border-bottom: 0.5rem solid var(--mainLight);
       }
 
       .navbar .bar {
@@ -121,6 +132,13 @@
         text-align: center;
         color: var(--dark);
         text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .navbar nav a:hover {
+        background: var(--mainLight);
       }
 
       .navbar .icon {
@@ -134,6 +152,30 @@
         align-items: center;
         cursor: pointer;
         padding: 0 var(--gutter);
+      }
+
+      .navbar .icon:hover {
+        background: var(--mainLight);
+      }
+
+      @media (min-width: 700px) {
+        .navbar {
+          display: flex;
+          justify-content: space-between;
+        }
+
+        .navbar .icon {
+          display: none;
+        }
+
+        .navbar nav {
+          display: flex;
+        }
+
+        .navbar nav a {
+          border: none;
+          padding: 1rem 0.5rem;
+        }
       }
 
       .cover {
@@ -151,11 +193,51 @@
         left: 0;
         bottom: 0;
         padding: var(--gutter);
+        max-width: 800px;
+      }
+
+      @media (min-width: 700px) {
+        .cover {
+          max-height: 70vh;
+        }
+
+        .cover p {
+          font-size: 6rem;
+        }
+      }
+
+      .quote {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      @media (min-width: 700px) {
+        .quote {
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .quote blockquote {
+          text-align: left;
+          margin-left: 1rem;
+        }
+
+        .quote.reverse {
+          flex-direction: row-reverse;
+        }
+
+        .quote.reverse blockquote {
+          text-align: right;
+          margin-right: 1rem;
+        }
       }
 
       img.avatar {
         border: 0.5rem solid var(--light);
         border-radius: 50%;
+        max-width: min(100%, 20rem);
       }
 
       img.avatar.green {
@@ -172,13 +254,22 @@
         margin-top: 1rem;
       }
 
-      .region.title {
+      .region {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .region > * {
+        max-width: 700px;
+      }
+      .region .title {
         font-size: 2rem;
         font-weight: 500;
         text-align: center;
         margin-bottom: 1rem;
       }
-      .region.text {
+      .region .text {
         font-size: 1.5rem;
         text-align: center;
       }
@@ -194,6 +285,16 @@
         margin-bottom: 0.7rem;
       }
 
+      .offer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .offer h2 {
+        align-self: flex-start;
+      }
+
       .features {
         display: grid;
         gap: 1rem;
@@ -207,11 +308,34 @@
         background: var(--mainAlt);
       }
 
+      @media (min-width: 700px) {
+        .features {
+          grid-template-columns: 1fr 1fr;
+        }
+        .features > div:nth-child(n) {
+          background: none;
+        }
+        .features > div:nth-child(4n - 1) {
+          background: var(--mainAlt);
+        }
+        .features > div:nth-child(4n) {
+          background: var(--mainAlt);
+        }
+      }
+
       .banner div[role="img"] {
         height: 500px;
         background: url(app/sections/contact/natural_smile.jpg) center;
         background-size: cover;
         width: 100%;
+        background-position: 70% 30%;
+      }
+
+      @media (min-width: 800px) {
+        .banner {
+          display: flex;
+          flex-direction: row-reverse;
+        }
       }
 
       .message {
@@ -220,12 +344,32 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
+        align-items: center;
       }
 
       .message p {
         font-size: 2rem;
         text-align: center;
         margin-bottom: 1rem;
+      }
+
+      .banner .message p {
+        font-size: 4rem;
+        font-weight: 300;
+      }
+
+      .assistant .message {
+        margin-top: 2rem;
+      }
+
+      @media (min-width: 800px) {
+        .assistant header {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 1rem;
+          margin-bottom: 2rem;
+        }
       }
 
       a[role="button"] {
@@ -251,11 +395,25 @@
         transition: all 0s;
       }
 
+      .employees {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .employees h2 {
+        align-self: flex-start;
+      }
+
       .employee {
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
+      }
+
+      .employee {
+        max-width: 800px;
       }
 
       .employee .name {
@@ -275,11 +433,16 @@
         margin-bottom: 1rem;
         color: var(--link);
         font-size: 1.4rem;
+        text-decoration: none;
+      }
+
+      .employee a:hover {
+        text-decoration: underline;
       }
 
       .partners {
         display: grid;
-        gap: 2rem;
+        gap: 1.5rem;
         text-align: center;
       }
 
@@ -300,7 +463,8 @@
 
       footer.section dl {
         display: grid;
-        grid-template-columns: 1fr auto;
+        grid-template-columns: min-content 1fr;
+        gap: 1rem;
       }
 
       footer.section a {
@@ -335,7 +499,7 @@
       <p>Personlig assistans på dina villkor</p>
     </section>
 
-    <section class="green">
+    <section class="green quote reverse">
       <img class="avatar" src="app/sections/quote/owner.png" />
       <blockquote>
         <p>
@@ -347,15 +511,16 @@
       </blockquote>
     </section>
 
-    <section class="grey">
-      <p class="region title">Västra Götaland</p>
-      <p class="region text">
+    <section class="grey region">
+      <p class="title">Västra Götaland</p>
+      <p class="text">
         Sedan 2011 bedriver Hemmalaget Assistans AB verksamhet inom personlig
         assistans i Västra Götalandsregionen.
       </p>
     </section>
 
-    <section id="Erbjudande">
+    <section class="offer">
+      <div class="target" id="Erbjudande"></div>
       <h2>Vi erbjuder</h2>
 
       <img style="margin: 2rem 0" src="app/sections/offer/cloud.png" />
@@ -468,7 +633,7 @@
       </div>
     </section>
 
-    <section class="green">
+    <section class="green quote">
       <img class="avatar" src="app/sections/quote/client.png" />
       <blockquote>
         <p>Vi kompletterar varandra, min assistent och jag.</p>
@@ -476,21 +641,26 @@
       </blockquote>
     </section>
 
-    <section id="Assistent">
-      <h2>Vill du bli en del av Hemmalaget?</h2>
+    <section class="assistant">
+      <div class="target" id="Assistent"></div>
+      <header>
+        <div>
+          <h2>Vill du bli en del av Hemmalaget?</h2>
 
-      <p>
-        Vi är måna om att erbjuda hög service till både kunder och anställda
-        eftersom vi vet att bra personliga assistenter är en förutsättning för
-        bra personlig assistans. Därför vill vi vara en riktigt bra arbetsgivare
-        och arbeta för goda relationer med varje medarbetare. Vi vill att du ska
-        trivas och stanna hos oss!
-      </p>
+          <p>
+            Vi är måna om att erbjuda hög service till både kunder och anställda
+            eftersom vi vet att bra personliga assistenter är en förutsättning
+            för bra personlig assistans. Därför vill vi vara en riktigt bra
+            arbetsgivare och arbeta för goda relationer med varje medarbetare.
+            Vi vill att du ska trivas och stanna hos oss!
+          </p>
+        </div>
 
-      <div class="message">
-        <p>Skicka ditt CV och Personligt Brev till oss!</p>
-        <a href="" role="button">Ansök nu</a>
-      </div>
+        <div class="message">
+          <p>Skicka ditt CV och Personligt Brev till oss!</p>
+          <a href="" role="button">Ansök nu</a>
+        </div>
+      </header>
 
       <div class="features">
         <div>
@@ -554,7 +724,7 @@
       </div>
     </section>
 
-    <section class="green">
+    <section class="green quote reverse">
       <img class="avatar" src="app/sections/quote/assistant.png" />
       <blockquote>
         <p>Det är underbart att få göra skillnad i en människas liv.</p>
@@ -562,15 +732,16 @@
       </blockquote>
     </section>
 
-    <section id="Anställda">
+    <section class="employees">
+      <div class="target" id="Anställda"></div>
       <h2>Vi på Hemmalaget</h2>
 
       <div class="employee">
         <img class="avatar green" src="app/sections/quote/owner.png" />
         <h3 class="name">Per-Arne Hederstaf</h3>
         <p class="title">Verksamhetschef</p>
-        <a>per-arne@hemmalaget.se</a>
-        <a>076 869 50 00</a>
+        <a href="mailto:per-arne@hemmalaget.se">per-arne@hemmalaget.se</a>
+        <a href="tel:0768695000">076 869 50 00</a>
         <p>
           Per-Arne har sedan 2001 jobbat i nära anknytning till assistans och
           startade 2010 Hemmalaget Assistans AB. Per-Arne jobbar främst från
@@ -592,7 +763,8 @@
       <p>Vi innehar tillstånd från Inspektionen för Vård och Omsorg</p>
     </section>
 
-    <footer class="section green" id="Kontakt">
+    <footer class="section green">
+      <div class="target" id="Kontakt"></div>
       <h2>Kontakt</h2>
       <dl>
         <dt>Org.nr</dt>
