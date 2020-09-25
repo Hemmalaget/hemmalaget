@@ -1,7 +1,0 @@
-.benefits {
-  padding-top: 0;
-}
-
-.list {
-  composes: listing from "../../common.css";
-}
