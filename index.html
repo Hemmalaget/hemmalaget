@@ -23,7 +23,17 @@
 
         --gutter: 1rem;
 
-        --navBarHeight: calc(2rem + 2 * var(--gutter) + 0.5rem);
+        --navbarBorderHeight: 0.5rem;
+        --navbarHeight: calc(
+          2rem + 2 * var(--gutter) + var(--navbarBorderHeight)
+        );
+      }
+
+      .scrolled {
+        --navbarBorderHeight: 0.4rem;
+        --navbarHeight: calc(
+          2rem + 1 * var(--gutter) + var(--navbarBorderHeight)
+        );
       }
 
       html {
@@ -50,7 +60,7 @@
         -moz-osx-font-smoothing: grayscale;
         letter-spacing: 0.02em;
         color: var(--dark);
-        padding-top: var(--navBarHeight);
+        padding-top: var(--navbarHeight);
       }
 
       body > section,
@@ -103,7 +113,7 @@
         background: #ee9b96;
         width: 0;
         height: 0;
-        top: calc(0px - var(--navBarHeight));
+        top: calc(0px - var(--navbarHeight));
         left: 0;
       }
 
@@ -114,25 +124,34 @@
         right: 0;
         background: var(--light);
         z-index: 1;
-        border-bottom: 0.5rem solid var(--mainLight);
+        border-bottom: var(--navbarBorderHeight) solid var(--mainLight);
+        box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+        display: flex;
+        flex-direction: column;
       }
 
       .navbar .bar {
         display: flex;
         justify-content: space-between;
+        height: calc(var(--navbarHeight) - var(--navbarBorderHeight));
+        align-items: center;
       }
 
       .navbar h1 {
         font-weight: normal;
         font-size: 1.8rem;
-        padding: var(--gutter);
-
+        padding-right: var(--gutter);
         padding-left: calc(env(safe-area-inset-left) + var(--gutter));
+      }
+
+      .navbar h1 a {
+        text-decoration: none;
+        color: var(--dark);
       }
 
       .navbar nav {
         display: none;
-        max-height: calc(100vh - var(--navBarHeight));
+        max-height: calc(100vh - var(--navbarHeight));
         overflow: auto;
       }
 
@@ -161,12 +180,16 @@
         border: none;
         background: none;
         font-size: 3rem;
-        /* height: 2rem; */
         display: flex;
         justify-content: center;
         align-items: center;
         cursor: pointer;
         padding: 0 var(--gutter);
+        align-self: stretch;
+      }
+
+      .scrolled .navbar .icon {
+        font-size: 2.5rem;
       }
 
       .navbar .icon:hover {
@@ -176,9 +199,14 @@
       @media (min-width: 700px) {
         .navbar {
           display: flex;
+          flex-direction: row;
           justify-content: space-between;
 
           padding-right: calc(env(safe-area-inset-right) + var(--gutter));
+        }
+
+        .navbar .bar {
+          align-self: center;
         }
 
         .navbar .icon {
@@ -197,7 +225,7 @@
 
       .cover {
         position: relative;
-        background: var(--main) url(images/header.png) center;
+        background: url(images/header.png) center;
         background-size: cover;
         min-height: 25rem;
         height: 60vw;
@@ -501,7 +529,9 @@
   <body id="Start">
     <div class="navbar">
       <div class="bar">
-        <h1>Hemmalaget</h1>
+        <h1>
+          <a href="#Start">Hemmalaget</a>
+        </h1>
 
         <button class="icon" onclick="toggleNav()">≡</button>
       </div>
@@ -830,6 +860,22 @@
             break;
         }
       }
+
+      var isFrameRequested = false;
+      window.addEventListener("scroll", function (e) {
+        if (!isFrameRequested) {
+          window.requestAnimationFrame(function () {
+            if (window.scrollY > 0) {
+              document.body.classList.add("scrolled");
+            } else {
+              document.body.classList.remove("scrolled");
+            }
+            isFrameRequested = false;
+          });
+
+          isFrameRequested = true;
+        }
+      });
     </script>
   </body>
 </html>
