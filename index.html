@@ -20,7 +20,7 @@
 
         --gutter: 1rem;
 
-        --navBarHeight: calc(-2rem - 2 * var(--gutter) - 0.5rem);
+        --navBarHeight: calc(2rem + 2 * var(--gutter) + 0.5rem);
       }
 
       html {
@@ -78,7 +78,7 @@
         background: #ee9b96;
         width: 0;
         height: 0;
-        top: var(--navBarHeight);
+        top: calc(0px - var(--navBarHeight));
         left: 0;
       }
 
@@ -630,7 +630,11 @@
       <div role="img"></div>
       <div class="message">
         <p>Vi hjälper dig!</p>
-        <a role="button" href="mailto:info@hemmalaget.se">Kontakta oss</a>
+        <a
+          role="button"
+          href="mailto:info@hemmalaget.se?Subject=Bli%20kund%20hos%20Hemmalaget"
+          >Kontakta oss</a
+        >
       </div>
     </section>
 
@@ -659,7 +663,11 @@
 
         <div class="message">
           <p>Skicka ditt CV och Personligt Brev till oss!</p>
-          <a href="" role="button">Ansök nu</a>
+          <a
+            href="mailto:info@hemmalaget.se?Subject=Jobba%20i%20Hemmalaget"
+            role="button"
+            >Ansök nu</a
+          >
         </div>
       </header>
 

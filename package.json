@@ -1,0 +1,21 @@
+{
+  "name": "hemmalaget",
+  "version": "1.0.0",
+  "description": "A super-simple static website for Hemmalaget, deployed with github pages.",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx live-server .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hemmalaget/hemmalaget.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hemmalaget/hemmalaget/issues"
+  },
+  "homepage": "https://github.com/Hemmalaget/hemmalaget#readme"
+}
