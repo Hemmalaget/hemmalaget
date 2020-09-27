@@ -119,6 +119,8 @@
 
       .navbar nav {
         display: none;
+        max-height: calc(100vh - var(--navBarHeight));
+        overflow: auto;
       }
 
       .navbar nav.open {
@@ -329,7 +331,7 @@
         background: url(images/natural_smile.jpg) center;
         background-size: cover;
         width: 100%;
-        background-position: 70% 30%;
+        background-position: 60% 30%;
       }
 
       @media (min-width: 800px) {
@@ -471,6 +473,7 @@
       footer.section a {
         color: var(--dark);
         text-decoration: none;
+        word-break: break-word;
       }
 
       footer.section a:hover {
