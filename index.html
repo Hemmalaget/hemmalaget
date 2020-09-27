@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
     <title>Hemmalaget</title>
 
     <style>
@@ -50,9 +53,17 @@
         padding-top: var(--navBarHeight);
       }
 
+      body > section,
+      body > .section {
+        padding-top: max(env(safe-area-inset-top), 2rem);
+        padding-left: calc(env(safe-area-inset-left) + var(--gutter));
+        padding-bottom: max(env(safe-area-inset-bottom), 2rem);
+        padding-right: calc(env(safe-area-inset-right) + var(--gutter));
+      }
+
       section,
       .section {
-        padding: calc(2 * var(--gutter)) var(--gutter);
+        /* padding: calc(2 * var(--gutter)) var(--gutter); */
         position: relative;
       }
 
@@ -61,7 +72,7 @@
         background: var(--main);
         border-top: 1.2rem solid var(--mainLight);
         border-bottom: 1.2rem solid var(--mainLight);
-        padding: 2rem var(--gutter);
+        /* padding: 2rem var(--gutter); */
         background: var(--main)
           repeating-linear-gradient(
             -55deg,
@@ -69,6 +80,20 @@
             var(--main) 2px,
             var(--mainLight) 2px,
             var(--mainLight) 4px
+          );
+      }
+
+      section.grey {
+        background: var(--grey);
+        background: var(--grey) url(/app/sections/quote/debut_light_g.png);
+        /* padding: 2rem var(--gutter); */
+        background: var(--grey)
+          repeating-linear-gradient(
+            -55deg,
+            var(--grey),
+            var(--grey) 2px,
+            var(--greyLight) 2px,
+            var(--greyLight) 4px
           );
       }
 
@@ -80,20 +105,6 @@
         height: 0;
         top: calc(0px - var(--navBarHeight));
         left: 0;
-      }
-
-      section.grey {
-        background: var(--grey);
-        background: var(--grey) url(/app/sections/quote/debut_light_g.png);
-        padding: 2rem var(--gutter);
-        background: var(--grey)
-          repeating-linear-gradient(
-            -55deg,
-            var(--grey),
-            var(--grey) 2px,
-            var(--greyLight) 2px,
-            var(--greyLight) 4px
-          );
       }
 
       .navbar {
@@ -115,6 +126,8 @@
         font-weight: normal;
         font-size: 1.8rem;
         padding: var(--gutter);
+
+        padding-left: calc(env(safe-area-inset-left) + var(--gutter));
       }
 
       .navbar nav {
@@ -164,6 +177,8 @@
         .navbar {
           display: flex;
           justify-content: space-between;
+
+          padding-right: calc(env(safe-area-inset-right) + var(--gutter));
         }
 
         .navbar .icon {
@@ -195,6 +210,7 @@
         left: 0;
         bottom: 0;
         padding: var(--gutter);
+        padding-left: calc(env(safe-area-inset-left) + var(--gutter));
         max-width: 800px;
       }
 
