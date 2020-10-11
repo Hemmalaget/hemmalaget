@@ -1,12 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv-se">
   <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-65451616-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-65451616-1");
+    </script>
+
     <meta charset="UTF-8" />
+    <meta http-equiv="content-language" content="sv-se" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     />
+
     <title>Hemmalaget</title>
+    <meta
+      name="description"
+      content="Hemmalaget är det personliga assistans­bolaget som sätter dig och dina behov i fokus. Tillsam­mans ser vi till att du får den hjälp som du vill ha, utan onödigt krångel."
+    />
+    <meta name="copyright" content="Hemmalaget Assistans AB" />
 
     <style>
       :root {
@@ -19,7 +41,7 @@
         --light: #ffffff;
         --grey: hsl(0deg 0% 93%);
         --greyLight: hsl(0deg 15% 97%);
-        --link: #00aeef;
+        --link: #007099;
 
         --gutter: 1rem;
 
@@ -225,7 +247,7 @@
 
       .cover {
         position: relative;
-        background: url(images/header.png) center;
+        background: var(--main) url(images/header.png) center;
         background-size: cover;
         min-height: 25rem;
         height: 60vw;
@@ -280,13 +302,20 @@
         }
       }
 
+      img {
+        height: auto;
+        max-width: 100%;
+      }
+
       img.avatar {
+        background: var(--light);
         border: 0.5rem solid var(--light);
         border-radius: 50%;
         max-width: min(100%, 20rem);
       }
 
       img.avatar.green {
+        background: var(--main);
         border-color: var(--main);
       }
 
@@ -372,7 +401,7 @@
 
       .banner div[role="img"] {
         height: 500px;
-        background: url(images/natural_smile.jpg) center;
+        background: var(--grey) url(images/natural_smile.jpg) center;
         background-size: cover;
         width: 100%;
         background-position: 60% 30%;
@@ -550,7 +579,13 @@
     </section>
 
     <section class="green quote reverse">
-      <img class="avatar" src="images/owner.png" />
+      <img
+        class="avatar"
+        src="images/owner.png"
+        alt=""
+        width="674"
+        height="676"
+      />
       <blockquote>
         <p>
           Hemmalaget är det personliga assistans­bolaget som sätter dig och dina
@@ -573,7 +608,13 @@
       <div class="target" id="Erbjudande"></div>
       <h2>Vi erbjuder</h2>
 
-      <img style="margin: 2rem 0" src="images/cloud.png" />
+      <img
+        style="margin: 2rem 0"
+        src="images/cloud.png"
+        alt="Värdeord för Hemmalget: Full service, Alltid tillgänglig och Inkluderande"
+        width="1898"
+        height="400"
+      />
 
       <div class="features">
         <div>
@@ -688,10 +729,16 @@
     </section>
 
     <section class="green quote">
-      <img class="avatar" src="images/client.png" />
+      <img
+        class="avatar"
+        src="images/client.png"
+        alt=""
+        width="512"
+        height="530"
+      />
       <blockquote>
         <p>Vi kompletterar varandra, min assistent och jag.</p>
-        <cite>Andreas</cite>
+        <cite>Patrik</cite>
       </blockquote>
     </section>
 
@@ -783,7 +830,13 @@
     </section>
 
     <section class="green quote reverse">
-      <img class="avatar" src="images/assistant.png" />
+      <img
+        class="avatar"
+        src="images/assistant.png"
+        alt=""
+        width="674"
+        height="674"
+      />
       <blockquote>
         <p>Det är underbart att få göra skillnad i en människas liv.</p>
         <cite>Susanne, Assistent</cite>
@@ -795,7 +848,13 @@
       <h2>Vi på Hemmalaget</h2>
 
       <div class="employee">
-        <img class="avatar green" src="images/owner.png" />
+        <img
+          class="avatar green"
+          src="images/owner.png"
+          alt=""
+          width="674"
+          height="676"
+        />
         <h3 class="name">Per-Arne Hederstaf</h3>
         <p class="title">Verksamhetschef</p>
         <a href="mailto:per-arne@hemmalaget.se">per-arne@hemmalaget.se</a>
@@ -814,8 +873,13 @@
       <p>I sammarbete med:</p>
 
       <div class="logos">
-        <img src="images/kfo.png" />
-        <img src="images/aiai.png" />
+        <img src="images/kfo.png" alt="Logga för KFO" width="128" height="56" />
+        <img
+          src="images/aiai.png"
+          alt="Logga för AIAI"
+          width="81"
+          height="96"
+        />
       </div>
 
       <p>Vi innehar tillstånd från Inspektionen för Vård och Omsorg</p>
