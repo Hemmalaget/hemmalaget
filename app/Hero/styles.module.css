@@ -1,0 +1,14 @@
+.section {
+    display: flex;
+    align-items: flex-end;
+    height: 24rem;
+    background-image: url('/header.png');
+    background-position: center;
+    background-size: cover;
+    padding: 16px;
+}
+
+.title {
+    font-size: 4.5rem;
+    line-height: 1;
+}

@@ -1,0 +1,28 @@
+
+.layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.image {
+    max-width: 300px;
+    border: 8px solid white;
+    border-radius: 50%;
+}
+
+.figure {
+    text-align: center;
+    font-size: 1.7rem;
+
+}
+
+.figure figcaption {
+    margin-top: 12px;
+}
+
+.figure figcaption::before {
+    content: "– ";
+}
