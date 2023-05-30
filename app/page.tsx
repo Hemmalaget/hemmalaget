@@ -1,5 +1,6 @@
 import { Hero } from "./Hero";
 import { Quote } from "./Quote";
+import { Region } from "./Region";
 
 const Home = () => (
   <main>
@@ -10,6 +11,11 @@ const Home = () => (
       alt="Per-Arne, VD för Hemmalaget."
       quote="Hemmalaget är det personliga assistans­bolaget som sätter dig och dina behov i fokus. Tillsam­mans ser vi till att du får den hjälp som du vill ha, utan onödigt krångel. "
       quotee="Per-Arne, VD"
+    />
+
+    <Region
+      title="Västra Götaland"
+      text="Sedan 2011 bedriver Hemmalaget Assistans AB verksamhet inom personlig assistans i Västra Götalandsregionen."
     />
 
     <Quote
