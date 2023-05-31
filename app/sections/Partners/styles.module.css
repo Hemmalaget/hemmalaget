@@ -1,0 +1,15 @@
+
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+    padding: 2rem;
+}
+
+.logos {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+}

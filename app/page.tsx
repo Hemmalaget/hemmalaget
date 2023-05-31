@@ -3,6 +3,7 @@ import { Employees } from "./sections/Employees";
 import { Hero } from "./sections/Hero";
 import { Join } from "./sections/Join";
 import { Offer } from "./sections/Offer";
+import { Partners } from "./sections/Partners";
 import { Quote } from "./sections/Quote";
 import { Region } from "./sections/Region";
 
@@ -43,6 +44,8 @@ const Home = () => (
     />
 
     <Employees />
+
+    <Partners />
   </main>
 );
 
