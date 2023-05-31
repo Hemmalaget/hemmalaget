@@ -2,6 +2,7 @@
 
 :root {
   --mint: #a8e6ce;
+  --mint-alt: #eaf4da;
   --steel: #f8f6f6;
 }
 
@@ -9,12 +10,22 @@
   margin: 0;
 }
 
+html {
+  font-size: 18px;
+}
+
+p {
+  line-height: 1.4;
+}
+
 img {
   height: auto;
+  max-width: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
+  line-height: 1;
 }
 
 body {

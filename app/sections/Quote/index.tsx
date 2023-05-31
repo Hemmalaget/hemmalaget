@@ -1,4 +1,3 @@
-import { Section } from "../Section";
 import Image from "next/image";
 import styles from "./styles.module.css";
 
@@ -13,7 +12,7 @@ export const Quote = ({
   quote: string;
   quotee: string;
 }) => (
-  <Section>
+  <section className={styles.section}>
     <div className={styles.layout}>
       <Image
         src={src}
@@ -27,5 +26,5 @@ export const Quote = ({
         <figcaption>{quotee}</figcaption>
       </figure>
     </div>
-  </Section>
+  </section>
 );

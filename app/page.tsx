@@ -1,6 +1,7 @@
-import { Hero } from "./Hero";
-import { Quote } from "./Quote";
-import { Region } from "./Region";
+import { Hero } from "./sections/Hero";
+import { Offer } from "./sections/Offer";
+import { Quote } from "./sections/Quote";
+import { Region } from "./sections/Region";
 
 const Home = () => (
   <main>
@@ -17,6 +18,8 @@ const Home = () => (
       title="Västra Götaland"
       text="Sedan 2011 bedriver Hemmalaget Assistans AB verksamhet inom personlig assistans i Västra Götalandsregionen."
     />
+
+    <Offer />
 
     <Quote
       src="/client.png"
