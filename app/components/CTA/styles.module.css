@@ -1,30 +1,24 @@
-.section {
+.container {
     display: flex;
     flex-direction: column;
     text-align: center;
     background: var(--steel);
-    margin: 1rem;
-}
-
-.image {
-    height: 24rem;
-    background-image: url('/smile.jpg');
-    background-position: center;
-    background-size: cover;
+    padding: 2rem;
+    gap: 1rem;
 }
 
 .title {
-    font-size: 2rem;
+    font-size: 1.7rem;
     font-weight: 500;
 }
 
 .button {
     all: unset;
+    display: block;
     font-size: 1.3rem;
     background: var(--tomato);
     border-radius: .5rem;
     cursor: pointer;
     padding: 1rem 2rem;
     margin: 0 auto;
-    margin-bottom: 2rem;
 }

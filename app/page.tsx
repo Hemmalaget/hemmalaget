@@ -1,5 +1,6 @@
 import { Banner } from "./sections/Banner";
 import { Hero } from "./sections/Hero";
+import { Join } from "./sections/Join";
 import { Offer } from "./sections/Offer";
 import { Quote } from "./sections/Quote";
 import { Region } from "./sections/Region";
@@ -30,6 +31,8 @@ const Home = () => (
       quote="Vi kompletterar varandra, min assistent och jag."
       quotee="Patrik"
     />
+
+    <Join />
 
     <Quote
       src="/assistant.png"
