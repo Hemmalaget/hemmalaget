@@ -1,0 +1,31 @@
+.section {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background: var(--steel);
+    margin: 1rem;
+    gap: 2rem;
+}
+
+.image {
+    height: 24rem;
+    background-image: url('/smile.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.button {
+    all: unset;
+    font-size: 1.3rem;
+    background: var(--tomato);
+    border-radius: .5rem;
+    cursor: pointer;
+    padding: 1rem 2rem;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+}

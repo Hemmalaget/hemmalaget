@@ -1,3 +1,4 @@
+import { Banner } from "./sections/Banner";
 import { Hero } from "./sections/Hero";
 import { Offer } from "./sections/Offer";
 import { Quote } from "./sections/Quote";
@@ -20,6 +21,8 @@ const Home = () => (
     />
 
     <Offer />
+
+    <Banner />
 
     <Quote
       src="/client.png"
