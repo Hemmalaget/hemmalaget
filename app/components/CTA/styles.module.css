@@ -22,3 +22,10 @@
     padding: 1rem 2rem;
     margin: 0 auto;
 }
+
+.button:hover {
+    text-decoration: none;
+    transform: scale(1.02) translateY(-0.1rem);
+    transition: all 200ms;
+    box-shadow: 0 .1rem .1rem 0 rgba(0,0,0,.5);
+}

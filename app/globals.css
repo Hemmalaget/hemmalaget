@@ -5,6 +5,7 @@
   --mint-alt: #eaf4da;
   --steel: #ededed;
   --tomato: #ffb6b3;
+  --link: #007099;
 }
 
 * {
@@ -13,6 +14,20 @@
 
 html {
   font-size: 18px;
+}
+
+button {
+  all: unset;
+}
+
+a {
+  all: unset;
+  color: var(--link);
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 p {

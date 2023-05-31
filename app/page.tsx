@@ -1,4 +1,5 @@
 import { Banner } from "./sections/Banner";
+import { Employees } from "./sections/Employees";
 import { Hero } from "./sections/Hero";
 import { Join } from "./sections/Join";
 import { Offer } from "./sections/Offer";
@@ -40,6 +41,8 @@ const Home = () => (
       quote="Det är underbart att få göra skillnad i en människas liv."
       quotee="Susanne, Assistent"
     />
+
+    <Employees />
   </main>
 );
 
