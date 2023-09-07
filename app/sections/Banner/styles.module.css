@@ -21,7 +21,7 @@
 .button {
     all: unset;
     font-size: 1.3rem;
-    background: var(--tomato);
+    background: var(--link);
     border-radius: .5rem;
     cursor: pointer;
     padding: 1rem 2rem;

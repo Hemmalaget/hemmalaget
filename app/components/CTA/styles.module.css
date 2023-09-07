@@ -16,7 +16,9 @@
     all: unset;
     display: block;
     font-size: 1.3rem;
-    background: var(--tomato);
+    color: white;
+    font-weight: 500;
+    background: var(--link);
     border-radius: .5rem;
     cursor: pointer;
     padding: 1rem 2rem;

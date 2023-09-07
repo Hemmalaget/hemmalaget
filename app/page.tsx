@@ -1,5 +1,4 @@
 import { Banner } from "./sections/Banner";
-import { Info } from "./sections/Info";
 import { Employees } from "./sections/Employees";
 import { Footer } from "./sections/Footer";
 import { Hero } from "./sections/Hero";
@@ -48,8 +47,6 @@ const Home = () => (
     <Employees />
 
     <Partners />
-
-    <Info />
 
     <Footer />
   </main>

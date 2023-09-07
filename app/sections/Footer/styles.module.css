@@ -9,6 +9,44 @@
     gap: 1rem;
 }
 
+.columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
 .copyright {
     text-align: right;
+}
+
+.title {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.group {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    font-size: .9rem;
+}
+
+.details {
+    display: grid;
+    gap: .5rem;
+    grid-template-columns: 80px auto;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.section a {
+    color: unset;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    line-height: 1.2rem;
 }

@@ -5,7 +5,6 @@
   --mint-light: #b1f1d9;
   --mint-alt: #eaf4da;
   --steel: #ededed;
-  --tomato: #ffb6b3;
   --link: #007099;
 }
 
@@ -46,7 +45,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 body {
-  color: #3a3a3a;
+  color: #111;
   background: white;
 }
 
