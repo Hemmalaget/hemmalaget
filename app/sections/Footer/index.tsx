@@ -1,7 +1,7 @@
 import styles from "./styles.module.css";
 
 export const Footer = () => (
-  <footer className={styles.section}>
+  <footer className={styles.section} id="kontakt">
     <div className={styles.columns}>
       <div className={styles.group}>
         <h2 className={styles.title}>Kontakt</h2>
@@ -32,7 +32,7 @@ export const Footer = () => (
       <div className={styles.group}>
         <h2 className={styles.title}>Information</h2>
         <div className={styles.links}>
-          <a>Visselblåsning</a>
+          <a href="visselblasning">Visselblåsning</a>
         </div>
       </div>
     </div>

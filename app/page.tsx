@@ -3,6 +3,7 @@ import { Employees } from "./sections/Employees";
 import { Footer } from "./sections/Footer";
 import { Hero } from "./sections/Hero";
 import { Join } from "./sections/Join";
+import { Navigation } from "./sections/Navigation";
 import { Offer } from "./sections/Offer";
 import { Partners } from "./sections/Partners";
 import { Quote } from "./sections/Quote";
@@ -10,6 +11,8 @@ import { Region } from "./sections/Region";
 
 const Home = () => (
   <main>
+    <Navigation />
+
     <Hero />
 
     <Quote

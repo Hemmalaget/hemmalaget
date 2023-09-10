@@ -4,7 +4,7 @@ import { Highlights } from "@/app/components/Highlights";
 import { CTA } from "@/app/components/CTA";
 
 export const Join = () => (
-  <section className={styles.section}>
+  <section className={styles.section} id="assistent">
     <h2 className={styles.title}>Vill du bli en del av Hemmalaget?</h2>
 
     <p>

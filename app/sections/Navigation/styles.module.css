@@ -1,0 +1,54 @@
+.section {
+    display: flex;
+    flex-direction: column;
+    background: white;
+}
+
+.topBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.hamburger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    font-size: 2rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+.verticalCenterFix {
+    margin-top: -.5rem;
+}
+
+.hamburger:focus-visible, .hamburger:hover {
+    background: var(--steel);
+}
+
+.companyName {
+    position: relative;
+    font-size: 2rem;
+    padding-left: 1rem;
+}
+
+.drawer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.drawer a {
+    color: unset;
+    padding: 1rem 2rem;
+
+}
+
+.drawer a:hover {
+    color: unset;
+}

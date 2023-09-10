@@ -3,7 +3,7 @@ import styles from "./styles.module.css";
 import { Highlights } from "@/app/components/Highlights";
 
 export const Offer = () => (
-  <section className={styles.section}>
+  <section className={styles.section} id="erbjudande">
     <h2 className={styles.title}>Vi erbjuder</h2>
 
     <Image

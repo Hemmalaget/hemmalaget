@@ -12,8 +12,13 @@
   margin: 0;
 }
 
+*:focus {
+  outline: none;
+}
+
 html {
   font-size: 18px;
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
 }
 
 button {
@@ -24,9 +29,10 @@ a {
   all: unset;
   color: var(--link);
   cursor: pointer;
+
 }
 
-a:hover {
+a:hover, a:focus-visible {
   text-decoration: underline;
 }
 

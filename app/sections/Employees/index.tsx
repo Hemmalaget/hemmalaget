@@ -45,7 +45,7 @@ const EmployeeCard = ({
 );
 
 export const Employees = () => (
-  <section className={styles.section}>
+  <section className={styles.section} id="anställda">
     <h2 className={styles.title}>Vi på Hemmalaget</h2>
 
     <div>
