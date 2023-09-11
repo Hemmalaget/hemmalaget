@@ -1,10 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import styles from "./styles.module.css";
 
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState<boolean>();
+
+  const closeDrawer = useCallback(() => setIsOpen(false), []);
 
   return (
     <section className={styles.section}>
@@ -19,15 +21,25 @@ export const Navigation = () => {
         </button>
       </div>
 
-      {isOpen && (
-        <nav className={styles.drawer}>
-          <a href="#start">Start</a>
-          <a href="#erbjudande">Erbjudande</a>
-          <a href="#assistent">Assistent</a>
-          <a href="#anställda">Anställda</a>
-          <a href="#kontakt">Kontakt</a>
-        </nav>
-      )}
+      <nav
+        className={styles.drawer + " " + (isOpen ? styles.open : styles.closed)}
+      >
+        <a href="#start" onClick={closeDrawer}>
+          Start
+        </a>
+        <a href="#erbjudande" onClick={closeDrawer}>
+          Erbjudande
+        </a>
+        <a href="#assistent" onClick={closeDrawer}>
+          Assistent
+        </a>
+        <a href="#anställda" onClick={closeDrawer}>
+          Anställda
+        </a>
+        <a href="#kontakt" onClick={closeDrawer}>
+          Kontakt
+        </a>
+      </nav>
     </section>
   );
 };

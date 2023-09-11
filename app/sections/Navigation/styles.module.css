@@ -15,8 +15,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 4rem;
-    height: 4rem;
+    padding: .8rem;
     font-size: 2rem;
     cursor: pointer;
     user-select: none;
@@ -26,7 +25,8 @@
     margin-top: -.5rem;
 }
 
-.hamburger:focus-visible, .hamburger:hover {
+.hamburger:focus-visible,
+.hamburger:hover {
     background: var(--steel);
 }
 
@@ -43,6 +43,14 @@
     font-size: 1.2rem;
 }
 
+.drawer.open {
+    display: flex;
+}
+
+.drawer.closed {
+    display: none;
+}
+
 .drawer a {
     color: unset;
     padding: 1rem 2rem;
@@ -51,4 +59,23 @@
 
 .drawer a:hover {
     color: unset;
+}
+
+@media (min-width: 850px) {
+  .hamburger {
+    display: none;
+  }
+  .drawer.closed {
+    display: flex;
+  }
+  .drawer {
+    flex-direction: row;
+  }
+  .drawer a {
+    padding: 1rem .7rem;
+  }
+  .section {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
