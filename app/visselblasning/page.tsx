@@ -1,3 +1,3 @@
-const Whistleblowing = () => <div>Hello!</div>;
+const Whistleblowing = () => <h1>Visselblåsning</h1>;
 
 export default Whistleblowing;
