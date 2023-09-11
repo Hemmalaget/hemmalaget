@@ -5,21 +5,24 @@ import { CTA } from "@/app/components/CTA";
 
 export const Join = () => (
   <section className={styles.section} id="assistent">
-    <h2 className={styles.title}>Vill du bli en del av Hemmalaget?</h2>
+    <div className={styles.lead}>
+      <div>
+        <h2 className={styles.title}>Vill du bli en del av Hemmalaget?</h2>
+        <p>
+          Vi är måna om att erbjuda hög service till både kunder och anställda
+          eftersom vi vet att bra personliga assistenter är en förutsättning för
+          bra personlig assistans. Därför vill vi vara en riktigt bra
+          arbetsgivare och arbeta för goda relationer med varje medarbetare. Vi
+          vill att du ska trivas och stanna hos oss!
+        </p>
+      </div>
 
-    <p>
-      Vi är måna om att erbjuda hög service till både kunder och anställda
-      eftersom vi vet att bra personliga assistenter är en förutsättning för bra
-      personlig assistans. Därför vill vi vara en riktigt bra arbetsgivare och
-      arbeta för goda relationer med varje medarbetare. Vi vill att du ska
-      trivas och stanna hos oss!
-    </p>
-
-    <CTA
-      title="Skicka ditt CV och Personligt Brev till oss!"
-      buttonText="Ansök nu"
-      url="mailto:info@hemmalaget.se?Subject=Jobba%20i%20Hemmalaget"
-    />
+      <CTA
+        title="Skicka ditt CV och Personligt Brev till oss!"
+        buttonText="Ansök nu"
+        url="mailto:info@hemmalaget.se?Subject=Jobba%20i%20Hemmalaget"
+      />
+    </div>
 
     <Highlights
       highlights={[

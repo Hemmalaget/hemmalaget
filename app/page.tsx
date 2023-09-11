@@ -36,6 +36,7 @@ const Home = () => (
       alt="Patrik, kund till Hemmalaget."
       quote="Vi kompletterar varandra, min assistent och jag."
       quotee="Patrik"
+      reverse
     />
 
     <Join />

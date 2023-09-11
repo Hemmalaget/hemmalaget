@@ -1,7 +1,7 @@
 .section {
     display: flex;
     align-items: flex-end;
-    height: 24rem;
+    height: 50vh;
     background-image: url('/header.png');
     background-position: center;
     background-size: cover;
@@ -11,4 +11,10 @@
 .title {
     font-size: 4rem;
     line-height: 1;
+}
+
+@media (min-width: 750px) {
+  .section {
+    height: 70vh;
+  }
 }

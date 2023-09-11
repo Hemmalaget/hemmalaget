@@ -1,6 +1,10 @@
 
 .section {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
     background: var(--mint);
     background: linear-gradient(135deg, #a8e6ce 25%, #b0f1d8 25%, #b0f1d8 50%, #a8e6ce 50%, #a8e6ce 75%, #b0f1d8 75%, #b0f1d8 100%);
     background-size: 5.66px 5.66px;
@@ -8,14 +12,6 @@
     border-right: none;
     border-left: none;
     padding: 16px;
-}
-
-.layout {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
 }
 
 .image {
@@ -36,4 +32,19 @@
 
 .figure figcaption::before {
     content: "– ";
+}
+
+@media (min-width: 700px) {
+  .section {
+    flex-direction: row-reverse;
+  }
+  .section.reverse {
+    flex-direction: row;
+  }
+  .figure {
+    text-align: right;
+  }
+  .section.reverse .figure {
+    text-align: left;
+  }
 }
