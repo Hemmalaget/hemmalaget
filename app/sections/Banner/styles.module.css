@@ -1,0 +1,23 @@
+.section {
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: center;
+    background: var(--steel);
+    margin: 1rem 1rem 2rem 1rem;
+}
+
+.image {
+    height: 24rem;
+    width: 100%;
+    background-image: url('/smile.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+
+@media (min-width: 800px) {
+  .section {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+}

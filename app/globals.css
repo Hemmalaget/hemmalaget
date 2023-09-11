@@ -1,0 +1,62 @@
+@import 'node_modules/modern-normalize/modern-normalize.css';
+
+:root {
+  --mint: #a8e6ce;
+  --mint-light: #b1f1d9;
+  --mint-alt: #eaf4da;
+  --steel: #ededed;
+  --link: #007099;
+}
+
+* {
+  margin: 0;
+}
+
+*:focus {
+  outline: none;
+}
+
+html {
+  font-size: 18px;
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+button {
+  all: unset;
+}
+
+a {
+  all: unset;
+  color: var(--link);
+  cursor: pointer;
+
+}
+
+a:hover, a:focus-visible {
+  text-decoration: underline;
+}
+
+p {
+  line-height: 1.4;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  line-height: 1;
+}
+
+body {
+  color: #111;
+  background: white;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}

@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background: var(--steel);
+    padding: 2rem;
+    gap: 1rem;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.button {
+    all: unset;
+    display: block;
+    font-size: 1.3rem;
+    color: white;
+    font-weight: 500;
+    background: var(--link);
+    border-radius: .5rem;
+    cursor: pointer;
+    padding: 1rem 2rem;
+    margin: 0 auto;
+}
+
+.button:hover {
+    text-decoration: none;
+    transform: scale(1.02) translateY(-0.1rem);
+    transition: all 200ms;
+    box-shadow: 0 .1rem .1rem 0 rgba(0,0,0,.5);
+}
