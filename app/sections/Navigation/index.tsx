@@ -24,9 +24,6 @@ export const Navigation = () => {
       <nav
         className={styles.drawer + " " + (isOpen ? styles.open : styles.closed)}
       >
-        <a href="#start" onClick={closeDrawer}>
-          Start
-        </a>
         <a href="#erbjudande" onClick={closeDrawer}>
           Erbjudande
         </a>
