@@ -17,4 +17,8 @@
   .section {
     height: 70vh;
   }
+  .title {
+    font-size: 5rem;
+    max-width: 80%;
+}
 }

@@ -11,7 +11,7 @@
     border: 20px solid var(--mint-light);
     border-right: none;
     border-left: none;
-    padding: 16px;
+    padding: 1rem;
 }
 
 .image {
@@ -23,7 +23,11 @@
 .figure {
     text-align: center;
     font-size: 1.5rem;
+    max-width: 750px;
+}
 
+.figure q::before {
+  content: ""
 }
 
 .figure figcaption {

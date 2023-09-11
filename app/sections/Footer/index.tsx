@@ -29,12 +29,14 @@ export const Footer = () => (
         </dl>
       </div>
 
+      {/*
       <div className={styles.group}>
         <h2 className={styles.title}>Information</h2>
         <div className={styles.links}>
           <a href="visselblasning">Visselblåsning</a>
         </div>
       </div>
+    */}
     </div>
 
     <div className={styles.copyright}>
