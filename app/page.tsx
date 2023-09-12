@@ -8,6 +8,7 @@ import { Offer } from "./sections/Offer";
 import { Partners } from "./sections/Partners";
 import { Quote } from "./sections/Quote";
 import { Region } from "./sections/Region";
+import { ScrollToTopButton } from "./components/ScrollToTopButton";
 
 const Home = () => (
   <main>
@@ -53,6 +54,8 @@ const Home = () => (
     <Partners />
 
     <Footer />
+
+    <ScrollToTopButton />
   </main>
 );
 

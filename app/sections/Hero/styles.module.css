@@ -2,6 +2,7 @@
     display: flex;
     align-items: flex-end;
     height: 50vh;
+    min-height: 300px;
     background-image: url('/header.png');
     background-position: center;
     background-size: cover;
@@ -9,7 +10,7 @@
 }
 
 .title {
-    font-size: 4rem;
+    font-size: 3.5rem;
     line-height: 1;
 }
 
