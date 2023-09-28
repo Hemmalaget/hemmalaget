@@ -28,7 +28,7 @@ export const Join = () => (
       highlights={[
         {
           title: "Kollektivavtal",
-          text: "Hemmalaget Assistans är anslutna till KFO och deras kollektivavtal. Det innebär för dig som assistent att du har en rad olika försäkringar att tillgå som anställd hos oss. Förutom att du är försäkrad på arbetstid kan du t.ex. ansöka om 10 % extra sjuklönetillägg vid längre sjukskrivning eller 10 % extra i föräldratillägg inför föräldraledighet. Du har även en livförsäkring och vi betalar in till din tjänstepension.",
+          text: "Hemmalaget Assistans är anslutna till Fremia och deras kollektivavtal. Det innebär för dig som assistent att du har en rad olika försäkringar att tillgå som anställd hos oss. Förutom att du är försäkrad på arbetstid kan du t.ex. ansöka om 10 % extra sjuklönetillägg vid längre sjukskrivning eller 10 % extra i föräldratillägg inför föräldraledighet. Du har även en livförsäkring och vi betalar in till din tjänstepension.",
         },
         {
           title: "Utbildning",
