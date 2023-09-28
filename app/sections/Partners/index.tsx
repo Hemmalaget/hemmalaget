@@ -6,7 +6,7 @@ export const Partners = () => (
     <div>I sammarbete med:</div>
 
     <div className={styles.logos}>
-      <Image src="/kfo.png" alt="KFO" width="128" height="56" />
+      <Image src="/fremia.png" alt="Fremia" width="100" height="100" />
       <Image src="/aiai.png" alt="AiAi" width="81" height="96" />
     </div>
 
