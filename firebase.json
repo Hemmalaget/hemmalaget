@@ -4,7 +4,7 @@
     "indexes": "firestore.indexes.json"
   },
   "hosting": {
-    "public": "out",
+    "public": "frontend/out",
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -29,5 +29,7 @@
     },
     "singleProjectMode": true
   },
-  "extensions": {}
+  "extensions": {
+    "firestore-send-email": "firebase/firestore-send-email@0.1.27"
+  }
 }
