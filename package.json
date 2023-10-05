@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "dev": "yarn emulators:start",
     "emulators:start": "firebase emulators:start",
     "emulators:stop": "pkill -f 'firebase/emulators'"
   },
