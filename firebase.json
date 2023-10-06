@@ -10,10 +10,14 @@
       "**/.*",
       "**/node_modules/**"
     ],
+    "cleanUrls": true,
     "rewrites": [
       {
-        "source": "**",
-        "destination": "/index.html"
+        "source": "/api/whistleblow",
+        "function": {
+          "functionId": "whistleblow",
+          "pinTag": true
+        }
       }
     ]
   },
@@ -43,8 +47,8 @@
         "firebase-debug.*.log"
       ],
       "predeploy": [
-        "npm --prefix \"$RESOURCE_DIR\" run lint",
-        "npm --prefix \"$RESOURCE_DIR\" run build"
+        "yarn --cwd \"$RESOURCE_DIR\" run lint",
+        "yarn --cwd \"$RESOURCE_DIR\" run build"
       ]
     }
   ]

@@ -9,9 +9,12 @@ admin.initializeApp();
 
 const db = admin.firestore();
 
-export const helloWorld = onRequest(async (request, response) => {
-  const subject = request.body.subject ?? "No subject";
-  const text = request.body.message ?? "No message body";
+export const whistleblow = onRequest({
+  timeoutSeconds: 500,
+}, async (request, response) => {
+  const data = JSON.parse(request.body);
+  const subject = data.subject ?? "No subject";
+  const text = data.message ?? "No message body";
 
   logger.info(`Received request with subject: "${
     subject

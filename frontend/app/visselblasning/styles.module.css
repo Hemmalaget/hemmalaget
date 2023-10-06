@@ -1,0 +1,47 @@
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.form label {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.form button {
+    all: unset;
+    display: block;
+    font-size: 1.3rem;
+    color: white;
+    font-weight: 500;
+    background: var(--link);
+    border-radius: .5rem;
+    cursor: pointer;
+    padding: 1rem 2rem;
+}
+
+.form button:hover {
+    text-decoration: none;
+    transform: scale(1.02) translateY(-0.1rem);
+    transition: all 200ms;
+    box-shadow: 0 .1rem .1rem 0 rgba(0,0,0,.5);
+}
+
+.form button:disabled{
+    cursor: default;
+    background: #aaa;
+    box-shadow: none;
+  transform: none;
+  transition: none;
+}
+

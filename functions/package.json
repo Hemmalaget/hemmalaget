@@ -4,6 +4,7 @@
     "lint": "eslint --ext .js,.ts .",
     "build": "tsc",
     "build:watch": "tsc --watch",
+    "dev": "yarn build:watch",
     "serve": "yarn build && cd .. && npx firebase emulators:start --only functions",
     "shell": "yarn build && npx firebase functions:shell",
     "start": "yarn shell",
