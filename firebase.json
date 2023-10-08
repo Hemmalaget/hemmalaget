@@ -47,8 +47,9 @@
         "firebase-debug.*.log"
       ],
       "predeploy": [
-        "yarn --cwd \"$RESOURCE_DIR\" run lint",
-        "yarn --cwd \"$RESOURCE_DIR\" run build"
+        "yarn --cwd ./functions",
+        "yarn --cwd ./functions run lint",
+        "yarn --cwd ./functions run build"
       ]
     }
   ]
