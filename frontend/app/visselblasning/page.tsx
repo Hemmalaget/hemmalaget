@@ -4,15 +4,21 @@ import { useState } from "react";
 import styles from "./styles.module.css";
 import { Navigation } from "../sections/Navigation";
 import { Footer } from "../sections/Footer";
+import { Spinner } from "../components/Spinner";
 
 const Whistleblowing = () => {
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
   const [email, setEmail] = useState("");
-  const [error, setError] = useState("");
+  const [status, setStatus] = useState<{
+    type: "success" | "error";
+    message: string;
+  }>();
+  const [isLoading, setIsLoading] = useState(false);
 
   const onSubmit = async () => {
-    setError("");
+    setStatus(undefined);
+    setIsLoading(true);
 
     const data = {
       subject: subject.trim(),
@@ -20,24 +26,47 @@ const Whistleblowing = () => {
       email: email.trim() || undefined,
     };
 
-    const response = await fetch("/api/whistleblow", {
-      method: "POST",
-      body: JSON.stringify(data),
-    });
+    try {
+      const response = await fetch("/api/whistleblow", {
+        method: "POST",
+        body: JSON.stringify(data),
+      });
 
-    if (response.ok) {
-      setSubject("");
-      setMessage("");
-      setEmail("");
-      setError("");
-    } else {
-      setError(`${response.status} (${response.statusText})`);
+      if (response.ok) {
+        setSubject("");
+        setMessage("");
+        setEmail("");
+        setStatus({
+          type: "success",
+          message: "Din rapport har skickats",
+        });
+      } else {
+        setStatus({
+          type: "error",
+          message: "Rapporten kunde inte skickas",
+        });
+      }
+    } catch (err) {
+      console.error(err);
+      setStatus({
+        type: "error",
+        message: "Rapporten kunde inte skickas",
+      });
+    } finally {
+      setIsLoading(false);
     }
   };
 
   return (
     <div>
-      <Navigation></Navigation>
+      <Navigation
+        links={{
+          Erbjudande: "/#erbjudande",
+          Assistent: "/#assistent",
+          Anställda: "/#anställda",
+          Kontakt: "#kontakt",
+        }}
+      />
 
       <div className={styles.page}>
         <div className={styles.text}>
@@ -131,8 +160,6 @@ const Whistleblowing = () => {
         <div className={styles.formSection}>
           <h2>Visselblåsarformulär</h2>
 
-          {error && <div>{error}</div>}
-
           <form
             className={styles.form}
             onSubmit={(evt) => {
@@ -180,12 +207,24 @@ const Whistleblowing = () => {
               )}
             </div>
 
-            <button
-              type="submit"
-              disabled={!(subject.trim() && message.trim())}
-            >
-              Skicka
-            </button>
+            <div className={styles.buttonRow}>
+              {status && (
+                <div
+                  className={
+                    status.type === "success" ? styles.success : styles.error
+                  }
+                >
+                  {status.message}
+                </div>
+              )}
+
+              <button
+                type="submit"
+                disabled={!(subject.trim() && message.trim()) || isLoading}
+              >
+                {isLoading ? <Spinner /> : <>Skicka</>}
+              </button>
+            </div>
           </form>
         </div>
       </div>

@@ -34,6 +34,11 @@
     position: relative;
     font-size: 2rem;
     padding-left: 1rem;
+    color: unset;
+}
+
+.companyName:hover {
+    text-decoration: none;
 }
 
 .drawer {

@@ -11,7 +11,14 @@ import { Region } from "./sections/Region";
 
 const Home = () => (
   <main>
-    <Navigation />
+    <Navigation
+      links={{
+        Erbjudande: "#erbjudande",
+        Assistent: "#assistent",
+        Anställda: "#anställda",
+        Kontakt: "#kontakt",
+      }}
+    />
 
     <Hero />
 
