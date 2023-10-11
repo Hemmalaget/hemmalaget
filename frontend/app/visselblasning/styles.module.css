@@ -86,8 +86,10 @@
 
 .form .buttonRow .error {
   color: tomato;
+  text-align: right;
 }
 
 .form .buttonRow .success {
   color: forestgreen;
+  text-align: right;
 }
