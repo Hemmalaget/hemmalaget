@@ -4,16 +4,20 @@
     "indexes": "firestore.indexes.json"
   },
   "hosting": {
-    "public": "out",
+    "public": "frontend/out",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
     ],
+    "cleanUrls": true,
     "rewrites": [
       {
-        "source": "**",
-        "destination": "/index.html"
+        "source": "/api/whistleblow",
+        "function": {
+          "functionId": "whistleblow",
+          "pinTag": true
+        }
       }
     ]
   },
@@ -29,5 +33,24 @@
     },
     "singleProjectMode": true
   },
-  "extensions": {}
+  "extensions": {
+    "firestore-send-email": "firebase/firestore-send-email@0.1.27"
+  },
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "default",
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log"
+      ],
+      "predeploy": [
+        "yarn --cwd ./functions",
+        "yarn --cwd ./functions run lint",
+        "yarn --cwd ./functions run build"
+      ]
+    }
+  ]
 }
