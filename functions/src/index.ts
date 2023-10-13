@@ -23,7 +23,7 @@ export const whistleblow = onRequest(
 
     logger.info(`Received request with subject: "" and messsage: "${text}".`);
 
-    const doc = await db.collection("default").add({
+    const doc = await db.collection("mail").add({
       to: receiverEmail.value(),
       replyTo,
       message: {
