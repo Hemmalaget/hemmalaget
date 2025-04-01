@@ -2,6 +2,13 @@ import { onRequest } from "firebase-functions/v2/https";
 import * as logger from "firebase-functions/logger";
 import * as admin from "firebase-admin";
 import { defineString } from "firebase-functions/params";
+import z from "zod";
+
+const requestBodySchema = z.object({
+  subject: z.string().optional(),
+  message: z.string().optional(),
+  email: z.string().optional(),
+});
 
 const receiverEmail = defineString("RECEIVER_EMAIL");
 
@@ -16,7 +23,8 @@ export const whistleblow = onRequest(
     timeoutSeconds: 500,
   },
   async (request, response) => {
-    const data = JSON.parse(request.body);
+    const { data = {} } = requestBodySchema.safeParse(request.body);
+
     const subject: string = data.subject ?? "No subject";
     const text = data.message ?? "No message body";
     const replyTo: string | undefined = data.email;

@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "lint": "run-p lint:*",
+    "lint:frontend": "cd frontend && yarn lint",
+    "lint:functions": "cd functions && yarn lint",
     "dev:frontend": "cd frontend && yarn build",
     "dev:functions": "cd functions && yarn dev",
     "dev": "run-p dev:* emulators:start",

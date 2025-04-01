@@ -5,7 +5,7 @@ Website for https://hemmalaget.se/. Deployed with [firebase](https://console.fir
 ## Development
 
 ```
-n 18
+n 20
 yarn install
 cd frontend; yarn install
 cd functions; yarn install
