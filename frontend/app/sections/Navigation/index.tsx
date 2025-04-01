@@ -2,6 +2,7 @@
 
 import { useCallback, useState } from "react";
 import styles from "./styles.module.css";
+import Link from "next/link";
 
 export const Navigation = ({
   links,
@@ -15,9 +16,9 @@ export const Navigation = ({
   return (
     <section className={styles.section}>
       <div className={styles.topBar}>
-        <a href="/" className={styles.companyName}>
+        <Link href="/" className={styles.companyName}>
           Hemmalaget
-        </a>
+        </Link>
 
         <button
           className={styles.hamburger}

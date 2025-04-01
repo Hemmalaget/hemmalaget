@@ -10,8 +10,8 @@
     "emulators:stop": "pkill -f 'firebase/emulators'"
   },
   "dependencies": {
-    "firebase": "^10.4.0",
-    "firebase-tools": "^12.6.0",
+    "firebase": "^11.6.0",
+    "firebase-tools": "^14.0.1",
     "npm-run-all": "^4.1.5"
   },
   "packageManager": "yarn@1.22.21+sha1.1959a18351b811cdeedbd484a8f86c3cc3bbaf72"
