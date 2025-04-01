@@ -2,7 +2,7 @@ import { onRequest } from "firebase-functions/v2/https";
 import * as logger from "firebase-functions/logger";
 import * as admin from "firebase-admin";
 import { defineString } from "firebase-functions/params";
-import z from "zod";
+import { z } from "zod";
 
 const requestBodySchema = z.object({
   subject: z.string().optional(),
