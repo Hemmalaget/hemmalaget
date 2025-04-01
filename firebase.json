@@ -5,11 +5,7 @@
   },
   "hosting": {
     "public": "frontend/out",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "cleanUrls": true,
     "rewrites": [
       {
@@ -26,7 +22,7 @@
       "port": 8080
     },
     "hosting": {
-      "port": 5000
+      "port": 5555
     },
     "ui": {
       "enabled": true

@@ -1,20 +1,15 @@
 # Hemmalaget
 
-Static site for Hemmalaget, built with Next.js and deployed on Github pages via Github Actions. Domain managed through [one.com](https://one.com).
+Website for https://hemmalaget.se/. Deployed with [firebase](https://console.firebase.google.com/u/0/project/hemmalaget-8e0ab/overview).
 
 ## Development
 
-The development runtime is fully provided via [Docker](https://www.docker.com/).
-
-### Server
-```bash
-# Launch a development server with live reload
-docker-compose up
 ```
-
-### Shell
-
-```bash
-# Launch an interactive shell with a complete node environment
-./shell.sh
+n 18
+yarn install
+cd frontend; yarn install
+cd functions; yarn install
+yarn firebase login
+yarn dev
+open http://localhost:5555
 ```

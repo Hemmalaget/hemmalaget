@@ -21,9 +21,9 @@ export const Footer = () => (
 
           <dt>Adress</dt>
           <dd>
-            <a href="https://goo.gl/maps/fmYpF54PYM8hU8St8">
-              Källedalsgatan 1 <br />
-              521 52 Floby
+            <a href="https://maps.app.goo.gl/TVeZteDAiCJ2gMw78">
+              Hässlebergsgatan 7<br />
+              521 51 Floby
             </a>
           </dd>
         </dl>
