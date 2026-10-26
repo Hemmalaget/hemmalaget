@@ -30,4 +30,7 @@ config only and are committed on purpose. **Never put a secret in them.**
 ## Deploying functions
 
 CI deploys hosting only. Deploy functions by hand with
-`pnpm firebase deploy --only functions`.
+`pnpm firebase deploy --only functions`, then redeploy hosting. The
+`/api/whistleblow` rewrite is pinned (`pinTag`) to the function revision that
+was live at the last hosting deploy, so the site keeps calling the old
+revision until hosting is deployed again.

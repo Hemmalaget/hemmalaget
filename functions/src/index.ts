@@ -4,10 +4,17 @@ import { defineSecret, defineString } from "firebase-functions/params";
 import { createTransport } from "nodemailer";
 import { z } from "zod";
 
+// Blank fields count as missing.
+const optionalText = z
+  .string()
+  .trim()
+  .transform((value) => value || undefined)
+  .optional();
+
 const requestBodySchema = z.object({
-  subject: z.string().optional(),
-  message: z.string().optional(),
-  email: z.string().optional(),
+  subject: optionalText,
+  message: optionalText,
+  email: optionalText,
 });
 
 const receiverEmail = defineString("RECEIVER_EMAIL");
@@ -21,18 +28,24 @@ export const whistleblow = onRequest(
     secrets: [smtpPassword],
   },
   async (request, response) => {
-    const { data = {} } = requestBodySchema.safeParse(request.body);
-
-    const subject: string = data.subject ?? "No subject";
-    const text = data.message ?? "No message body";
-    const replyTo: string | undefined = data.email;
-
     logger.info("Received whistleblow request.");
+
+    const parsed = requestBodySchema.safeParse(request.body);
+    if (!parsed.success) {
+      logger.warn("Rejected malformed whistleblow request.");
+      response.sendStatus(400);
+      return;
+    }
+    const { data } = parsed;
+
+    const subject = data.subject ?? "No subject";
+    const text = data.message ?? "No message body";
+    const replyTo = data.email;
 
     // The password must go into the URL: nodemailer lets the URL's (empty)
     // password override a separate `auth` option.
     const smtpUrl = new URL(smtpConnectionUri.value());
-    smtpUrl.password = smtpPassword.value();
+    smtpUrl.password = smtpPassword.value().trim();
     const transport = createTransport({
       url: smtpUrl.toString(),
       connectionTimeout: 10_000,
