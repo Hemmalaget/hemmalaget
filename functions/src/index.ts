@@ -29,19 +29,31 @@ export const whistleblow = onRequest(
 
     logger.info(`Received request with subject: "" and messsage: "${text}".`);
 
+    // The password must go into the URL: nodemailer lets the URL's (empty)
+    // password override a separate `auth` option.
     const smtpUrl = new URL(smtpConnectionUri.value());
     smtpUrl.password = smtpPassword.value();
-    const transport = createTransport(smtpUrl.toString());
-
-    const info = await transport.sendMail({
-      from: senderEmail.value(),
-      to: receiverEmail.value(),
-      replyTo: replyTo ?? senderEmail.value(),
-      subject,
-      text,
+    const transport = createTransport({
+      url: smtpUrl.toString(),
+      connectionTimeout: 10_000,
+      greetingTimeout: 10_000,
+      socketTimeout: 20_000,
     });
 
-    logger.info("Sent email: " + info.messageId);
+    try {
+      const info = await transport.sendMail({
+        from: senderEmail.value(),
+        to: receiverEmail.value(),
+        replyTo: replyTo ?? senderEmail.value(),
+        subject,
+        text,
+      });
+      logger.info("Sent email: " + info.messageId);
+    } catch (error) {
+      logger.error("Failed to send email", error);
+      response.sendStatus(502);
+      return;
+    }
 
     response.sendStatus(200);
   }
