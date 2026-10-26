@@ -1,4 +1,3 @@
-import Image from "next/image";
 import styles from "./styles.module.css";
 import { CTA } from "../../components/CTA";
 

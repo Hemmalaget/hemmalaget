@@ -47,9 +47,9 @@
         "firebase-debug.*.log"
       ],
       "predeploy": [
-        "yarn --cwd ./functions",
-        "yarn --cwd ./functions run lint",
-        "yarn --cwd ./functions run build"
+        "pnpm --dir ./functions install",
+        "pnpm --dir ./functions lint",
+        "pnpm --dir ./functions build"
       ]
     }
   ]

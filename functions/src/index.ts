@@ -1,6 +1,7 @@
 import { onRequest } from "firebase-functions/v2/https";
 import * as logger from "firebase-functions/logger";
-import * as admin from "firebase-admin";
+import { initializeApp } from "firebase-admin/app";
+import { getFirestore } from "firebase-admin/firestore";
 import { defineString } from "firebase-functions/params";
 import { z } from "zod";
 
@@ -12,9 +13,9 @@ const requestBodySchema = z.object({
 
 const receiverEmail = defineString("RECEIVER_EMAIL");
 
-admin.initializeApp();
+initializeApp();
 
-const db = admin.firestore();
+const db = getFirestore();
 
 db.settings({ ignoreUndefinedProperties: true });
 
