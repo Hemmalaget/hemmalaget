@@ -1,8 +1,7 @@
 import { onRequest } from "firebase-functions/v2/https";
 import * as logger from "firebase-functions/logger";
-import { initializeApp } from "firebase-admin/app";
-import { getFirestore } from "firebase-admin/firestore";
-import { defineString } from "firebase-functions/params";
+import { defineSecret, defineString } from "firebase-functions/params";
+import { createTransport } from "nodemailer";
 import { z } from "zod";
 
 const requestBodySchema = z.object({
@@ -12,16 +11,14 @@ const requestBodySchema = z.object({
 });
 
 const receiverEmail = defineString("RECEIVER_EMAIL");
-
-initializeApp();
-
-const db = getFirestore();
-
-db.settings({ ignoreUndefinedProperties: true });
+const senderEmail = defineString("SENDER_EMAIL");
+const smtpConnectionUri = defineString("SMTP_CONNECTION_URI");
+const smtpPassword = defineSecret("SMTP_PASSWORD");
 
 export const whistleblow = onRequest(
   {
     timeoutSeconds: 500,
+    secrets: [smtpPassword],
   },
   async (request, response) => {
     const { data = {} } = requestBodySchema.safeParse(request.body);
@@ -32,16 +29,19 @@ export const whistleblow = onRequest(
 
     logger.info(`Received request with subject: "" and messsage: "${text}".`);
 
-    const doc = await db.collection("mail").add({
+    const smtpUrl = new URL(smtpConnectionUri.value());
+    smtpUrl.password = smtpPassword.value();
+    const transport = createTransport(smtpUrl.toString());
+
+    const info = await transport.sendMail({
+      from: senderEmail.value(),
       to: receiverEmail.value(),
-      replyTo,
-      message: {
-        subject,
-        text,
-      },
+      replyTo: replyTo ?? senderEmail.value(),
+      subject,
+      text,
     });
 
-    logger.info("Added document: " + doc.path);
+    logger.info("Sent email: " + info.messageId);
 
     response.sendStatus(200);
   }

@@ -4,10 +4,9 @@ node_modules
 .direnv
 
 # There are no secrets in this repo: the SMTP password lives in Firebase Secret
-# Manager. The env files below are Firebase's own, hold config only and are
+# Manager. The env file below is Firebase's own, holds config only and is
 # committed on purpose. Anything else named .env or .env.* stays ignored.
 .env
 .env.*
 *.secret.local
 !/functions/.env
-!/extensions/firestore-send-email.env
