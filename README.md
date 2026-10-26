@@ -4,14 +4,14 @@ Website for https://hemmalaget.se/. Deployed with [firebase](https://console.fir
 
 ## Development
 
-Requires the Nix dev shell (`direnv allow`) or Node 22 and Yarn 1.
+Requires the Nix dev shell (`direnv allow`) or Node 24 and pnpm.
 
 ```
-yarn install
-cd frontend; yarn install
-cd functions; yarn install
-yarn firebase login
-yarn dev
+pnpm install
+pnpm --dir frontend install
+pnpm --dir functions install
+pnpm firebase login
+pnpm dev
 open http://localhost:5555
 ```
 

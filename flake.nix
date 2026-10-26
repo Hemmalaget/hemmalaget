@@ -16,8 +16,8 @@
       {
         devShells.default = pkgs.mkShell {
           packages = with pkgs; [
-            nodejs_22
-            (yarn.override { nodejs = nodejs_22; })
+            nodejs_24
+            pnpm
             firebase-tools
             # Required by the Firebase emulators
             jdk21_headless

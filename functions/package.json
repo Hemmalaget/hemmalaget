@@ -1,41 +1,33 @@
 {
   "name": "functions",
   "scripts": {
-    "lint": "eslint --ext .js,.ts .",
+    "lint": "eslint .",
     "build": "tsc",
     "build:watch": "tsc --watch",
-    "dev": "yarn build:watch",
-    "serve": "yarn build && cd .. && npx firebase emulators:start --only functions",
-    "shell": "yarn build && npx firebase functions:shell",
-    "start": "yarn shell",
+    "dev": "pnpm build:watch",
+    "serve": "pnpm build && cd .. && npx firebase emulators:start --only functions",
+    "shell": "pnpm build && npx firebase functions:shell",
+    "start": "pnpm shell",
     "logs": "npx firebase functions:log",
     "format": "prettier -w ."
   },
   "engines": {
-    "node": "22"
+    "node": "24"
   },
   "main": "lib/index.js",
   "dependencies": {
-    "eslint-config-prettier": "^10.1.1",
-    "firebase-admin": "^13.2.0",
-    "firebase-functions": "^6.3.2",
-    "prettier": "^3.5.3"
+    "firebase-admin": "^14.5.0",
+    "firebase-functions": "^7.4.0",
+    "zod": "^4.6.7"
   },
   "devDependencies": {
-    "@eslint/compat": "^1.2.7",
-    "@eslint/eslintrc": "^3.3.1",
-    "@eslint/js": "^9.23.0",
-    "@typescript-eslint/eslint-plugin": "^8.29.0",
-    "@typescript-eslint/parser": "^8.29.0",
-    "eslint": "^9.23.0",
-    "eslint-config-google": "^0.14.0",
-    "eslint-plugin-import": "^2.31.0",
-    "firebase-functions-test": "^3.4.1",
-    "globals": "^16.0.0",
-    "jiti": "^2.4.2",
-    "typescript": "^5.8.2",
-    "typescript-eslint": "^8.29.0",
-    "zod": "^3.24.2"
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^24.19.2",
+    "eslint": "^10.13.0",
+    "prettier": "^3.9.10",
+    "typescript": "~6.0",
+    "typescript-eslint": "^8.72.0"
   },
-  "private": true
+  "private": true,
+  "packageManager": "pnpm@12.9.0"
 }
