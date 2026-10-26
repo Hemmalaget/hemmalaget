@@ -19,6 +19,7 @@
             nodejs_24
             pnpm
             firebase-tools
+            google-cloud-sdk
             # Required by the Firebase emulators
             jdk21_headless
           ];
