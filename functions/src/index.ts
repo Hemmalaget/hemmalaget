@@ -17,6 +17,17 @@ const requestBodySchema = z.object({
   email: optionalText,
 });
 
+// Older versions of the form sent JSON as text/plain, which arrives as a
+// string. Accept it so cached copies of the form keep working.
+function parseBody(body: unknown): unknown {
+  if (typeof body !== "string") return body;
+  try {
+    return JSON.parse(body);
+  } catch {
+    return undefined;
+  }
+}
+
 const receiverEmail = defineString("RECEIVER_EMAIL");
 const senderEmail = defineString("SENDER_EMAIL");
 const smtpConnectionUri = defineString("SMTP_CONNECTION_URI");
@@ -30,7 +41,7 @@ export const whistleblow = onRequest(
   async (request, response) => {
     logger.info("Received whistleblow request.");
 
-    const parsed = requestBodySchema.safeParse(request.body);
+    const parsed = requestBodySchema.safeParse(parseBody(request.body));
     if (!parsed.success) {
       logger.warn("Rejected malformed whistleblow request.");
       response.sendStatus(400);

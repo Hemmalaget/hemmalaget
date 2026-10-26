@@ -27,10 +27,17 @@ config only and are committed on purpose. **Never put a secret in them.**
   `functions/.secret.local`, which is gitignored. The emulator sends real
   email through SendGrid.
 
-## Deploying functions
+## Deploying
 
-CI deploys hosting only. Deploy functions by hand with
-`pnpm firebase deploy --only functions`, then redeploy hosting. The
-`/api/whistleblow` rewrite is pinned (`pinTag`) to the function revision that
-was live at the last hosting deploy, so the site keeps calling the old
-revision until hosting is deployed again.
+CI deploys on every merge to `main`. Because the `/api/whistleblow` rewrite is
+pinned (`pinTag`), every hosting deploy also deploys the `whistleblow`
+function, so the site and the function always move together. PR preview
+deploys do this too, which uploads the PR's function code as a new revision of
+the production function; the live site stays pinned to the revision from the
+last `main` deploy.
+
+CI's service account needs `roles/secretmanager.viewer` on the
+`SMTP_PASSWORD` secret.
+
+To deploy by hand, build the frontend first (`pnpm --dir frontend build`), as
+the hosting deploy uploads whatever is in `frontend/out`.
