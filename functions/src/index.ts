@@ -27,7 +27,7 @@ export const whistleblow = onRequest(
     const text = data.message ?? "No message body";
     const replyTo: string | undefined = data.email;
 
-    logger.info(`Received request with subject: "" and messsage: "${text}".`);
+    logger.info("Received whistleblow request.");
 
     // The password must go into the URL: nodemailer lets the URL's (empty)
     // password override a separate `auth` option.
