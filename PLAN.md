@@ -44,9 +44,9 @@ the form, and the function, SendGrid and every secret go away.
 - **Questions:**
   - *Ämne*: text, required.
   - *Meddelande*: long text, required.
-  - *Din email*: text, optional. Its subtitle repeats the site's note: *Om du
-    lämnar din email tom rapporterar du anonymt men vi kan tyvärr inte
-    återkoppla hur ditt ärende behandlats.*
+  - *Din e-post*: text, optional. Its subtitle repeats the site's note:
+    *Lämnar du fältet tomt rapporterar du anonymt, men då kan vi inte
+    återkoppla till dig.*
 - **Settings:**
   - *Who can fill out this form*: *Anyone can respond*. Reporters need no
     account, and Forms records no identity.
@@ -104,20 +104,33 @@ Questions for the report handlers:
 
 In `frontend/app/visselblasning/page.tsx`:
 
-- Replace the form with a link to the Microsoft Forms form, styled like the
-  current submit button, opening in a new tab
-  (`target="_blank" rel="noopener noreferrer"`). The link URL is a constant in
-  the page; it is public and not configuration.
-- Keep the anonymity note next to the link.
+- Replace the form, and the divider and heading above it, with the site's
+  grey `CTA` box, in a two-column lead like the home page's *Vill du bli en
+  del av Hemmalaget?*: the page heading and intro on the left, the box on
+  the right. Below 700px the box follows the intro.
+- The box has the title *Rapportera ett ärende* and the button *Öppna
+  formuläret*. Two new optional `CTA` props:
+  - `external` opens the link in a new tab
+    (`target="_blank" rel="noopener noreferrer"`) and adds an external-link
+    icon. Screen readers hear *(öppnas i ny flik)* instead of the icon.
+  - `small` uses a smaller button, so the other `CTA`s keep their size.
+- The link URL is a constant in the page; it is public and not
+  configuration.
+- Lay out the six text sections below the lead in two columns, with CSS
+  multi-column layout local to the page, so the columns balance in height.
+  Not `Highlights`: its alternating backgrounds mean something else on the
+  home page. Below 700px the sections stack in one column.
+- Move the anonymity note into the form, as the subtitle of *Din e-post*.
 - Drop the client state, `onSubmit`, the status messages and the `Spinner`
   import. Delete `frontend/app/components/Spinner`, which nothing else uses.
 - Remove the form styles that are no longer used from `styles.module.css`.
 - Update the copy that refers to the form below:
-  - *Längre ner på sidan finns Hemmalagets visselblåsarformulär*: keep, the
-    link is still at the bottom of the page.
+  - *Längre ner på sidan finns Hemmalagets visselblåsarformulär. Innan du går
+    dit …* becomes *Innan du rapporterar rekommenderar vi att du läser igenom
+    informationen nedan.*
   - *Använd formuläret nedan och fyll i rapporteringsformuläret för
-    visselblåsning*: say that the link opens the form at Microsoft, and fix
-    the missing full stop after *visselblåsning*.
+    visselblåsning* becomes *Öppna visselblåsarformuläret med knappen högst
+    upp på sidan.*
 
 Linking is preferred over embedding the form in an `<iframe>`. A link needs
 no layout work, behaves the same on phones, and does not depend on
