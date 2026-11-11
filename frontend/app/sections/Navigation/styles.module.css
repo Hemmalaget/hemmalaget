@@ -4,36 +4,67 @@
     background: white;
 }
 
+.skipLink {
+    position: absolute;
+    top: .5rem;
+    left: .5rem;
+    z-index: 1;
+    padding: .6rem 1rem;
+    border-radius: .5rem;
+    background: var(--link);
+    color: white;
+    font-weight: 500;
+    transform: translateY(-200%);
+}
+
+.skipLink:focus-visible {
+    transform: none;
+    outline-color: #111;
+}
+
 .topBar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     gap: 1rem;
+    padding: .5rem 1rem;
 }
 
-.hamburger {
+.menuButton {
     display: flex;
-    justify-content: center;
     align-items: center;
-    padding: .8rem;
-    font-size: 2rem;
+    gap: .5rem;
+    min-height: 48px;
+    /* Pulls the icon back in line with the page edge; the padding keeps the tap area */
+    margin-right: -.75rem;
+    padding: 0 .75rem;
+    box-sizing: border-box;
+    border-radius: .5rem;
     cursor: pointer;
     user-select: none;
 }
 
-.verticalCenterFix {
-    margin-top: -.5rem;
+.menuButton:hover {
+    background: var(--steel);
 }
 
-.hamburger:focus-visible,
-.hamburger:hover {
-    background: var(--steel);
+.bars {
+    display: grid;
+    gap: 5px;
+}
+
+.bars span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 1px;
+    background: currentColor;
 }
 
 .companyName {
     position: relative;
-    font-size: 2rem;
-    padding-left: 1rem;
+    font-size: clamp(1.6rem, 1rem + 2.5vw, 2rem);
     color: unset;
 }
 
@@ -59,15 +90,19 @@
 .drawer a {
     color: unset;
     padding: 1rem 2rem;
-
 }
 
 .drawer a:hover {
     color: unset;
 }
 
-@media (min-width: 850px) {
-  .hamburger {
+/* The links span the full width, so an outer ring would be cut off at the screen edges */
+.drawer a:focus-visible {
+    outline-offset: -3px;
+}
+
+@media (min-width: 700px) {
+  .menuButton {
     display: none;
   }
   .drawer.closed {
@@ -75,6 +110,7 @@
   }
   .drawer {
     flex-direction: row;
+    padding-right: 1rem;
   }
   .drawer a {
     padding: 1rem .7rem;

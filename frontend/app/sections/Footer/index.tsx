@@ -11,7 +11,7 @@ export const Footer = () => (
 
           <dt>Telefon</dt>
           <dd>
-            <a href="tel:+46768695000">076 869 5000</a>
+            <a href="tel:+46768695000">076-869 50 00</a>
           </dd>
 
           <dt>E-post</dt>
@@ -37,8 +37,6 @@ export const Footer = () => (
       </div>
     </div>
 
-    <div className={styles.copyright}>
-      {new Date().getFullYear()} © Hemmalaget AB
-    </div>
+    <div className={styles.copyright}>© Hemmalaget AB</div>
   </footer>
 );

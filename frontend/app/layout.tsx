@@ -4,7 +4,7 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Hemmalaget",
+  title: "Hemmalaget – personlig assistans i Västra Götaland",
   description:
     "Hemmalaget är det personliga assistansbolaget som sätter dig och dina behov i fokus. Tillsammans ser vi till att du får den hjälp som du vill ha, utan onödigt krångel.",
   copyright: "Hemmalaget AB",

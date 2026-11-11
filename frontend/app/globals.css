@@ -10,13 +10,15 @@
   margin: 0;
 }
 
-*:focus {
-  outline: none;
+:focus-visible {
+  outline: 3px solid var(--link);
+  outline-offset: 3px;
+  border-radius: 2px;
 }
 
 html {
-  font-size: 18px;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  /* 18px at the browser default, and scales with the user's font size */
+  font-size: 112.5%;
 }
 
 button {
@@ -51,15 +53,19 @@ h5,
 h6 {
   font-weight: normal;
   line-height: 1;
+  overflow-wrap: break-word;
 }
 
 body {
   color: #111;
   background: white;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 main {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  flex: 1;
 }
