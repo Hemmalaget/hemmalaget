@@ -6,11 +6,11 @@
     background-image: url('/header.jpg');
     background-position: center;
     background-size: cover;
-    padding: 16px;
+    padding: 1rem max(1rem, (100% - 1200px) / 2 + 1rem);
 }
 
 .title {
-    font-size: 3.5rem;
+    font-size: var(--font-hero);
     line-height: 1;
 }
 
@@ -19,7 +19,6 @@
     max-height: 50vw;
   }
   .title {
-    font-size: 5rem;
     max-width: 80%;
 }
 }

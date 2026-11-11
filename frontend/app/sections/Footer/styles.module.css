@@ -5,7 +5,7 @@
     background: linear-gradient(135deg, #a8e6ce 25%, #b0f1d8 25%, #b0f1d8 50%, #a8e6ce 50%, #a8e6ce 75%, #b0f1d8 75%, #b0f1d8 100%);
     background-size: 5.66px 5.66px;
     border-top: 20px solid var(--mint-light);
-    padding: 1rem;
+    padding: 1rem max(1rem, (100% - 1200px) / 2 + 1rem);
     gap: 1rem;
 }
 
@@ -21,7 +21,7 @@
 }
 
 .title {
-    font-size: 1.5rem;
+    font-size: var(--font-h3);
     font-weight: 500;
 }
 

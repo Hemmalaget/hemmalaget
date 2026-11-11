@@ -2,6 +2,8 @@
     display: flex;
     flex-direction: column;
     background: white;
+    /* Keeps the content as wide as the page sections on wide screens */
+    padding-inline: max(0px, (100% - 1200px) / 2);
 }
 
 .skipLink {
@@ -76,7 +78,7 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-    font-size: 1.2rem;
+    font-size: var(--font-lead);
 }
 
 .drawer.open {
@@ -101,7 +103,7 @@
     outline-offset: -3px;
 }
 
-@media (min-width: 700px) {
+@media (min-width: 800px) {
   .menuButton {
     display: none;
   }
@@ -110,7 +112,8 @@
   }
   .drawer {
     flex-direction: row;
-    padding-right: 1rem;
+    /* Lines the last link's text up with the page edge */
+    padding-right: .3rem;
   }
   .drawer a {
     padding: 1rem .7rem;

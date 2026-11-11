@@ -10,13 +10,13 @@
 }
 
 .title {
-    font-size: 2rem;
+    font-size: var(--font-h2-small);
     font-weight: 500;
 }
 
 .button {
     display: block;
-    font-size: 1.3rem;
+    font-size: var(--font-lead);
     color: white;
     font-weight: 500;
     background: var(--link);

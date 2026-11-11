@@ -10,7 +10,7 @@
 }
 
 .title {
-    font-size: clamp(1.8rem, 1rem + 4vw, 2.5rem);
+    font-size: var(--font-h2);
     margin-bottom: 1rem;
 }
 

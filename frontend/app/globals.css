@@ -4,6 +4,13 @@
   --mint-alt: #eaf4da;
   --steel: #ededed;
   --link: #007099;
+
+  /* Type scale. Large headings are weight 400, the smaller ones 500. */
+  --font-hero: clamp(3rem, 2rem + 4vw, 5rem);
+  --font-h2: clamp(1.8rem, 1rem + 4vw, 2.5rem);
+  --font-h2-small: clamp(1.5rem, 1rem + 2vw, 2rem);
+  --font-h3: 1.5rem;
+  --font-lead: 1.25rem;
 }
 
 * {
@@ -52,8 +59,9 @@ h4,
 h5,
 h6 {
   font-weight: normal;
-  line-height: 1;
+  line-height: 1.15;
   overflow-wrap: break-word;
+  text-wrap: balance;
 }
 
 body {

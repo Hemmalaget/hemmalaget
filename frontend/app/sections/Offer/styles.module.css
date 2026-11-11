@@ -10,7 +10,7 @@
 }
 
 .title {
-    font-size: clamp(1.8rem, 1rem + 4vw, 2.5rem);
+    font-size: var(--font-h2);
     padding-inline: 1rem;
 }
 
@@ -81,15 +81,15 @@
     }
 
     .s {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 
     .m {
-        font-size: 1.3rem;
+        font-size: var(--font-lead);
     }
 
     .l,
     .xl {
-        font-size: 1.6rem;
+        font-size: var(--font-h3);
     }
 }
