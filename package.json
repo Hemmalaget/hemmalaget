@@ -5,9 +5,7 @@
   "scripts": {
     "lint": "run-p lint:*",
     "lint:frontend": "pnpm --dir frontend lint",
-    "lint:functions": "pnpm --dir functions lint",
     "dev:frontend": "pnpm --dir frontend build",
-    "dev:functions": "pnpm --dir functions dev",
     "dev": "run-p dev:* emulators:start",
     "emulators:start": "firebase emulators:start",
     "emulators:stop": "pkill -f 'firebase/emulators'"
