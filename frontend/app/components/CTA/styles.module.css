@@ -18,9 +18,10 @@
     display: block;
     font-size: var(--font-lead);
     color: white;
-    font-weight: 500;
-    background: var(--link);
-    border: 2px solid var(--link);
+    /* Bold at this size is large text in WCAG terms */
+    font-weight: 700;
+    background: var(--button);
+    border: 2px solid var(--button);
     border-radius: .5rem;
     cursor: pointer;
     padding: 1rem 2rem;
@@ -43,6 +44,6 @@
 }
 
 .secondary {
-    color: var(--link);
+    color: var(--button);
     background: white;
 }

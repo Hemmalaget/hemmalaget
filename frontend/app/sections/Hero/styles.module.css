@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column-reverse;
     /* The colour along the photo's edges, so the fade has no visible seam */
-    background: #9bc6b5;
+    background: var(--mint-dark);
 }
 
 .title {

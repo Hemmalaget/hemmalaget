@@ -44,6 +44,13 @@
     font-size: var(--font-lead);
 }
 
+/* Underlined so they don't rely on colour alone to stand out from the text */
+.employeeCard a {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+}
+
 .employeeCard p {
   max-width: 60ch;
   text-align: left;

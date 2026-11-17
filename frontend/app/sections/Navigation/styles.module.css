@@ -21,7 +21,7 @@
 
 .skipLink:focus-visible {
     transform: none;
-    outline-color: #111;
+    outline-color: var(--text);
 }
 
 .topBar {
