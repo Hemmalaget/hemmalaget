@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import styles from "./styles.module.css";
 import Link from "next/link";
 
@@ -10,23 +10,14 @@ export const Navigation = ({
   links: { [name: string]: string };
 }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const buttonRef = useRef<HTMLButtonElement>(null);
+  const dialogRef = useRef<HTMLDialogElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
 
-  const closeDrawer = useCallback(() => setIsOpen(false), []);
-
-  useEffect(() => {
-    if (!isOpen) return;
-
-    const onKeyDown = (evt: KeyboardEvent) => {
-      if (evt.key === "Escape") {
-        setIsOpen(false);
-        buttonRef.current?.focus();
-      }
-    };
-
-    document.addEventListener("keydown", onKeyDown);
-    return () => document.removeEventListener("keydown", onKeyDown);
-  }, [isOpen]);
+  const linkElements = Object.entries(links).map(([text, href]) => (
+    <a key={text} href={href}>
+      {text}
+    </a>
+  ));
 
   return (
     <header className={styles.section}>
@@ -40,33 +31,64 @@ export const Navigation = ({
         </Link>
 
         <button
-          ref={buttonRef}
           type="button"
           className={styles.menuButton}
+          aria-label="Meny"
           aria-expanded={isOpen}
-          aria-controls="huvudmeny"
-          onClick={() => setIsOpen((prev) => !prev)}
+          aria-controls="mobilmeny"
+          onClick={() => {
+            dialogRef.current?.showModal();
+            closeButtonRef.current?.focus();
+            setIsOpen(true);
+          }}
         >
           <span className={styles.bars} aria-hidden="true">
             <span />
             <span />
             <span />
           </span>
-          {isOpen ? "Stäng" : "Meny"}
         </button>
       </div>
 
-      <nav
-        id="huvudmeny"
-        aria-label="Huvudmeny"
-        className={styles.drawer + " " + (isOpen ? styles.open : styles.closed)}
-      >
-        {Object.entries(links).map(([text, href]) => (
-          <a key={text} href={href} onClick={closeDrawer}>
-            {text}
-          </a>
-        ))}
+      <nav aria-label="Huvudmeny" className={styles.links}>
+        {linkElements}
       </nav>
+
+      {/* On small screens the menu opens as a full-screen dialog, which keeps
+          focus inside it and closes on Escape */}
+      <dialog
+        ref={dialogRef}
+        id="mobilmeny"
+        className={styles.dialog}
+        onClose={() => setIsOpen(false)}
+        // Choosing a link closes the menu before the page scrolls to it
+        onClick={(evt) => {
+          if ((evt.target as Element).closest("a")) dialogRef.current?.close();
+        }}
+      >
+        <div className={styles.topBar}>
+          <Link href="/" className={styles.companyName}>
+            Hemmalaget
+          </Link>
+
+          <button
+            ref={closeButtonRef}
+            type="button"
+            className={styles.menuButton}
+            aria-label="Stäng meny"
+            onClick={() => dialogRef.current?.close()}
+          >
+            <span className={styles.cross} aria-hidden="true">
+              <span />
+              <span />
+            </span>
+          </button>
+        </div>
+
+        <nav aria-label="Huvudmeny" className={styles.dialogLinks}>
+          {linkElements}
+        </nav>
+      </dialog>
     </header>
   );
 };

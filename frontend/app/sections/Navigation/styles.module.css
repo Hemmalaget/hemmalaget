@@ -36,7 +36,6 @@
 .menuButton {
     display: flex;
     align-items: center;
-    gap: .5rem;
     min-height: 48px;
     /* Pulls the icon back in line with the page edge; the padding keeps the tap area */
     margin-right: -.75rem;
@@ -51,17 +50,28 @@
     background: var(--steel);
 }
 
-.bars {
+.bars,
+.cross {
     display: grid;
     gap: 5px;
 }
 
-.bars span {
+.bars span,
+.cross span {
     display: block;
     width: 22px;
     height: 2px;
     border-radius: 1px;
     background: currentColor;
+}
+
+/* Two bars crossed into an X */
+.cross span:first-child {
+    transform: translateY(3.5px) rotate(45deg);
+}
+
+.cross span:last-child {
+    transform: translateY(-3.5px) rotate(-45deg);
 }
 
 .companyName {
@@ -74,32 +84,53 @@
     text-decoration: none;
 }
 
-.drawer {
+.links {
+    display: none;
+    font-size: var(--font-lead);
+    /* Lines the last link's text up with the page edge */
+    padding-right: .3rem;
+}
+
+.links a,
+.dialogLinks a {
+    color: unset;
+}
+
+.links a {
+    padding: 1rem .7rem;
+}
+
+.dialog {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: white;
+    color: inherit;
+}
+
+/* Keeps the page behind the menu from scrolling */
+html:has(.dialog[open]) {
+    overflow: hidden;
+}
+
+.dialogLinks {
     display: flex;
     flex-direction: column;
     text-align: center;
-    font-size: var(--font-lead);
+    font-size: var(--font-h3);
+    padding-block: 1rem;
 }
 
-.drawer.open {
-    display: flex;
-}
-
-.drawer.closed {
-    display: none;
-}
-
-.drawer a {
-    color: unset;
+.dialogLinks a {
     padding: 1rem 2rem;
 }
 
-.drawer a:hover {
-    color: unset;
-}
-
 /* The links span the full width, so an outer ring would be cut off at the screen edges */
-.drawer a:focus-visible {
+.dialogLinks a:focus-visible {
     outline-offset: -3px;
 }
 
@@ -107,16 +138,8 @@
   .menuButton {
     display: none;
   }
-  .drawer.closed {
+  .links {
     display: flex;
-  }
-  .drawer {
-    flex-direction: row;
-    /* Lines the last link's text up with the page edge */
-    padding-right: .3rem;
-  }
-  .drawer a {
-    padding: 1rem .7rem;
   }
   .section {
     flex-direction: row;
