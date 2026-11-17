@@ -4,7 +4,7 @@
     flex-direction: column-reverse;
     text-align: center;
     background: var(--steel-solid);
-    margin: 0 max(1rem, (100% - 1200px + 2rem) / 2) 3rem;
+    margin: 0 max(1rem, (100% - var(--content-width) + 2rem) / 2) 3rem;
 }
 
 .image {
@@ -15,10 +15,17 @@
 }
 
 
-@media (min-width: 800px) {
+/* Keeps the number on one line, except on screens too narrow for it at large text sizes */
+@media (min-width: 20em) {
+  .number {
+    white-space: nowrap;
+  }
+}
+
+@media (min-width: 50em) {
   .section {
     display: grid;
-    /* Wide enough for the buttons to fit on one line */
+    /* Wide enough for the CTA's buttons (max 18rem) plus its 1rem side padding */
     grid-template-columns: minmax(20rem, 1fr) 2fr;
   }
   .image {

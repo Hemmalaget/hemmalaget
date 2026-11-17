@@ -8,7 +8,7 @@
   --mint: oklch(87.6% var(--mint-chroma) var(--mint-hue));
   --mint-light: oklch(90.8% var(--mint-chroma) var(--mint-hue));
   /* The colour along the edges of the hero photo, which fades into it. The
-     photo's tint is matched to it, so change both together. */
+     photo's tint is matched to it; see originals/README.md to regenerate it. */
   --mint-dark: oklch(79.8% var(--mint-chroma) var(--mint-hue));
   /* A pale tint, for the alternating cards */
   --mint-alt: oklch(96% 0.02 var(--mint-hue));
@@ -22,6 +22,8 @@
      needs 4.5:1 for AAA. */
   --button: oklch(51.3% 0.106 var(--teal-hue));
   --text: oklch(17.8% 0 0);
+
+  --content-width: 1200px;
 
   /* The diagonal stripes behind the mint and grey bands */
   --stripes-mint: linear-gradient(135deg, var(--mint) 25%, var(--mint-light) 25% 50%, var(--mint) 50% 75%, var(--mint-light) 75%) 0 0 / 5.66px 5.66px;
@@ -46,7 +48,9 @@
 }
 
 html {
-  /* 18px at the browser default, and scales with the user's font size */
+  /* 18px at the browser default, and scales with the user's font size.
+     Breakpoints are in em for the same reason, so a larger font switches to
+     the narrow layouts instead of overflowing. */
   font-size: 112.5%;
 }
 
@@ -67,6 +71,9 @@ a:focus-visible {
 
 p {
   line-height: 1.4;
+  /* Breaks long Swedish compounds only when they don't fit, e.g. on narrow
+     screens at large text sizes */
+  overflow-wrap: anywhere;
 }
 
 img {
@@ -82,7 +89,7 @@ h5,
 h6 {
   font-weight: normal;
   line-height: 1.15;
-  overflow-wrap: break-word;
+  overflow-wrap: anywhere;
   text-wrap: balance;
 }
 

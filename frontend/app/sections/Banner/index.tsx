@@ -7,9 +7,12 @@ export const Banner = () => (
       title="Vi hjälper dig!"
       buttonText="Mejla oss"
       url="mailto:info@hemmalaget.se?Subject=Bli%20kund%20hos%20Hemmalaget"
-      // Non-breaking space and hyphen keep the number on one line
       secondary={{
-        text: "Ring 076\u2011869\u00a050\u00a000",
+        text: (
+          <>
+            Ring <span className={styles.number}>076-869 50 00</span>
+          </>
+        ),
         url: "tel:+46768695000",
       }}
     />

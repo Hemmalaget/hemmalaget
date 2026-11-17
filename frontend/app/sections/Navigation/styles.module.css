@@ -3,7 +3,7 @@
     flex-direction: column;
     background: white;
     /* Keeps the content as wide as the page sections on wide screens */
-    padding-inline: max(0px, (100% - 1200px) / 2);
+    padding-inline: max(0px, (100% - var(--content-width)) / 2);
 }
 
 .skipLink {
@@ -46,7 +46,8 @@
     user-select: none;
 }
 
-.menuButton:hover {
+.menuButton:hover,
+.menuButton:active {
     background: var(--steel);
 }
 
@@ -65,7 +66,6 @@
     background: currentColor;
 }
 
-/* Two bars crossed into an X */
 .cross span:first-child {
     transform: translateY(3.5px) rotate(45deg);
 }
@@ -74,9 +74,18 @@
     transform: translateY(-3.5px) rotate(-45deg);
 }
 
+/* High-contrast modes drop background colours, which would hide the icons */
+@media (forced-colors: active) {
+  .bars span,
+  .cross span {
+    background: CanvasText;
+  }
+}
+
 .companyName {
     position: relative;
-    font-size: clamp(1.6rem, 1rem + 2.5vw, 2rem);
+    /* Capped by the screen width, so a large text size can't push it off a phone screen */
+    font-size: min(clamp(1.6rem, 1rem + 2.5vw, 2rem), 12vw);
     color: unset;
 }
 
@@ -129,13 +138,17 @@ html:has(.dialog[open]) {
     padding: 1rem 2rem;
 }
 
-/* The links span the full width, so an outer ring would be cut off at the screen edges */
+/* The links fill the menu bar and the dialog, so an outer ring would be cut off */
+.links a:focus-visible,
 .dialogLinks a:focus-visible {
     outline-offset: -3px;
 }
 
-@media (min-width: 800px) {
-  .menuButton {
+/* Wide enough for the links in one row, at any text size */
+@media (min-width: 54em) {
+  /* Only the opening button, so an open menu keeps its close button if the
+     screen widens, e.g. when a tablet is turned */
+  .openButton {
     display: none;
   }
   .links {

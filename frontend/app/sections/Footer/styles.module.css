@@ -3,14 +3,13 @@
     flex-direction: column;
     background: var(--stripes-mint);
     border-top: 20px solid var(--mint-light);
-    padding: 1rem max(1rem, (100% - 1200px) / 2 + 1rem);
+    padding: 1rem max(1rem, (100% - var(--content-width)) / 2 + 1rem);
     gap: 1rem;
 }
 
 .columns {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    flex-wrap: wrap;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 14rem), 1fr));
     gap: 1rem;
 }
 
@@ -31,8 +30,14 @@
 
 .details {
     display: grid;
-    gap: .5rem;
-    grid-template-columns: 80px auto;
+    gap: .5rem 1rem;
+    grid-template-columns: max-content 1fr;
+}
+
+/* The email address can't otherwise wrap at large text sizes */
+.details dd {
+    min-width: 0;
+    overflow-wrap: anywhere;
 }
 
 .links {

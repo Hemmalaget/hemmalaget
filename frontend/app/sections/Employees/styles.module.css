@@ -4,14 +4,13 @@
     gap: 1rem;
     padding: 2rem 1rem 2rem 1rem;
     width: 100%;
-    max-width: 1200px;
+    max-width: var(--content-width);
     box-sizing: border-box;
     margin-inline: auto;
 }
 
 .title {
     font-size: var(--font-h2);
-    padding-inline: 1rem;
 }
 
 .grid {
@@ -25,7 +24,10 @@
     align-items: center;
     text-align: center;
     gap: 1rem;
+    min-width: 0;
     max-width: 800px;
+    /* Long titles such as "Verksamhetschef" would otherwise overflow at large text sizes */
+    overflow-wrap: anywhere;
 }
 
 .employeeCard .image {
@@ -49,9 +51,15 @@
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-underline-offset: 4px;
+    /* A larger tap target without changing the spacing */
+    display: inline-block;
+    padding-block: .35rem;
+    margin-block: -.35rem;
+    /* The email address can't otherwise wrap at large text sizes */
+    overflow-wrap: anywhere;
 }
 
 .employeeCard p {
-  max-width: 60ch;
-  text-align: left;
+    max-width: 60ch;
+    text-align: left;
 }

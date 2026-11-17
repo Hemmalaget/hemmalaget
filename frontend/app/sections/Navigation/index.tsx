@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import styles from "./styles.module.css";
 import Link from "next/link";
 
@@ -9,7 +9,6 @@ export const Navigation = ({
 }: {
   links: { [name: string]: string };
 }) => {
-  const [isOpen, setIsOpen] = useState(false);
   const dialogRef = useRef<HTMLDialogElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
 
@@ -32,14 +31,12 @@ export const Navigation = ({
 
         <button
           type="button"
-          className={styles.menuButton}
+          className={`${styles.menuButton} ${styles.openButton}`}
           aria-label="Meny"
-          aria-expanded={isOpen}
-          aria-controls="mobilmeny"
           onClick={() => {
             dialogRef.current?.showModal();
+            // The dialog would otherwise focus its first link, the logo
             closeButtonRef.current?.focus();
-            setIsOpen(true);
           }}
         >
           <span className={styles.bars} aria-hidden="true">
@@ -58,9 +55,7 @@ export const Navigation = ({
           focus inside it and closes on Escape */}
       <dialog
         ref={dialogRef}
-        id="mobilmeny"
         className={styles.dialog}
-        onClose={() => setIsOpen(false)}
         // Choosing a link closes the menu before the page scrolls to it
         onClick={(evt) => {
           if ((evt.target as Element).closest("a")) dialogRef.current?.close();
