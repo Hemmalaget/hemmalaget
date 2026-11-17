@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" fill="none">
+  <title>Hemmalaget Assistans thumbs up</title>
+  <g stroke="#32964F" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M86 40H65L40 21 37 9C36 3 30 3 26 8s-5 10-2 16l5 16H18C9 40 4 46 8 52c-5 4-4 10 2 13-4 4-2 10 4 12-2 4 1 9 7 10 3 3 8 4 13 4h5c9 0 13-4 17-11h30"/>
+    <!-- Four rounded fingertips, from index finger to little finger. -->
+    <path d="M16 47h14c9 0 11 8 3 10-10 3-19 2-25-5"/>
+    <path d="M33 57c10 0 12 8 3 11-10 3-19 2-26-3"/>
+    <path d="M36 68c10 0 12 8 3 10-9 3-18 2-25-1"/>
+    <path d="M39 78c9 0 10 7 2 10-7 2-14 1-20-1"/>
+  </g>
+</svg>
