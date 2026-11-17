@@ -10,16 +10,7 @@
       "**/.*",
       "**/node_modules/**"
     ],
-    "cleanUrls": true,
-    "rewrites": [
-      {
-        "source": "/api/whistleblow",
-        "function": {
-          "functionId": "whistleblow",
-          "pinTag": true
-        }
-      }
-    ]
+    "cleanUrls": true
   },
   "emulators": {
     "firestore": {
@@ -32,22 +23,5 @@
       "enabled": true
     },
     "singleProjectMode": true
-  },
-  "functions": [
-    {
-      "source": "functions",
-      "codebase": "default",
-      "ignore": [
-        "node_modules",
-        ".git",
-        "firebase-debug.log",
-        "firebase-debug.*.log"
-      ],
-      "predeploy": [
-        "pnpm --dir ./functions install",
-        "pnpm --dir ./functions lint",
-        "pnpm --dir ./functions build"
-      ]
-    }
-  ]
+  }
 }
