@@ -1,8 +1,4 @@
 {
-  "firestore": {
-    "rules": "firestore.rules",
-    "indexes": "firestore.indexes.json"
-  },
   "hosting": {
     "public": "frontend/out",
     "ignore": [
@@ -13,9 +9,6 @@
     "cleanUrls": true
   },
   "emulators": {
-    "firestore": {
-      "port": 8080
-    },
     "hosting": {
       "port": 5555
     },
