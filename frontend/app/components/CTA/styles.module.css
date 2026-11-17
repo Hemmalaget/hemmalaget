@@ -4,7 +4,7 @@
     text-align: center;
     justify-content: center;
     align-items: center;
-    background: var(--steel);
+    background: var(--steel-solid);
     padding: 2rem 1rem;
     gap: 1rem;
 }
@@ -33,7 +33,7 @@
 
 .button:hover {
     text-decoration: none;
-    box-shadow: 0 .1rem .1rem 0 rgba(0,0,0,.5);
+    box-shadow: 0 .1rem .1rem 0 oklch(0% 0 0 / .5);
 }
 
 @media (prefers-reduced-motion: no-preference) {

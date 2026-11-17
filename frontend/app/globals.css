@@ -1,18 +1,27 @@
 :root {
-  --mint: #a8e6ce;
-  --mint-light: #b1f1d9;
-  /* The colour along the edges of the hero photo, which fades into it */
-  --mint-dark: #9bc6b5;
-  /* A light tint of it, for the alternating cards */
-  --mint-alt: color-mix(in srgb, var(--mint-dark) 20%, white);
-  --steel: #ededed;
-  --steel-light: #f7f7f7;
-  /* At least 7:1 (WCAG AAA) against every background it's used on, mint included */
-  --link: #004761;
+  /* Colours are OKLCH (lightness, chroma, hue), so related colours share a
+     hue and chroma and differ only in lightness */
+  --mint-hue: 169;
+  --teal-hue: 232;
+  --mint-chroma: 0.06;
+
+  --mint: oklch(87.6% var(--mint-chroma) var(--mint-hue));
+  --mint-light: oklch(90.8% var(--mint-chroma) var(--mint-hue));
+  /* The colour along the edges of the hero photo, which fades into it. The
+     photo's tint is matched to it, so change both together. */
+  --mint-dark: oklch(79.8% var(--mint-chroma) var(--mint-hue));
+  /* A pale tint, for the alternating cards */
+  --mint-alt: oklch(96% 0.02 var(--mint-hue));
+  --steel: oklch(94.6% 0 0);
+  --steel-light: oklch(97.6% 0 0);
+  /* Solid grey boxes, between the two stripe greys so they don't look heavy */
+  --steel-solid: oklch(96.2% 0 0);
+  /* At least 7:1 (WCAG AAA) against every background it's used on */
+  --link: oklch(37.3% 0.075 var(--teal-hue));
   /* Brighter, for the buttons. Their bold text counts as large text, which
      needs 4.5:1 for AAA. */
-  --button: #007099;
-  --text: #111;
+  --button: oklch(51.3% 0.106 var(--teal-hue));
+  --text: oklch(17.8% 0 0);
 
   /* The diagonal stripes behind the mint and grey bands */
   --stripes-mint: linear-gradient(135deg, var(--mint) 25%, var(--mint-light) 25% 50%, var(--mint) 50% 75%, var(--mint-light) 75%) 0 0 / 5.66px 5.66px;
