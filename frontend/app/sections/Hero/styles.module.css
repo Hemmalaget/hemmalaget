@@ -4,7 +4,8 @@
     height: 50vh;
     min-height: 300px;
     background-image: url('/header.jpg');
-    background-position: center;
+    /* Keeps his eyes and mouth, in the lower right of the image, in view however it's cropped */
+    background-position: right 55%;
     background-size: cover;
     padding: 1rem max(1rem, (100% - 1200px) / 2 + 1rem);
 }
@@ -16,9 +17,11 @@
 
 @media (min-width: 750px) {
   .section {
-    max-height: 50vw;
+    /* Grows with the width so wide screens show more of the image, but at most
+       600px, and never a strip so thin that it loses his eyes or mouth */
+    height: clamp(300px, 40vw, max(min(60vh, 600px), 20vw));
   }
   .title {
     max-width: 80%;
-}
+  }
 }
