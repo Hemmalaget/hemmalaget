@@ -1,4 +1,3 @@
-import Image from "next/image";
 import styles from "./styles.module.css";
 import { Highlights } from "@/app/components/Highlights";
 
@@ -6,13 +5,20 @@ export const Offer = () => (
   <section className={styles.section} id="erbjudande">
     <h2 className={styles.title}>Vi erbjuder</h2>
 
-    <Image
-      src="/cloud.png"
-      alt="Ordmoln av Hemmalagets värdeord"
-      width="500"
-      height="300"
-      className={styles.image}
-    />
+    <div className={styles.cloudContainer}>
+      <ul className={styles.cloud} aria-label="Våra värdeord">
+        <li className={`${styles.m} ${styles.rowEnd}`}>Kompetens</li>
+        <li className={styles.l}>Full service</li>
+        <li className={`${styles.m} ${styles.rowEnd}`}>Inkluderande</li>
+        <li className={styles.m}>Engagemang</li>
+        <li className={styles.m}>Utbildning</li>
+        <li className={`${styles.l} ${styles.rowEnd}`}>24 timmar om dygnet</li>
+        <li className={styles.s}>Relationer</li>
+        <li className={styles.xl}>365 dagar om året</li>
+        <li className={`${styles.s} ${styles.rowEnd}`}>Delaktighet</li>
+        <li className={styles.m}>Transparens</li>
+      </ul>
+    </div>
 
     <Highlights
       highlights={[

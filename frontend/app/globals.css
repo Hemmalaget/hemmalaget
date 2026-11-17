@@ -1,22 +1,57 @@
 :root {
-  --mint: #a8e6ce;
-  --mint-light: #b1f1d9;
-  --mint-alt: #eaf4da;
-  --steel: #ededed;
-  --link: #007099;
+  /* Colours are OKLCH (lightness, chroma, hue), so related colours share a
+     hue and chroma and differ only in lightness */
+  --mint-hue: 169;
+  --teal-hue: 232;
+  --mint-chroma: 0.06;
+
+  --mint: oklch(87.6% var(--mint-chroma) var(--mint-hue));
+  --mint-light: oklch(90.8% var(--mint-chroma) var(--mint-hue));
+  /* The colour along the edges of the hero photo, which fades into it. The
+     photo's tint is matched to it; see originals/README.md to regenerate it. */
+  --mint-dark: oklch(79.8% var(--mint-chroma) var(--mint-hue));
+  /* A pale tint, for the alternating cards */
+  --mint-alt: oklch(96% 0.02 var(--mint-hue));
+  --steel: oklch(94.6% 0 0);
+  --steel-light: oklch(97.6% 0 0);
+  /* Solid grey boxes, between the two stripe greys so they don't look heavy */
+  --steel-solid: oklch(96.2% 0 0);
+  /* At least 7:1 (WCAG AAA) against every background it's used on */
+  --link: oklch(37.3% 0.075 var(--teal-hue));
+  /* Brighter, for the buttons. Their bold text counts as large text, which
+     needs 4.5:1 for AAA. */
+  --button: oklch(51.3% 0.106 var(--teal-hue));
+  --text: oklch(17.8% 0 0);
+
+  --content-width: 1200px;
+
+  /* The diagonal stripes behind the mint and grey bands */
+  --stripes-mint: linear-gradient(135deg, var(--mint) 25%, var(--mint-light) 25% 50%, var(--mint) 50% 75%, var(--mint-light) 75%) 0 0 / 5.66px 5.66px;
+  --stripes-steel: linear-gradient(135deg, var(--steel-light) 25%, var(--steel) 25% 50%, var(--steel-light) 50% 75%, var(--steel) 75%) 0 0 / 5.66px 5.66px;
+
+  /* Type scale. Large headings are weight 400, the smaller ones 500. */
+  --font-hero: clamp(3rem, 2rem + 4vw, 5rem);
+  --font-h2: clamp(1.8rem, 1rem + 4vw, 2.5rem);
+  --font-h2-small: clamp(1.5rem, 1rem + 2vw, 2rem);
+  --font-h3: 1.5rem;
+  --font-lead: 1.25rem;
 }
 
 * {
   margin: 0;
 }
 
-*:focus {
-  outline: none;
+:focus-visible {
+  outline: 3px solid var(--link);
+  outline-offset: 3px;
+  border-radius: 2px;
 }
 
 html {
-  font-size: 18px;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  /* 18px at the browser default, and scales with the user's font size.
+     Breakpoints are in em for the same reason, so a larger font switches to
+     the narrow layouts instead of overflowing. */
+  font-size: 112.5%;
 }
 
 button {
@@ -36,6 +71,9 @@ a:focus-visible {
 
 p {
   line-height: 1.4;
+  /* Breaks long Swedish compounds only when they don't fit, e.g. on narrow
+     screens at large text sizes */
+  overflow-wrap: anywhere;
 }
 
 img {
@@ -50,16 +88,21 @@ h4,
 h5,
 h6 {
   font-weight: normal;
-  line-height: 1;
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
 }
 
 body {
-  color: #111;
+  color: var(--text);
   background: white;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 main {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  flex: 1;
 }

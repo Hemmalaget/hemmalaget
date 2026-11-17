@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import styles from "./styles.module.css";
 
 export const CTA = ({
@@ -6,6 +7,7 @@ export const CTA = ({
   url,
   external = false,
   small = false,
+  secondary,
 }: {
   title: string;
   buttonText: string;
@@ -13,6 +15,7 @@ export const CTA = ({
   // Opens the link in a new tab, marked with an icon.
   external?: boolean;
   small?: boolean;
+  secondary?: { text: ReactNode; url: string };
 }) => (
   <div className={styles.container}>
     <h2 className={styles.title}>{title}</h2>
@@ -42,5 +45,13 @@ export const CTA = ({
         </>
       )}
     </a>
+    {secondary && (
+      <a
+        className={`${styles.button} ${styles.secondary}`}
+        href={secondary.url}
+      >
+        {secondary.text}
+      </a>
+    )}
   </div>
 );

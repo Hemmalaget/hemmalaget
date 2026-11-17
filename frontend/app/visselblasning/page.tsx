@@ -18,7 +18,7 @@ const Whistleblowing = () => {
         }}
       />
 
-      <div className={styles.page}>
+      <main id="innehall" className={styles.page}>
         <div className={styles.lead}>
           <div className={styles.text}>
             <h1>Visselblåsning</h1>
@@ -125,7 +125,7 @@ const Whistleblowing = () => {
             </p>
           </section>
         </div>
-      </div>
+      </main>
 
       <Footer></Footer>
     </div>

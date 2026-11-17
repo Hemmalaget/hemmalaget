@@ -17,7 +17,7 @@ export const Join = () => (
       </div>
 
       <CTA
-        title="Skicka ditt CV och Personligt Brev till oss!"
+        title="Skicka ditt CV och personligt brev till oss!"
         buttonText="Ansök nu"
         url="mailto:info@hemmalaget.se?Subject=Jobba%20i%20Hemmalaget"
       />

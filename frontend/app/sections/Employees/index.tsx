@@ -51,7 +51,7 @@ export const Employees = () => (
     <div className={styles.grid}>
       <EmployeeCard
         image={{
-          src: "/per-arne.png",
+          src: "/per-arne.jpg",
           alt: "Per-Arne, VD för Hemmalaget.",
         }}
         name="Per-Arne Hederstaf"
@@ -61,7 +61,7 @@ export const Employees = () => (
           href: "mailto:per-arne@hemmalaget.se",
         }}
         phone={{
-          text: "076 869 50 00",
+          text: "076-869 50 00",
           href: "tel:+46768695000",
         }}
         description="Per-Arne har sedan 2001 jobbat i nära anknytning till assistans och startade 2010 Hemmalaget Assistans AB. Per-Arne jobbar främst från Alingsås och har helhetsansvaret för kunderna i Västra Götaland. Frihet för Per-Arne är att dra iväg några veckor med husbil runt vårt vackra land."
