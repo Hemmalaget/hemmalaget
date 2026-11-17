@@ -1,18 +1,15 @@
 .section {
     display: flex;
     flex-direction: column;
-    background: var(--mint);
-    background: linear-gradient(135deg, #a8e6ce 25%, #b0f1d8 25%, #b0f1d8 50%, #a8e6ce 50%, #a8e6ce 75%, #b0f1d8 75%, #b0f1d8 100%);
-    background-size: 5.66px 5.66px;
+    background: var(--stripes-mint);
     border-top: 20px solid var(--mint-light);
-    padding: 1rem;
+    padding: 1rem max(1rem, (100% - var(--content-width)) / 2 + 1rem);
     gap: 1rem;
 }
 
 .columns {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    flex-wrap: wrap;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 14rem), 1fr));
     gap: 1rem;
 }
 
@@ -21,7 +18,7 @@
 }
 
 .title {
-    font-size: 1.5rem;
+    font-size: var(--font-h3);
     font-weight: 500;
 }
 
@@ -33,8 +30,14 @@
 
 .details {
     display: grid;
-    gap: .5rem;
-    grid-template-columns: 80px auto;
+    gap: .5rem 1rem;
+    grid-template-columns: max-content 1fr;
+}
+
+/* The email address can't otherwise wrap at large text sizes */
+.details dd {
+    min-width: 0;
+    overflow-wrap: anywhere;
 }
 
 .links {
@@ -44,7 +47,16 @@
 }
 
 .section a {
-    color: unset;
+    color: var(--text);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
     text-underline-offset: 4px;
     line-height: 1.2rem;
+    display: inline-block;
+    padding-block: .35rem;
+    margin-block: -.35rem;
+}
+
+.section a:focus-visible {
+    outline-color: var(--text);
 }

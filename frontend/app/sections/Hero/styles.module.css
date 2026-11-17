@@ -1,25 +1,56 @@
 .section {
     display: flex;
-    align-items: flex-end;
-    height: 50vh;
-    min-height: 300px;
-    background-image: url('/header.png');
-    background-position: center;
-    background-size: cover;
-    padding: 16px;
+    flex-direction: column-reverse;
+    /* The colour along the photo's edges, so the fade has no visible seam */
+    background: var(--mint-dark);
 }
 
 .title {
-    font-size: 3.5rem;
+    font-size: var(--font-hero);
     line-height: 1;
+    padding: 0 1rem 2rem;
 }
 
-@media (min-width: 750px) {
+.image {
+    aspect-ratio: 1800 / 1123;
+    background: url('/header.jpg') center / cover;
+    mask-image: linear-gradient(black 70%, transparent);
+}
+
+@media (min-width: 50em) {
+  /* The photo fills most of the hero from the right, and the heading sits in
+     the bottom left, partly over the photo's faded edge */
   .section {
-    max-height: 50vw;
+    position: relative;
+    /* Sizes below are in cqi (the hero's width), which excludes the scrollbar, unlike vw */
+    container-type: inline-size;
+    flex-direction: row;
+    align-items: flex-end;
+    min-height: clamp(360px, 40vw, 600px);
   }
   .title {
-    font-size: 5rem;
-    max-width: 80%;
-}
+    position: relative;
+    z-index: 1;
+    /* 70% of the content width, so it stays clear of his face on wide screens */
+    box-sizing: content-box;
+    max-width: calc(min(100cqi, var(--content-width)) * .7);
+    /* Lines the heading up with the content of the sections below */
+    padding: 2rem 1rem 2rem max(1rem, (100cqi - var(--content-width)) / 2 + 1rem);
+  }
+  .image {
+    /* The space beside the page content on wide screens, and how far the photo
+       may reach into it before it has faded out */
+    --margin: max(0px, (100cqi - var(--content-width)) / 2);
+    --overhang: min(var(--margin), 8rem);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    /* Ends at the right edge of the page content, plus the fade */
+    right: calc(var(--margin) - var(--overhang));
+    width: calc(min(100cqi, var(--content-width)) * .7 + var(--overhang));
+    aspect-ratio: auto;
+    /* Keeps both faces in view when the photo is cropped */
+    background-position: 40% 20%;
+    mask-image: linear-gradient(to right, transparent, black min(25%, 8rem), black calc(100% - var(--overhang)), transparent);
+  }
 }

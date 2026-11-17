@@ -6,6 +6,8 @@ on:
   push:
     branches:
       - main
+permissions:
+  contents: read
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
@@ -16,8 +18,10 @@ jobs:
         with:
           node-version: 24
       - run: pnpm -C frontend install --frozen-lockfile && pnpm -C frontend build
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+      - uses: FirebaseExtended/action-hosting-deploy@500ac625ca2dd40cbd15f7659af953801858032a # v0.11.0
         with:
+          # The action otherwise installs the latest firebase-tools on every run
+          firebaseToolsVersion: 15.34.1
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_HEMMALAGET_8E0AB }}
           channelId: live

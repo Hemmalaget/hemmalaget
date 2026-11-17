@@ -3,13 +3,11 @@ import styles from "./styles.module.css";
 
 export const Quote = ({
   src,
-  alt,
   quote,
   quotee,
   reverse = false,
 }: {
   src: string;
-  alt: string;
   quote: string;
   quotee: string;
   reverse?: boolean;
@@ -17,7 +15,8 @@ export const Quote = ({
   <section className={styles.section + " " + (reverse ? styles.reverse : "")}>
     <Image
       src={src}
-      alt={alt}
+      // The caption names the person, so the photo is decorative
+      alt=""
       width="300"
       height="300"
       className={styles.image}

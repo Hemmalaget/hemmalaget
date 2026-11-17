@@ -5,9 +5,7 @@
     align-items: center;
     justify-content: center;
     gap: 16px;
-    background: var(--mint);
-    background: linear-gradient(135deg, #a8e6ce 25%, #b0f1d8 25%, #b0f1d8 50%, #a8e6ce 50%, #a8e6ce 75%, #b0f1d8 75%, #b0f1d8 100%);
-    background-size: 5.66px 5.66px;
+    background: var(--stripes-mint);
     border: 20px solid var(--mint-light);
     border-right: none;
     border-left: none;
@@ -22,8 +20,9 @@
 
 .figure {
     text-align: center;
-    font-size: 1.5rem;
+    font-size: var(--font-h3);
     max-width: 750px;
+    overflow-wrap: anywhere;
 }
 
 .figure q::before {
@@ -38,7 +37,7 @@
     content: "– ";
 }
 
-@media (min-width: 700px) {
+@media (min-width: 44em) {
   .section {
     flex-direction: row-reverse;
   }

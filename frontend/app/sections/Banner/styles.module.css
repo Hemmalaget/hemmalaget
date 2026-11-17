@@ -1,23 +1,35 @@
+/* A contact banner closing the offer section, as wide as its cards */
 .section {
     display: flex;
     flex-direction: column-reverse;
     text-align: center;
-    background: var(--steel);
-    margin: 1rem 1rem 2rem 1rem;
+    background: var(--steel-solid);
+    margin: 0 max(1rem, (100% - var(--content-width) + 2rem) / 2) 3rem;
 }
 
 .image {
-    height: 24rem;
-    width: 100%;
+    height: 16rem;
     background-image: url('/smile.jpg');
-    background-position: center;
+    background-position: 66% 30%;
     background-size: cover;
 }
 
 
-@media (min-width: 800px) {
+/* Keeps the number on one line, except on screens too narrow for it at large text sizes */
+@media (min-width: 20em) {
+  .number {
+    white-space: nowrap;
+  }
+}
+
+@media (min-width: 50em) {
   .section {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    /* Wide enough for the CTA's buttons (max 18rem) plus its 1rem side padding */
+    grid-template-columns: minmax(20rem, 1fr) 2fr;
+  }
+  .image {
+    height: auto;
+    min-height: 22rem;
   }
 }
