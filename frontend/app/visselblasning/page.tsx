@@ -3,8 +3,9 @@ import { Navigation } from "../sections/Navigation";
 import { Footer } from "../sections/Footer";
 import { CTA } from "../components/CTA";
 
-// TODO: replace with the Microsoft Forms share link once the form exists.
-const formUrl = "https://forms.office.com/r/PLACEHOLDER";
+// The Microsoft Forms form that collects reports.
+const formUrl =
+  "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=0N7XTxOBOkqW4eczTFg_NiReCAtDvL5IrQVS2POPQeFUQk9OTVpHWDBCSlQ3NTIxU0NERE1KMktDRi4u";
 
 const Whistleblowing = () => {
   return (
