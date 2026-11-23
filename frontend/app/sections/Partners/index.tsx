@@ -6,18 +6,20 @@ export const Partners = () => (
     <div>I samarbete med:</div>
 
     <div className={styles.logos}>
+      <div className={styles.badges}>
+        <Image src="/aiai.png" alt="AiAi" width="81" height="96" />
+        <Image
+          src="/gasell-logo-rgb-krans-2023.png"
+          alt="Dagens Industri Gasell 2023"
+          width="67"
+          height="100"
+        />
+      </div>
       <Image
         src="/fremia.png"
-        alt="Fremia – Vi följer etiska riktlinjer 2023"
-        width="100"
-        height="100"
-      />
-      <Image src="/aiai.png" alt="AiAi" width="81" height="96" />
-      <Image
-        src="/gasell-logo-rgb-krans-2023.png"
-        alt="Dagens Industri Gasell 2023"
-        width="67"
-        height="100"
+        alt="Fremia – Personlig assistans, etiska riktlinjer 2027"
+        width="306"
+        height="45"
       />
     </div>
 
